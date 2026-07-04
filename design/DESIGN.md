@@ -31,7 +31,7 @@ The single source of truth for how Ailly looks, moves, and speaks — on iOS, th
 
 ## 3. Type
 - **Quicksand** (500/600/700) for everything.
-- **Source Serif 4** (600/700) ONLY for enterprise gravitas: report titles, big dollar/hour numerals, landing headlines.
+- **Source Serif 4** (600/700) ONLY for enterprise REPORT artifacts: report titles/section headers, grade seals, big dollar/hour numerals. Page chrome — even on enterprise screens — stays rounded.
 - Eyebrow labels: 10.5–12px, bold, +0.8–2 tracking, ALL CAPS.
 - Stage titles: 23–27 heavy, white, centered. Page titles: 26 bold.
 
