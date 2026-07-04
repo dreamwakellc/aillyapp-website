@@ -354,6 +354,7 @@ main { display: block; }
   font-size: 21px;
 }
 .ico-gold { background: #F7EED9; }
+.ico-gold svg { color: var(--biz-gold-1); }
 
 /* Lane cards (home) */
 .lane {
