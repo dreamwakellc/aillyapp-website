@@ -340,6 +340,9 @@ main { display: block; }
 .card h3 { font-size: 17px; font-weight: 700; margin: 12px 0 7px; }
 .card p { font-size: 14.5px; line-height: 1.6; color: var(--muted); }
 
+.ico svg { width: 22px; height: 22px; color: var(--navy); }
+.ent .ico svg { color: var(--ent-navy); }
+.sec-ico svg { width: 22px; height: 22px; color: var(--biz-gold-1); }
 .ico {
   width: 44px;
   height: 44px;
