@@ -379,7 +379,14 @@ main { display: block; }
 .lane .lane-cta { margin-top: auto; font-weight: 700; font-size: 15px; color: var(--navy); }
 .lane .lane-cta::after { content: " →"; }
 
-.lane-business { border-top: 4px solid; border-image: linear-gradient(90deg, var(--biz-gold-1), var(--biz-gold-2)) 1; }
+.lane-business { position: relative; overflow: hidden; }
+.lane-business::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--biz-gold-1), var(--biz-gold-2));
+}
 .lane-business .lane-tag, .lane-business li::before, .lane-business .lane-cta { color: var(--biz-gold-1); }
 
 .lane-enterprise { background: var(--ent-navy); }

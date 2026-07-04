@@ -1,424 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ailly — Your AI Ally for Work and Life</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #F8F9FA;
-      color: #1a1a2e;
-    }
-
-    /* HERO */
-    .hero {
-      background: linear-gradient(135deg, #1A237E, #4A148C);
-      color: white;
-      text-align: center;
-      padding: 80px 24px 72px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .hero img {
-      width: 80px;
-      height: 80px;
-      object-fit: contain;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 1.15rem;
-      opacity: 0.85;
-      margin-bottom: 40px;
-    }
-
-    .app-store-btn {
-      display: inline-block;
-      background: white;
-      color: #1A237E;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 16px 36px;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-
-    .app-store-btn:hover { opacity: 0.88; }
-
-    /* SCORE PREVIEW */
-    .score-section {
-      background: white;
-      padding: 64px 24px;
-      text-align: center;
-    }
-
-    .section-label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-      color: #6C63FF;
-      margin-bottom: 12px;
-    }
-
-    .section-title {
-      font-size: 1.9rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      color: #1a1a2e;
-    }
-
-    .section-subtitle {
-      font-size: 1rem;
-      color: #666;
-      max-width: 480px;
-      margin: 0 auto 48px;
-      line-height: 1.6;
-    }
-
-    .score-card {
-      max-width: 400px;
-      margin: 0 auto;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
-    }
-
-    .score-card-header {
-      background: linear-gradient(135deg, #1A237E, #4A148C);
-      padding: 28px 24px;
-      color: white;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .score-circle {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      border: 4px solid rgba(255,255,255,0.3);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .score-circle .num {
-      font-size: 1.6rem;
-      font-weight: 900;
-      line-height: 1;
-    }
-
-    .score-circle .denom {
-      font-size: 0.65rem;
-      opacity: 0.65;
-    }
-
-    .score-card-grade { font-size: 3rem; font-weight: 900; line-height: 1; }
-    .score-card-headline { font-size: 0.9rem; opacity: 0.9; margin-top: 4px; }
-
-    .score-card-body {
-      background: white;
-      padding: 20px 24px;
-    }
-
-    .category-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 14px;
-    }
-
-    .category-label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      width: 140px;
-      flex-shrink: 0;
-      color: #333;
-    }
-
-    .bar-track {
-      flex: 1;
-      height: 6px;
-      background: #eee;
-      border-radius: 4px;
-      overflow: hidden;
-    }
-
-    .bar-fill {
-      height: 100%;
-      border-radius: 4px;
-      background: #1A237E;
-    }
-
-    .bar-score {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: #1A237E;
-      width: 28px;
-      text-align: right;
-    }
-
-    /* FEATURES */
-    .features-section {
-      padding: 64px 24px;
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    .features-section .section-title,
-    .features-section .section-label,
-    .features-section .section-subtitle {
-      text-align: center;
-    }
-
-    .tiles {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      margin-top: 40px;
-    }
-
-    .tile {
-      background: white;
-      border-radius: 20px;
-      padding: 28px 24px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-    }
-
-    .tile-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      margin-bottom: 16px;
-    }
-
-    .tile h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: #1a1a2e;
-    }
-
-    .tile p {
-      font-size: 0.9rem;
-      color: #666;
-      line-height: 1.6;
-    }
-
-    /* MODES */
-    .modes-section {
-      background: linear-gradient(135deg, #1A237E, #4A148C);
-      padding: 64px 24px;
-      text-align: center;
-      color: white;
-    }
-
-    .modes-section .section-label { color: rgba(255,255,255,0.6); }
-    .modes-section .section-title { color: white; }
-    .modes-section .section-subtitle { color: rgba(255,255,255,0.8); }
-
-    .modes {
-      display: flex;
-      gap: 16px;
-      max-width: 560px;
-      margin: 40px auto 0;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .mode-card {
-      flex: 1;
-      min-width: 220px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 20px;
-      padding: 28px 20px;
-      color: white;
-    }
-
-    .mode-icon {
-      font-size: 2rem;
-      margin-bottom: 14px;
-    }
-
-    .mode-card h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .mode-card p {
-      font-size: 0.875rem;
-      opacity: 0.7;
-    }
-
-    /* CTA */
-    .cta-section {
-      background: white;
-      padding: 64px 24px;
-      text-align: center;
-    }
-
-    .cta-section .app-store-btn {
-      background: linear-gradient(135deg, #1A237E, #4A148C);
-      color: white;
-      font-size: 1.05rem;
-      padding: 18px 44px;
-    }
-
-    .cta-section .app-store-btn:hover { opacity: 0.88; }
-
-    /* FOOTER */
-    footer {
-      background: #1a1a2e;
-      color: rgba(255,255,255,0.5);
-      text-align: center;
-      padding: 24px;
-      font-size: 0.85rem;
-    }
-
-    footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
-    footer a:hover { color: white; }
-
-    @media (max-width: 480px) {
-      .hero h1 { font-size: 2.4rem; }
-      .score-card-grade { font-size: 2.4rem; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ailly — Actually use AI, in plain, simple steps</title>
+<meta name="description" content="Ailly is your AI ally for life and work. Take a 2-minute check-up, get a personal game plan, and build real AI skills with daily practice — no jargon, no wrong answers.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ailly — Actually use AI, in plain, simple steps">
+<meta property="og:description" content="Your AI ally for life and work. A 2-minute check-up, a personal game plan, and daily practice that makes AI feel simple.">
+<meta property="og:url" content="https://aillyapp.com/">
+<meta property="og:image" content="https://aillyapp.com/assets/mascot.png">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/"><img src="/assets/wordmark.png" alt="Ailly — home"></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu"><span class="bars"></span></button>
+    <nav class="nav-menu" id="navMenu" aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="/personal">Personal</a></li>
+        <li><a href="/business">Business</a></li>
+        <li><a href="/enterprise">Enterprise</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/support">Support</a></li>
+      </ul>
+      <span class="nav-cta">App coming soon</span>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
   <!-- HERO -->
   <section class="hero">
-    <img src="mascot.png" alt="Ailly mascot" />
-    <h1>Ailly</h1>
-    <p>Your AI Ally for Work and Life</p>
-    <a class="app-store-btn" href="#">Download on the App Store</a>
-  </section>
-
-  <!-- SCORE PREVIEW -->
-  <section class="score-section">
-    <div class="section-label">AI Readiness</div>
-    <h2 class="section-title">See exactly where you stand</h2>
-    <p class="section-subtitle">Get a personalized AI readiness score with a full breakdown — strengths, opportunities, and a ranked game plan.</p>
-
-    <div class="score-card">
-      <div class="score-card-header">
-        <div class="score-circle">
-          <span class="num">78</span>
-          <span class="denom">/100</span>
-        </div>
-        <div>
-          <div class="score-card-grade">B+</div>
-          <div class="score-card-headline">Strong foundation, room to scale</div>
-        </div>
-      </div>
-      <div class="score-card-body">
-        <div class="category-row">
-          <span class="category-label">🤖 AI Adoption</span>
-          <div class="bar-track"><div class="bar-fill" style="width:82%; background:#1A237E;"></div></div>
-          <span class="bar-score" style="color:#1A237E;">82</span>
-        </div>
-        <div class="category-row">
-          <span class="category-label">⚡ Automation</span>
-          <div class="bar-track"><div class="bar-fill" style="width:74%; background:#FF9800;"></div></div>
-          <span class="bar-score" style="color:#FF9800;">74</span>
-        </div>
-        <div class="category-row">
-          <span class="category-label">📈 Growth</span>
-          <div class="bar-track"><div class="bar-fill" style="width:80%; background:#4caf50;"></div></div>
-          <span class="bar-score" style="color:#4caf50;">80</span>
-        </div>
-        <div class="category-row">
-          <span class="category-label">🗂️ Operations</span>
-          <div class="bar-track"><div class="bar-fill" style="width:68%; background:#FF9800;"></div></div>
-          <span class="bar-score" style="color:#FF9800;">68</span>
-        </div>
-      </div>
+    <img class="hero-mascot float" src="/assets/mascot.png" alt="Ailly mascot — a friendly speech-bubble robot with a lightning bolt">
+    <div><span class="chip">Your AI ally for life and work</span></div>
+    <h1>Actually use AI — in plain, simple steps</h1>
+    <p class="hero-sub">Everyone says you should be using AI. Ailly shows you how — with a quick check-up,
+    a personal game plan, and a little practice each day. No jargon. No wrong answers.</p>
+    <div class="hero-ctas">
+      <!-- TEMP: the app isn't live yet. When it is, change this <span> to
+           <a class="store-badge" href="APP_STORE_URL"> with the same inner HTML — everywhere it appears. -->
+      <span class="store-badge">
+        <svg viewBox="0 0 384 512" aria-hidden="true" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.7-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        <span><span class="sb-top">Coming soon to the</span><span class="sb-bottom">App Store</span></span>
+      </span>
+      <a class="btn btn-ghost" href="#how">See how it works</a>
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section class="features-section">
-    <div class="section-label">How it works</div>
-    <h2 class="section-title">Your AI game plan in minutes</h2>
-    <p class="section-subtitle">Answer a few questions and Ailly generates a ranked, actionable plan tailored to you.</p>
-
-    <div class="tiles">
-      <div class="tile">
-        <div class="tile-icon" style="background: rgba(108,99,255,0.12);">✨</div>
-        <h3>Smart Assessment</h3>
-        <p>A short diagnostic questionnaire — no fluff, just the right questions to understand where you are with AI today.</p>
-      </div>
-      <div class="tile">
-        <div class="tile-icon" style="background: rgba(26,35,126,0.1);">🎯</div>
-        <h3>Personalized Score</h3>
-        <p>Get an AI readiness score with a full category breakdown so you know exactly what to focus on first.</p>
-      </div>
-      <div class="tile">
-        <div class="tile-icon" style="background: rgba(76,175,80,0.12);">📋</div>
-        <h3>Ranked Action Plan</h3>
-        <p>A prioritized list of AI tools and strategies tailored to your specific goals — ranked by impact.</p>
-      </div>
-      <div class="tile">
-        <div class="tile-icon" style="background: rgba(0,188,212,0.12);">📈</div>
-        <h3>Track Progress</h3>
-        <p>Check off action items, revisit past assessments, and watch your AI readiness improve over time.</p>
-      </div>
+  <!-- THREE LANES -->
+  <section class="section center">
+    <p class="kicker">One ally, three journeys</p>
+    <h2>Wherever you're starting, Ailly meets you there</h2>
+    <p class="lede">For you, for your business, or for your whole company — same friendly guide, tuned to what you need.</p>
+    <div class="grid grid-3" style="text-align:left">
+      <a class="lane" href="/personal">
+        <span class="lane-tag">Personal</span>
+        <h3>Learn AI for everyday life</h3>
+        <p>New to AI? Perfect. A 2-minute check-up, a game plan with your grade, and one small win a day.</p>
+        <ul>
+          <li>Daily lesson &amp; daily challenge</li>
+          <li>Prompt Coach — ask AI better</li>
+          <li>An AI Fluency score that climbs</li>
+        </ul>
+        <span class="lane-cta">Start free</span>
+      </a>
+      <a class="lane lane-business" href="/business">
+        <span class="lane-tag">Business</span>
+        <h3>Launch or grow your business</h3>
+        <p>From idea to official — or from running to thriving. A free assessment, then everything you need in one place.</p>
+        <ul>
+          <li>Startup Kit: plan, name, brand</li>
+          <li>LLC &amp; EIN answer sheets</li>
+          <li>Documents, invoices &amp; reminders</li>
+        </ul>
+        <span class="lane-cta">See the launch path</span>
+      </a>
+      <a class="lane lane-enterprise" href="/enterprise">
+        <span class="lane-tag">Enterprise</span>
+        <h3>AI readiness for your whole company</h3>
+        <p>Interview every employee, get a graded posture report, and watch readiness climb over six months.</p>
+        <ul>
+          <li>Board-ready graded report</li>
+          <li>Training for every employee</li>
+          <li>Live adoption dashboard</li>
+        </ul>
+        <span class="lane-cta">Read a sample report</span>
+      </a>
     </div>
   </section>
 
-  <!-- MODES -->
-  <section class="modes-section">
-    <div class="section-label">Built for everyone</div>
-    <h2 class="section-title">Personal or Business</h2>
-    <p class="section-subtitle">Whether you're optimizing your daily life or scaling your business with AI, Ailly has a path for you.</p>
-
-    <div class="modes">
-      <div class="mode-card">
-        <div class="mode-icon">👤</div>
-        <h3>Personal</h3>
-        <p>Home, health, productivity & daily life</p>
-      </div>
-      <div class="mode-card">
-        <div class="mode-icon">🏢</div>
-        <h3>Business</h3>
-        <p>Growth, operations & customers</p>
-      </div>
+  <!-- HOW IT WORKS -->
+  <section class="section section-narrow" id="how">
+    <p class="kicker">How it works</p>
+    <h2>A check-up, a plan, and a friend who checks in</h2>
+    <p class="lede">Ailly isn't a video library or a firehose of tips. It's a guide that learns where you are and walks with you.</p>
+    <div class="steps">
+      <div class="step"><div>
+        <h3>Take the 2-minute check-up</h3>
+        <p>A few friendly questions about your life or work and how you use AI today. There are no wrong answers — honest is what works.</p>
+      </div></div>
+      <div class="step"><div>
+        <h3>Get your personal game plan</h3>
+        <p>Ailly grades where you stand, shows your biggest opportunities, and lays out exactly what to do first — in plain words.</p>
+      </div></div>
+      <div class="step"><div>
+        <h3>Practice a little every day</h3>
+        <p>A short daily lesson, a real-life challenge, and a Prompt Coach drill. Small wins that add up faster than you'd think.</p>
+      </div></div>
+      <div class="step"><div>
+        <h3>Check in weekly — and watch your plan evolve</h3>
+        <p>Each week Ailly asks how it's going and reshapes your journey around what's working. Your score climbs; so does your confidence.</p>
+      </div></div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="section-label">Get started</div>
-    <h2 class="section-title">Ready to meet your AI ally?</h2>
-    <p class="section-subtitle" style="margin-bottom: 36px;">Download Ailly and get your personalized AI game plan in under 3 minutes.</p>
-    <a class="app-store-btn" href="#">Download on the App Store</a>
+  <!-- SOCIAL PROOF (placeholder) -->
+  <section class="section center">
+    <p class="kicker">Early words</p>
+    <h2>Built for people who felt left behind by AI</h2>
+    <p class="lede">Ailly is opening soon. Here's the kind of difference it's built to make.</p>
+    <!-- PLACEHOLDER: replace these with real user quotes once the app is live. -->
+    <div class="grid grid-3" style="text-align:left">
+      <figure class="quote-card">
+        <blockquote>I always felt like AI was for other people. Having someone explain it in normal words changed that for me.</blockquote>
+        <figcaption>Early tester · Personal</figcaption>
+      </figure>
+      <figure class="quote-card">
+        <blockquote>It's like having a patient friend who happens to know everything about starting a business.</blockquote>
+        <figcaption>Early tester · Business</figcaption>
+      </figure>
+      <figure class="quote-card">
+        <blockquote>The report told us exactly where our hours were hiding — and what to do Monday morning.</blockquote>
+        <figcaption>Pilot company · Enterprise</figcaption>
+      </figure>
+    </div>
   </section>
 
-  <footer>
-    &copy; 2026 Dreamwake LLC &nbsp;·&nbsp; <a href="/privacy-policy.html">Privacy Policy</a>
-  </footer>
+  <!-- CLOSING CTA -->
+  <section class="cta-band">
+    <img class="float" src="/assets/mascot.png" alt="" width="84" style="margin-bottom:14px">
+    <h2>Ready to meet your AI ally?</h2>
+    <p>Free to start. Two minutes to your first game plan. A friendlier way into AI than anything you've tried.</p>
+    <!-- TEMP: swap to App Store link when live (see comment in hero). -->
+    <span class="store-badge">
+      <svg viewBox="0 0 384 512" aria-hidden="true" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.7-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+      <span><span class="sb-top">Coming soon to the</span><span class="sb-bottom">App Store</span></span>
+    </span>
+  </section>
 
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/mascot.png" alt="">
+        <p>Ailly — your AI ally for life and work. Plain-language AI guidance for you, your business, and your whole company.</p>
+      </div>
+      <nav aria-label="Product">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/personal">Personal</a></li>
+          <li><a href="/business">Business</a></li>
+          <li><a href="/enterprise">Enterprise</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Company">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/support">Support</a></li>
+          <li><a href="/privacy-policy">Privacy policy</a></li>
+          <li><a href="/terms">Terms of use</a></li>
+          <!-- TEMP contact address until hello@aillyapp.com exists -->
+          <li><a href="mailto:sattar.amaan@gmail.com">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Dreamwake LLC. All rights reserved.</span>
+      <span>No jargon. No wrong answers.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/site.js" defer></script>
 </body>
 </html>
