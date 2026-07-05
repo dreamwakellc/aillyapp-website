@@ -718,3 +718,19 @@ main { display: block; }
   background: rgba(255, 255, 255, .13); border: 1px solid rgba(255, 255, 255, .24);
   border-radius: 99px; padding: 10px 18px;
 }
+
+/* ============================== SCROLL REVEAL ==============================
+   Progressive enhancement: the hidden state only exists once site.js adds
+   `reveal-ready` to <html>. No JS (or reduced-motion) => nothing is hidden,
+   content is always fully visible. site.js tags targets with [data-reveal]. */
+[data-reveal] {
+  transition: opacity .7s cubic-bezier(.16, .84, .44, 1),
+              transform .7s cubic-bezier(.16, .84, .44, 1);
+  will-change: opacity, transform;
+}
+html.reveal-ready [data-reveal] { opacity: 0; transform: translateY(22px); }
+html.reveal-ready [data-reveal].is-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html.reveal-ready [data-reveal] { opacity: 1 !important; transform: none !important; }
+}
