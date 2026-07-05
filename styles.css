@@ -525,7 +525,9 @@ main { display: block; }
 .plan-enterprise .plan-lane { color: var(--gold-light); }
 .plan-enterprise h3 { font-family: var(--serif); }
 .plan-enterprise .plan-note { color: rgba(255, 255, 255, .65); }
-.plan-enterprise .n { font-family: var(--serif); color: var(--gold-light); }
+/* Match the other two plans' price font — side by side, prices should be
+   visually comparable (the serif reads as inconsistent). Gold accent stays. */
+.plan-enterprise .n { color: var(--gold-light); }
 .plan-enterprise .n small { color: rgba(255, 255, 255, .75); }
 .plan-enterprise .per { color: rgba(255, 255, 255, .75); }
 .plan-enterprise li { color: rgba(255, 255, 255, .9); }
