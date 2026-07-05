@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://aillyapp.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<url><loc>https://aillyapp.com/personal</loc><changefreq>monthly</changefreq></url>
+<url><loc>https://aillyapp.com/business</loc><changefreq>monthly</changefreq></url>
+<url><loc>https://aillyapp.com/enterprise</loc><changefreq>monthly</changefreq></url>
+<url><loc>https://aillyapp.com/pricing</loc><changefreq>monthly</changefreq></url>
+<url><loc>https://aillyapp.com/support</loc><changefreq>monthly</changefreq></url>
+</urlset>
