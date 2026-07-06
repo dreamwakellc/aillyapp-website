@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://aillyapp.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-<url><loc>https://aillyapp.com/personal</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://aillyapp.com/business</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://aillyapp.com/enterprise</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://aillyapp.com/pricing</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://aillyapp.com/support</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://aillyapp.com/</loc><lastmod>2026-07-05</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://aillyapp.com/personal</loc><lastmod>2026-07-05</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://aillyapp.com/business</loc><lastmod>2026-07-05</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://aillyapp.com/enterprise</loc><lastmod>2026-07-05</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://aillyapp.com/pricing</loc><lastmod>2026-07-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aillyapp.com/support</loc><lastmod>2026-07-05</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://aillyapp.com/privacy-policy</loc><lastmod>2026-07-05</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://aillyapp.com/terms</loc><lastmod>2026-07-05</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
