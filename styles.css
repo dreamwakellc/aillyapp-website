@@ -535,6 +535,12 @@ main { display: block; }
 
 .finePrint { font-size: 12.5px; color: var(--faint); margin-top: 10px; line-height: 1.55; }
 
+/* Keep the plan CTAs on one line across cards: reserve equal fine-print height
+   when the plans sit side by side, so a shorter note doesn't drop its button. */
+@media (min-width: 700px) {
+  .plan .finePrint { min-height: 58px; }
+}
+
 /* ============================== SECURITY ROWS ============================== */
 
 .sec-row { display: flex; gap: 15px; align-items: flex-start; margin-bottom: 16px; }
