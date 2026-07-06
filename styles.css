@@ -14,8 +14,9 @@
   --faint: #8A8FA8;
   --bg: #F6F6FA;
   --ent-navy: #141B4D;
-  --gold: #C9A34A;
-  --gold-light: #E7C878;
+  /* Enterprise accent — cool azure, distinct from Business gold + Personal navy */
+  --ent-accent: #2F6DB0;
+  --ent-accent-light: #8FBEE8;
   --biz-gold-1: #A9762A;
   --biz-gold-2: #C79A3E;
   --grad: linear-gradient(160deg, #1A237E 0%, #311B92 55%, #4A148C 100%);
@@ -204,9 +205,9 @@ a { color: var(--navy); }
   margin-bottom: 22px;
 }
 
-.chip-gold { border-color: var(--gold); color: var(--gold-light); border-radius: 4px; }
+.chip-gold { border-color: var(--ent-accent); color: var(--ent-accent-light); border-radius: 4px; }
 
-.rule-gold { width: 56px; height: 2px; background: var(--gold); margin: 26px auto; border: none; }
+.rule-gold { width: 56px; height: 2px; background: var(--ent-accent); margin: 26px auto; border: none; }
 
 /* Gentle float on the mascot */
 .float { animation: float 5.5s ease-in-out infinite; }
@@ -400,7 +401,7 @@ main { display: block; }
 .lane-enterprise h3 { color: #fff; }
 .lane-enterprise p { color: rgba(255, 255, 255, .82); }
 .lane-enterprise li { color: rgba(255, 255, 255, .88); }
-.lane-enterprise .lane-tag, .lane-enterprise li::before, .lane-enterprise .lane-cta { color: var(--gold-light); }
+.lane-enterprise .lane-tag, .lane-enterprise li::before, .lane-enterprise .lane-cta { color: var(--ent-accent-light); }
 
 /* ============================== STEPS ============================== */
 
@@ -488,14 +489,14 @@ main { display: block; }
   font-family: var(--serif);
   font-size: clamp(28px, 4.5vw, 38px);
   font-weight: 700;
-  color: var(--gold-light);
+  color: var(--ent-accent-light);
   display: block;
   margin-bottom: 10px;
 }
 .impact p { color: rgba(255, 255, 255, .88); font-size: 14.5px; line-height: 1.6; max-width: 680px; }
 .impact ul { list-style: none; margin-top: 14px; display: grid; gap: 8px; }
 .impact li { font-size: 14.5px; line-height: 1.5; color: rgba(255,255,255,.92); padding-left: 24px; position: relative; font-weight: 600; }
-.impact li::before { content: "✓"; position: absolute; left: 0; color: var(--gold-light); font-weight: 700; }
+.impact li::before { content: "✓"; position: absolute; left: 0; color: var(--ent-accent-light); font-weight: 700; }
 
 /* ============================== PRICING ============================== */
 
@@ -522,22 +523,26 @@ main { display: block; }
 .plan-business .n { color: var(--biz-gold-1); }
 
 .plan-enterprise { background: var(--ent-navy); color: #fff; }
-.plan-enterprise .plan-lane { color: var(--gold-light); }
+.plan-enterprise .plan-lane { color: var(--ent-accent-light); }
 .plan-enterprise h3 { font-family: var(--serif); }
 .plan-enterprise .plan-note { color: rgba(255, 255, 255, .65); }
 /* Match the other two plans' price font — side by side, prices should be
    visually comparable (the serif reads as inconsistent). Gold accent stays. */
-.plan-enterprise .n { color: var(--gold-light); }
+.plan-enterprise .n { color: var(--ent-accent-light); }
 .plan-enterprise .n small { color: rgba(255, 255, 255, .75); }
 .plan-enterprise .per { color: rgba(255, 255, 255, .75); }
 .plan-enterprise li { color: rgba(255, 255, 255, .9); }
-.plan-enterprise li::before { color: var(--gold-light); }
+.plan-enterprise li::before { color: var(--ent-accent-light); }
 
 .finePrint { font-size: 12.5px; color: var(--faint); margin-top: 10px; line-height: 1.55; }
 
 /* Keep the plan CTAs on one line across cards: reserve equal fine-print height
    when the plans sit side by side, so a shorter note doesn't drop its button. */
 @media (min-width: 700px) {
+  /* Reserve equal heights so the price, feature list, and CTA all line up
+     across cards regardless of how long each plan's copy runs. */
+  .plan .plan-note { min-height: 34px; }
+  .plan .per { min-height: 96px; }
   .plan .finePrint { min-height: 58px; }
 }
 
@@ -806,4 +811,4 @@ html.reveal-ready [data-reveal].is-visible { opacity: 1; transform: none; }
 .chapter-enterprise { background: var(--ent-navy); background-image: var(--grad-ent); color: #fff; }
 .chapter-enterprise .chapter-lede { color: rgba(255, 255, 255, .82); }
 .chapter-enterprise .chapter-kicker,
-.chapter-enterprise .chapter-cta { color: var(--gold-light); }
+.chapter-enterprise .chapter-cta { color: var(--ent-accent-light); }
