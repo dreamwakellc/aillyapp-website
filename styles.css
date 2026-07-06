@@ -397,7 +397,7 @@ main { display: block; }
 .lane-business .lane-tag, .lane-business li::before, .lane-business .lane-cta { color: var(--biz-gold-1); }
 
 .lane-enterprise { background: var(--ent-navy); }
-.lane-enterprise h3 { color: #fff; font-family: var(--serif); }
+.lane-enterprise h3 { color: #fff; }
 .lane-enterprise p { color: rgba(255, 255, 255, .82); }
 .lane-enterprise li { color: rgba(255, 255, 255, .88); }
 .lane-enterprise .lane-tag, .lane-enterprise li::before, .lane-enterprise .lane-cta { color: var(--gold-light); }
@@ -734,3 +734,70 @@ html.reveal-ready [data-reveal].is-visible { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   html.reveal-ready [data-reveal] { opacity: 1 !important; transform: none !important; }
 }
+
+/* ============================== CHAPTERS (home lanes) ==============================
+   One umbrella hero, then each lane gets its own full-width cinematic chapter:
+   a distinct color world, one headline, one line, one visual, one CTA. */
+.chapter { padding: 96px 24px; overflow: hidden; }
+.chapter-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 44px;
+  align-items: center;
+}
+@media (min-width: 880px) {
+  .chapter-inner { grid-template-columns: 1.05fr .95fr; gap: 72px; }
+  /* Reversed chapters put the copy on the right, media on the left */
+  .chapter-reverse .chapter-copy { order: 2; }
+}
+
+.chapter-kicker {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 14px;
+}
+.chapter h2 {
+  font-size: clamp(30px, 4.6vw, 46px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -.03em;
+  margin-bottom: 16px;
+}
+.chapter-lede {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 460px;
+  margin-bottom: 28px;
+}
+.chapter-cta {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--navy);
+  text-decoration: none;
+}
+.chapter-cta::after { content: " \2192"; display: inline-block; transition: transform .18s ease; }
+.chapter-cta:hover::after { transform: translateX(4px); }
+
+.chapter-media { display: flex; justify-content: center; }
+.chapter-media .phone { width: min(300px, 74vw); }
+
+/* Personal — clean & warm */
+.chapter-personal { background: #fff; }
+
+/* Business — soft gold world */
+.chapter-business { background: #FBF6EC; }
+.chapter-business .chapter-kicker,
+.chapter-business .chapter-cta { color: var(--biz-gold-1); }
+
+/* Enterprise — dark, authoritative stage */
+.chapter-enterprise { background: var(--ent-navy); background-image: var(--grad-ent); color: #fff; }
+.chapter-enterprise .chapter-lede { color: rgba(255, 255, 255, .82); }
+.chapter-enterprise .chapter-kicker,
+.chapter-enterprise .chapter-cta { color: var(--gold-light); }
