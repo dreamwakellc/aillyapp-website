@@ -812,3 +812,51 @@ html.reveal-ready [data-reveal].is-visible { opacity: 1; transform: none; }
 .chapter-enterprise .chapter-lede { color: rgba(255, 255, 255, .82); }
 .chapter-enterprise .chapter-kicker,
 .chapter-enterprise .chapter-cta { color: var(--ent-accent-light); }
+
+/* Alternating soft-tint chapter for rhythm on single-lane pages */
+.chapter-alt { background: #EFF1FA; }
+
+/* Bigger, more cinematic headline for lane pages */
+.chapter-xl h2 { font-size: clamp(34px, 5.4vw, 56px); line-height: 1.04; }
+
+/* Soft glow behind device shots so they lift off the page */
+.chapter-media { position: relative; }
+.chapter-media .phone { position: relative; z-index: 1; }
+.chapter-media::before {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 360px; height: 360px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 92, 200, .20), transparent 66%);
+  z-index: 0;
+  pointer-events: none;
+}
+.chapter-business .chapter-media::before { background: radial-gradient(circle, rgba(201, 163, 74, .22), transparent 66%); }
+.chapter-enterprise .chapter-media::before { background: radial-gradient(circle, rgba(143, 190, 232, .26), transparent 66%); }
+
+/* ============================== STAGE — full-bleed stat / statement ============================== */
+.stage {
+  background: var(--navy);
+  background-image: var(--grad);
+  color: #fff;
+  text-align: center;
+  padding: 120px 24px;
+  overflow: hidden;
+}
+.stage.stage-ent { background: var(--ent-navy); background-image: var(--grad-ent); }
+.stage .stage-kicker {
+  font-size: 12px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+  color: rgba(255, 255, 255, .7); margin-bottom: 18px;
+}
+.stage .stage-num {
+  font-size: clamp(84px, 17vw, 180px);
+  font-weight: 700; line-height: .88; letter-spacing: -.04em;
+  margin: 0 0 6px;
+}
+.stage h2 {
+  font-size: clamp(30px, 4.6vw, 46px); font-weight: 700;
+  letter-spacing: -.025em; line-height: 1.08; margin-bottom: 16px;
+}
+.stage p { font-size: 18px; line-height: 1.6; color: rgba(255, 255, 255, .82); max-width: 560px; margin: 0 auto; }
