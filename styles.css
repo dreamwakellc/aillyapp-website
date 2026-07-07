@@ -525,17 +525,27 @@ main { display: block; }
 .plan-business .plan-lane { color: var(--biz-gold-1); }
 .plan-business .n { color: var(--biz-gold-1); }
 
-.plan-enterprise { background: var(--ent-navy); color: #fff; }
+/* The enterprise plan wears the report cover: deep navy gradient + glow,
+   white type. Gold is jewelry, not paint — exactly two gold moments (the
+   lane eyebrow and the founding line); price and checks stay white so the
+   card reads premium, not brassy. */
+.plan-enterprise {
+  background: var(--ent-navy);
+  background-image:
+    radial-gradient(circle at 82% -12%, rgba(61, 90, 254, .38), transparent 58%),
+    linear-gradient(160deg, #0D1240 0%, #1A237E 62%, #283593 100%);
+  color: #fff;
+}
 .plan-enterprise .plan-lane { color: var(--ent-gold); }
 .plan-enterprise .plan-note { color: rgba(255, 255, 255, .65); }
 /* Price font matches the other plans — side by side, prices must read as one
    family (serif here looks off next to Quicksand numerals). Serif is reserved
-   for INSIDE report artifacts: grade seals, the report cover. Gold stays. */
-.plan-enterprise .n { color: var(--ent-gold); }
-.plan-enterprise .n small { color: rgba(255, 255, 255, .6); }
+   for INSIDE report artifacts: grade seals, the report cover. */
+.plan-enterprise .n { color: #fff; }
+.plan-enterprise .n small { color: rgba(255, 255, 255, .55); }
 .plan-enterprise .per { color: rgba(255, 255, 255, .75); }
 .plan-enterprise li { color: rgba(255, 255, 255, .9); }
-.plan-enterprise li::before { color: var(--ent-gold); }
+.plan-enterprise li::before { color: rgba(255, 255, 255, .7); }
 .plan-enterprise .founding { color: var(--ent-gold); }
 
 .finePrint { font-size: 12.5px; color: var(--faint); margin-top: 10px; line-height: 1.55; }
