@@ -21,19 +21,29 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=7">
+<link rel="stylesheet" href="/styles.css?v=8">
 <style>
-  /* Enterprise refinements: cool azure accent (gold is Business's). Serif is
-     reserved for REPORT artifacts and big numerals — page chrome stays rounded,
-     exactly like the app's enterprise screens. */
-  .ent .kicker { color: var(--ent-accent); }
-  .dim-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+  /* Enterprise refinements: report indigo on light surfaces, cover gold on navy —
+     the app's posture report is the reference. Serif is reserved for REPORT
+     artifacts (grade seals, money) — page chrome stays rounded. */
+  .ent .kicker { color: var(--ent-ink); }
+  .dim-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
   .dim {
-    background: #fff; border-radius: 14px; padding: 16px 14px; text-align: center;
-    box-shadow: var(--shadow-card); border-top: 3px solid var(--ent-accent);
+    background: #fff; border-radius: 16px; padding: 22px 16px 18px; text-align: center;
+    box-shadow: var(--shadow-card);
   }
-  .dim b { font-size: 22px; color: var(--ent-navy); display: block; }
-  .dim span { font-size: 14.5px; font-weight: 600; color: var(--muted); line-height: 1.4; display: block; }
+  /* The grade seal — serif letter in its band color, like the report scorecard. */
+  .dim .seal {
+    width: 52px; height: 52px; border-radius: 50%; margin: 0 auto 12px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--band); color: #fff;
+    font-family: var(--serif); font-size: 24px; font-weight: 700;
+  }
+  .dim .nm { font-size: 14.5px; font-weight: 700; color: var(--ink); line-height: 1.35; display: block; min-height: 40px; }
+  .dim .bar { display: block; height: 4px; border-radius: 2px; background: rgba(20, 27, 77, .08); margin: 10px 8px 8px; overflow: hidden; }
+  .dim .bar i { display: block; height: 100%; border-radius: 2px; background: var(--band); }
+  .dim .sc { font-size: 12.5px; font-weight: 600; color: var(--muted); display: block; }
+  .dim-note { font-size: 13px; color: var(--faint); margin-top: 16px; }
 </style>
 </head>
 <body class="ent">
@@ -68,8 +78,7 @@
     <div class="jobs" aria-hidden="false"><span style="cursor:default">✓ Every employee graded</span><span style="cursor:default">✓ Hidden hours quantified</span><span style="cursor:default">✓ Proof your board can read</span></div>
     <div class="hero-ctas">
       <a class="btn btn-white" href="/sample-report.pdf">Read a sample report</a>
-      <!-- TEMP contact address until hello@aillyapp.com exists -->
-      <a class="btn btn-ghost" href="mailto:sattar.amaan@gmail.com?subject=Ailly%20Enterprise%20%E2%80%94%20request%20access">Request access</a>
+        <a class="btn btn-ghost" href="mailto:support@aillyapp.com?subject=Ailly%20Enterprise%20%E2%80%94%20request%20access">Request access</a>
     </div>
   </section>
 
@@ -123,14 +132,15 @@
     <h2>Graded across six dimensions</h2>
     <p class="lede">Every grade comes with evidence from your own team's words — not a generic maturity model.</p>
     <div class="dim-grid" role="list">
-      <div class="dim" role="listitem"><b>A–F</b><span>Workforce AI fluency</span></div>
-      <div class="dim" role="listitem"><b>A–F</b><span>Current AI adoption</span></div>
-      <div class="dim" role="listitem"><b>A–F</b><span>Opportunity &amp; upside</span></div>
-      <div class="dim" role="listitem"><b>A–F</b><span>Culture &amp; change readiness</span></div>
-      <div class="dim" role="listitem"><b>A–F</b><span>Data &amp; tooling</span></div>
-      <div class="dim" role="listitem"><b>A–F</b><span>Governance &amp; risk</span></div>
+      <div class="dim" role="listitem" style="--band:var(--grade-c)"><span class="seal" aria-hidden="true">C-</span><span class="nm">Workforce AI fluency</span><span class="bar"><i style="width:50%"></i></span><span class="sc">50/100 · Developing</span></div>
+      <div class="dim" role="listitem" style="--band:var(--grade-f)"><span class="seal" aria-hidden="true">F</span><span class="nm">Current AI adoption</span><span class="bar"><i style="width:24%"></i></span><span class="sc">24/100 · At risk</span></div>
+      <div class="dim" role="listitem" style="--band:var(--grade-a)"><span class="seal" aria-hidden="true">A-</span><span class="nm">Opportunity &amp; upside</span><span class="bar"><i style="width:88%"></i></span><span class="sc">88/100 · Leading</span></div>
+      <div class="dim" role="listitem" style="--band:var(--grade-c)"><span class="seal" aria-hidden="true">C+</span><span class="nm">Culture &amp; change readiness</span><span class="bar"><i style="width:63%"></i></span><span class="sc">63/100 · Developing</span></div>
+      <div class="dim" role="listitem" style="--band:var(--grade-d)"><span class="seal" aria-hidden="true">D</span><span class="nm">Data &amp; tooling</span><span class="bar"><i style="width:44%"></i></span><span class="sc">44/100 · Early</span></div>
+      <div class="dim" role="listitem" style="--band:var(--grade-f)"><span class="seal" aria-hidden="true">F</span><span class="nm">Governance &amp; risk</span><span class="bar"><i style="width:20%"></i></span><span class="sc">20/100 · At risk</span></div>
     </div>
-    <p style="margin-top:26px"><a class="btn btn-navy" href="/sample-report.pdf">Read a sample report (PDF)</a></p>
+    <p class="dim-note center">Grades shown are from the fictional sample company's report — yours come from your team's real interviews.</p>
+    <p style="margin-top:20px"><a class="btn btn-navy" href="/sample-report.pdf">Read a sample report (PDF)</a></p>
   </section>
 
   <!-- WHAT YOU GET -->
@@ -165,7 +175,7 @@
     <div class="plan plan-enterprise" style="max-width:540px; margin: 30px auto 0; text-align:center">
       <span class="plan-lane" style="align-self:center">6-month program</span>
       <p class="n">$2,500 <small style="font-size:.5em;opacity:.6;text-decoration:line-through;font-weight:600">$5,000</small></p>
-      <p class="per"><strong style="color:#8FE3B0">Founding customers save 50%</strong><br>Includes 5 people · +$100 per additional person · invoiced directly, no app-store fees.<br>Most companies recover it in the first month.</p>
+      <p class="per"><strong class="founding">Founding customers save 50%</strong><br>Includes 5 people · +$100 per additional person · invoiced directly, no app-store fees.<br>Most companies recover it in the first month.</p>
       <ul style="text-align:left">
         <li>Full readiness assessment of every employee</li>
         <li>Graded AI posture report + board-ready PDF</li>
@@ -174,8 +184,7 @@
         <li>AI usage policy drafted for your company</li>
         <li>Optional ongoing monitoring after the program</li>
       </ul>
-      <!-- TEMP contact address until hello@aillyapp.com exists -->
-      <a class="btn btn-white" style="align-self:center" href="mailto:sattar.amaan@gmail.com?subject=Ailly%20Enterprise%20%E2%80%94%20request%20access&body=Company%3A%0ATeam%20size%3A%0AName%3A">Request access</a>
+        <a class="btn btn-white" style="align-self:center" href="mailto:support@aillyapp.com?subject=Ailly%20Enterprise%20%E2%80%94%20request%20access&body=Company%3A%0ATeam%20size%3A%0AName%3A">Request access</a>
       <p class="finePrint" style="color:rgba(255,255,255,.6); text-align:center">We reply within one business day with your quote and onboarding.</p>
     </div>
   </section>
@@ -186,8 +195,7 @@
     <p>Start with the sample report — then run the real thing on your own company.</p>
     <div class="hero-ctas" style="margin-top:0">
       <a class="btn btn-white" href="/sample-report.pdf">Read a sample report</a>
-      <!-- TEMP contact address until hello@aillyapp.com exists -->
-      <a class="btn btn-ghost" href="mailto:sattar.amaan@gmail.com?subject=Ailly%20Enterprise%20%E2%80%94%20request%20access">Request access</a>
+        <a class="btn btn-ghost" href="mailto:support@aillyapp.com?subject=Ailly%20Enterprise%20%E2%80%94%20request%20access">Request access</a>
     </div>
   </section>
 
@@ -218,8 +226,7 @@
           <li><a href="/how-to-talk-to-ai">How to talk to AI</a></li>
           <li><a href="/privacy-policy">Privacy policy</a></li>
           <li><a href="/terms">Terms of use</a></li>
-          <!-- TEMP contact address until hello@aillyapp.com exists -->
-          <li><a href="mailto:sattar.amaan@gmail.com">Contact</a></li>
+                <li><a href="mailto:support@aillyapp.com">Contact</a></li>
         </ul>
       </nav>
     </div>

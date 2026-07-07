@@ -14,9 +14,12 @@
   --faint: #8A8FA8;
   --bg: #F6F6FA;
   --ent-navy: #141B4D;
-  /* Enterprise accent — cool azure, distinct from Business gold + Personal navy */
-  --ent-accent: #2F6DB0;
-  --ent-accent-light: #8FBEE8;
+  /* Enterprise accent pair, from the app's posture report (the reference):
+     indigo on light surfaces, cover gold on navy. */
+  --ent-ink: #3949AB;
+  --ent-gold: #FFD54F;
+  /* Grade bands (app LetterGrade.color): A green, B indigo, C amber, D deep orange, F red */
+  --grade-a: #2E7D32; --grade-b: #3949AB; --grade-c: #F57C00; --grade-d: #E65100; --grade-f: #C62828;
   --biz-gold-1: #A9762A;
   --biz-gold-2: #C79A3E;
   --grad: linear-gradient(160deg, #1A237E 0%, #311B92 55%, #4A148C 100%);
@@ -205,9 +208,9 @@ a { color: var(--navy); }
   margin-bottom: 22px;
 }
 
-.chip-gold { border-color: var(--ent-accent); color: var(--ent-accent-light); border-radius: 4px; }
+.chip-gold { border-color: rgba(255, 213, 79, .5); color: var(--ent-gold); border-radius: 4px; }
 
-.rule-gold { width: 56px; height: 2px; background: var(--ent-accent); margin: 26px auto; border: none; }
+.rule-gold { width: 56px; height: 2px; background: var(--ent-gold); opacity: .85; margin: 26px auto; border: none; }
 
 /* Gentle float on the mascot */
 .float { animation: float 5.5s ease-in-out infinite; }
@@ -401,7 +404,7 @@ main { display: block; }
 .lane-enterprise h3 { color: #fff; }
 .lane-enterprise p { color: rgba(255, 255, 255, .82); }
 .lane-enterprise li { color: rgba(255, 255, 255, .88); }
-.lane-enterprise .lane-tag, .lane-enterprise li::before, .lane-enterprise .lane-cta { color: var(--ent-accent-light); }
+.lane-enterprise .lane-tag, .lane-enterprise li::before, .lane-enterprise .lane-cta { color: var(--ent-gold); }
 
 /* ============================== STEPS ============================== */
 
@@ -489,14 +492,14 @@ main { display: block; }
   font-family: var(--serif);
   font-size: clamp(28px, 4.5vw, 38px);
   font-weight: 700;
-  color: var(--ent-accent-light);
+  color: var(--ent-gold);
   display: block;
   margin-bottom: 10px;
 }
 .impact p { color: rgba(255, 255, 255, .88); font-size: 14.5px; line-height: 1.6; max-width: 680px; }
 .impact ul { list-style: none; margin-top: 14px; display: grid; gap: 8px; }
 .impact li { font-size: 14.5px; line-height: 1.5; color: rgba(255,255,255,.92); padding-left: 24px; position: relative; font-weight: 600; }
-.impact li::before { content: "✓"; position: absolute; left: 0; color: var(--ent-accent-light); font-weight: 700; }
+.impact li::before { content: "✓"; position: absolute; left: 0; color: var(--ent-gold); font-weight: 700; }
 
 /* ============================== PRICING ============================== */
 
@@ -523,15 +526,16 @@ main { display: block; }
 .plan-business .n { color: var(--biz-gold-1); }
 
 .plan-enterprise { background: var(--ent-navy); color: #fff; }
-.plan-enterprise .plan-lane { color: var(--ent-accent-light); }
+.plan-enterprise .plan-lane { color: var(--ent-gold); }
 .plan-enterprise .plan-note { color: rgba(255, 255, 255, .65); }
-/* Match the other two plans' price font — side by side, prices should be
-   visually comparable (the serif reads as inconsistent). Gold accent stays. */
-.plan-enterprise .n { color: var(--ent-accent-light); }
-.plan-enterprise .n small { color: rgba(255, 255, 255, .75); }
+/* Enterprise money is a report artifact: serif numerals in cover gold,
+   same treatment as the app's posture report. */
+.plan-enterprise .n { font-family: var(--serif); color: var(--ent-gold); }
+.plan-enterprise .n small { font-family: var(--font); color: rgba(255, 255, 255, .6); }
 .plan-enterprise .per { color: rgba(255, 255, 255, .75); }
 .plan-enterprise li { color: rgba(255, 255, 255, .9); }
-.plan-enterprise li::before { color: var(--ent-accent-light); }
+.plan-enterprise li::before { color: var(--ent-gold); }
+.plan-enterprise .founding { color: var(--ent-gold); }
 
 .finePrint { font-size: 12.5px; color: var(--faint); margin-top: 10px; line-height: 1.55; }
 
@@ -810,7 +814,7 @@ html.reveal-ready [data-reveal].is-visible { opacity: 1; transform: none; }
 .chapter-enterprise { background: var(--ent-navy); background-image: var(--grad-ent); color: #fff; }
 .chapter-enterprise .chapter-lede { color: rgba(255, 255, 255, .82); }
 .chapter-enterprise .chapter-kicker,
-.chapter-enterprise .chapter-cta { color: var(--ent-accent-light); }
+.chapter-enterprise .chapter-cta { color: var(--ent-ink); }
 
 /* Alternating soft-tint chapter for rhythm on single-lane pages */
 .chapter-alt { background: #EFF1FA; }
