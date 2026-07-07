@@ -52,6 +52,7 @@ Score → grade: 95+ A+ · 90 A · 85 A- · 80 B+ · 73 B · 67 B- · 62 C+ · 5
 The app is the reference. Its wordmark is **rendered SF Rounded**, not Quicksand — the two differ visibly (A, y). Rules:
 - **Never typeset "Ailly" as logo text** in Quicksand or any web font. Always place the rendered wordmark asset: `assets/wordmark.png` on the web (pixel-identical to the app's `AillyWordmark` imageset; white, for dark/gradient surfaces).
 - **Opening-screen lockup** (splash, share cards, hero brand moments): mascot stacked ON TOP of wordmark, centered. Proportions from the app splash — mascot 190 : wordmark width 130 : gap 12 (scale together). Tagline sits below the wordmark.
+- **Tagline:** the canonical line is **"Your AI Ally for Life and Business"** — title case when standalone under the lockup (app splash, share cards, welcome email header); sentence case when inline in copy ("your AI ally for life and business"). Standalone treatment matches the app splash: **rounded system font at REGULAR weight** (web stack: ui-rounded / SF Pro Rounded → Quicksand fallback), white at 85% on gradient — never semibold, never a different color. Retired wording: "for life and work", "AI, finally on your side." (the latter survives only as the website hero H1 until deliberately rewritten).
 - Body copy may say Ailly in Quicksand like any word; the rule is only for logo/lockup usage.
 - Mascot always paired white-on-gradient in brand moments; drop-shadow ok, recolors not.
 
