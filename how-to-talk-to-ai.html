@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How to Talk to AI — a beginner's guide to better prompts</title>
+<meta name="description" content="A beginner's guide to talking to AI: the four-part prompt recipe, real before-and-after examples, and the mistakes that make AI answers worse.">
+<link rel="canonical" href="https://aillyapp.com/how-to-talk-to-ai">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Talk to AI — a beginner's guide to better prompts">
+<meta property="og:description" content="The four-part prompt recipe, real before-and-after examples, and the mistakes that make AI answers worse.">
+<meta property="og:url" content="https://aillyapp.com/how-to-talk-to-ai">
+<meta property="og:image" content="https://aillyapp.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ailly — AI, finally on your side.">
+<meta name="twitter:image" content="https://aillyapp.com/assets/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","@id":"https://aillyapp.com/#org","name":"Ailly","url":"https://aillyapp.com/","logo":"https://aillyapp.com/assets/mascot.png","sameAs":["https://dreamwakelabs.com/"]},
+{"@type":"WebSite","@id":"https://aillyapp.com/#site","name":"Ailly","url":"https://aillyapp.com/","publisher":{"@id":"https://aillyapp.com/#org"}},
+{"@type":"Article","@id":"https://aillyapp.com/how-to-talk-to-ai","headline":"How to talk to AI: a beginner's guide to better prompts","description":"The four-part prompt recipe, real before-and-after examples, and the mistakes that make AI answers worse.","url":"https://aillyapp.com/how-to-talk-to-ai","author":{"@id":"https://aillyapp.com/#org"},"publisher":{"@id":"https://aillyapp.com/#org"},"image":"https://aillyapp.com/assets/og-image.png","isPartOf":{"@id":"https://aillyapp.com/#site"}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Do I need to learn special commands to use AI?","acceptedAnswer":{"@type":"Answer","text":"No. Modern AI understands plain English. The skill isn't syntax — it's being clear about what you want, what it needs to know, and what shape of answer you're after. If you can brief a helpful coworker, you can prompt AI."}},
+{"@type":"Question","name":"Why do I get generic answers from AI?","acceptedAnswer":{"@type":"Answer","text":"Generic questions get generic answers. Add your specifics — who it's for, what you've tried, what constraint matters — and the answer sharpens immediately. The AI can only work with what you give it."}},
+{"@type":"Question","name":"Can I trust what AI tells me?","acceptedAnswer":{"@type":"Answer","text":"Mostly, but not blindly. AI sometimes states false things confidently — this is called hallucination. Treat checkable facts (numbers, names, dates, laws) as drafts to verify, and treat brainstorming, rewriting, and explanations as its home turf."}},
+{"@type":"Question","name":"What's the fastest way to get better at prompting?","acceptedAnswer":{"@type":"Answer","text":"Practice on real tasks and compare results. Take one email or plan you'd write anyway, ask AI three different ways, and notice what changed the quality. A few minutes of deliberate practice a day compounds fast — it's exactly what Ailly's Prompt Coach is built for."}}
+]}]}</script>
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=7">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/"><img src="/assets/wordmark.png" alt="Ailly — home"></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu"><span class="bars"></span></button>
+    <nav class="nav-menu" id="navMenu" aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="/personal">Personal</a></li>
+        <li><a href="/business">Business</a></li>
+        <li><a href="/enterprise">Enterprise</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/support">Support</a></li>
+      </ul>
+      <span class="nav-cta">App coming soon</span>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero page-hero">
+    <img class="hero-mascot float" src="/assets/mascot.png" alt="Ailly mascot — a friendly speech-bubble robot with a lightning bolt" style="width:84px">
+    <h1>How to talk to AI</h1>
+    <p class="hero-sub">The difference between "AI is useless" and "AI saved my afternoon" is usually one sentence of yours. Here's the whole skill, in plain English.</p>
+  </section>
+
+  <section class="section section-narrow">
+    <p>Here's the secret nobody puts on the box: <b>AI answers the question you asked, not the one you meant.</b> Ask vaguely, get a horoscope. Ask well, get a colleague. The good news — asking well is a recipe, not a talent.</p>
+  </section>
+
+  <section class="section center">
+    <p class="kicker">The recipe</p>
+    <h2>Four ingredients of a good ask</h2>
+    <p class="lede">You don't need all four every time. But when an answer disappoints, one of these is usually missing.</p>
+    <div class="grid grid-2" style="text-align:left">
+      <div class="card">
+        <h3>1. The goal</h3>
+        <p>What do you actually want to walk away with? "Help me with my resume" is a mood. "Rewrite my resume summary so it fits a project-manager job" is a goal.</p>
+      </div>
+      <div class="card">
+        <h3>2. The context</h3>
+        <p>What does it need to know? Who it's for, what you've tried, what matters to you. The AI can't see your life — the two sentences of background you almost didn't type are usually the ones that fix the answer.</p>
+      </div>
+      <div class="card">
+        <h3>3. The format</h3>
+        <p>What should the answer look like? A table, five bullet points, a 100-word email, a step-by-step plan. If you don't pick a shape, the AI picks one for you — and it loves long essays.</p>
+      </div>
+      <div class="card">
+        <h3>4. An example</h3>
+        <p>The shortcut most people skip: show it one example of what "good" looks like to you. "Here's a caption I like — give me five more in this voice" outperforms any description of your style.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-narrow">
+    <h2>Watch the recipe work</h2>
+
+    <p style="margin-top:22px"><b>Before:</b> <i>"Give me dinner ideas."</i><br>
+    Result: a list you could have gotten from any magazine cover.</p>
+    <p><b>After:</b> <i>"Give me 5 weeknight dinners under 30 minutes, kid-friendly, no seafood, using a slow cooker at least twice. Format: name + one-line description + main ingredients."</i><br>
+    Result: a plan you'll actually use — because you told it your goal, your constraints, and the shape.</p>
+
+    <p style="margin-top:26px"><b>Before:</b> <i>"Write a post about my bakery."</i><br>
+    Result: generic fluff with the word "delicious" four times.</p>
+    <p><b>After:</b> <i>"You're a small-town bakery owner who's friendly but never salesy. Write a 60-word Instagram caption announcing our sourdough class this Saturday — mention only 6 spots are left. Here's a past caption in our voice: [paste]."</i><br>
+    Result: sounds like you, sells without shouting.</p>
+
+    <p style="margin-top:26px"><b>Before:</b> <i>"Explain this contract."</i><br>
+    Result: a summary as long as the contract.</p>
+    <p><b>After:</b> <i>"I'm a freelance designer with no legal background. Read this contract and list, in plain English: 1) anything unusual, 2) anything that limits what I can do for other clients, 3) questions I should ask before signing."</i><br>
+    Result: exactly the three things you were worried about. (Then have a lawyer confirm the big ones — AI is your first reader, not your last.)</p>
+
+    <h2 style="margin-top:40px">The five mistakes that ruin good answers</h2>
+    <ul class="impact" style="margin-top:14px">
+      <li><b>Asking everything at once.</b> One giant prompt with six requests gets six shallow answers. Ask, refine, then ask the next thing — it's a conversation, not a wish.</li>
+      <li><b>Accepting the first draft.</b> The magic is in the follow-up: "shorter," "warmer," "more specific," "now as a table." People who love AI are mostly people who reply to it.</li>
+      <li><b>Hiding the audience.</b> "Explain interest rates" and "explain interest rates to my 12-year-old" are different universes. Always say who it's for — even when it's you.</li>
+      <li><b>Trusting it with checkable facts.</b> Numbers, names, dates, laws, citations — AI states wrong ones with a straight face (that's a <a href="/ai-glossary#hallucination">hallucination</a>). Verify anything you'd be embarrassed to repeat.</li>
+      <li><b>Giving up after one bad answer.</b> A weak answer is information: it tells you which ingredient was missing. Add it and go again — round two is usually the good one.</li>
+    </ul>
+
+    <h2 style="margin-top:40px">A 5-minute daily practice</h2>
+    <p>Prompting is a muscle, and tiny reps beat weekend cram sessions. Pick one real thing you were going to write today — an email, a list, a plan. Ask AI for it three ways: bare, then with context, then with context plus an example. Watch what changes. That noticing <b>is</b> the skill.</p>
+    <p>It's also exactly what <a href="/personal">Ailly's Prompt Coach</a> turns into a habit: one real scenario a day, feedback on your ask, and a running picture of your judgment getting sharper.</p>
+
+    <h2 style="margin-top:40px">Common questions</h2>
+    <div class="faq" style="margin-top:18px">
+      <details>
+        <summary>Do I need to learn special commands?</summary>
+        <p>No. Modern AI understands plain English. The skill isn't syntax — it's being clear about what you want, what it needs to know, and what shape of answer you're after. If you can brief a helpful coworker, you can prompt AI.</p>
+      </details>
+      <details>
+        <summary>Why do I keep getting generic answers?</summary>
+        <p>Generic questions get generic answers. Add your specifics — who it's for, what you've tried, which constraint matters — and the answer sharpens immediately. The AI can only work with what you give it.</p>
+      </details>
+      <details>
+        <summary>Can I trust what it tells me?</summary>
+        <p>Mostly, but not blindly. AI sometimes states false things confidently. Treat checkable facts as drafts to verify; treat brainstorming, rewriting, and explaining as its home turf.</p>
+      </details>
+      <details>
+        <summary>What's the fastest way to get better?</summary>
+        <p>Deliberate practice on real tasks. A few minutes a day, comparing what changed between a weak ask and a strong one, compounds surprisingly fast — that's the entire design behind Ailly's daily practice.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <h2>Reading about it is step one. Reps are the rest.</h2>
+    <p>Ailly gives you one real prompt drill a day — with feedback — so asking well becomes second nature.</p>
+    <a class="btn btn-white" href="/personal">Explore Ailly Personal</a>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/mascot.png" alt="">
+        <p>Ailly — your AI ally for life and work. Plain-language AI guidance for you, your business, and your whole company.</p>
+      </div>
+      <nav aria-label="Product">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/personal">Personal</a></li>
+          <li><a href="/business">Business</a></li>
+          <li><a href="/enterprise">Enterprise</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Company">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/support">Support</a></li>
+          <li><a href="/ai-glossary">AI glossary</a></li>
+          <li><a href="/how-to-talk-to-ai">How to talk to AI</a></li>
+          <li><a href="/privacy-policy">Privacy policy</a></li>
+          <li><a href="/terms">Terms of use</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Dreamwake LLC. All rights reserved.</span>
+      <span>No jargon. No wrong answers.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/site.js?v=7" defer></script>
+</body>
+</html>
