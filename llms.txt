@@ -22,3 +22,6 @@ People who feel left behind by AI: non-technical users, seniors, teachers, real-
 - https://aillyapp.com/support — FAQ and contact
 - https://aillyapp.com/ai-glossary — plain-English glossary of 36 AI terms (model, prompt, token, hallucination, agent…)
 - https://aillyapp.com/how-to-talk-to-ai — beginner guide to prompting: the four-part recipe, before/after examples, common mistakes
+- https://aillyapp.com/ai-for-teachers — practical AI uses for teachers with copy-paste prompts and privacy cautions
+- https://aillyapp.com/ai-for-real-estate-agents — practical AI uses for agents incl. fair-housing caution
+- https://aillyapp.com/ai-for-small-business-owners — practical AI uses for owners incl. data cautions

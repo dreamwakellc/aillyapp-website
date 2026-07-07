@@ -30,10 +30,17 @@ The single source of truth for how Ailly looks, moves, and speaks — on iOS, th
 **Rules:** brand gradient buttons NEVER sit on the brand gradient (use white pills). Deep hues never carry text on dark cards — brighten per hue in dark mode.
 
 ## 3. Type
-- **Quicksand** (500/600/700) for everything.
+- **Quicksand** (500/600/700) for everything — EXCEPT the brand name (see §3a).
 - **Source Serif 4** (600/700) ONLY for enterprise REPORT artifacts: report titles/section headers, grade seals, big dollar/hour numerals. Page chrome — even on enterprise screens — stays rounded.
 - Eyebrow labels: 10.5–12px, bold, +0.8–2 tracking, ALL CAPS.
 - Stage titles: 23–27 heavy, white, centered. Page titles: 26 bold.
+
+## 3a. Brand lockup (wordmark + mascot)
+The app is the reference. Its wordmark is **rendered SF Rounded**, not Quicksand — the two differ visibly (A, y). Rules:
+- **Never typeset "Ailly" as logo text** in Quicksand or any web font. Always place the rendered wordmark asset: `assets/wordmark.png` on the web (pixel-identical to the app's `AillyWordmark` imageset; white, for dark/gradient surfaces).
+- **Opening-screen lockup** (splash, share cards, hero brand moments): mascot stacked ON TOP of wordmark, centered. Proportions from the app splash — mascot 190 : wordmark width 130 : gap 12 (scale together). Tagline sits below the wordmark.
+- Body copy may say Ailly in Quicksand like any word; the rule is only for logo/lockup usage.
+- Mascot always paired white-on-gradient in brand moments; drop-shadow ok, recolors not.
 
 ## 4. Surfaces & components
 - **Stage** (`.stage`): 160deg brand gradient + one blurred glow circle + white top gloss. Content: white text, glass inputs (white 12% fill / 22–25% stroke), options fill WHITE when selected (brand-blue text + check).
