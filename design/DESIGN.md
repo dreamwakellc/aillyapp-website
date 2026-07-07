@@ -62,7 +62,8 @@ The app is the reference. Its wordmark is **rendered SF Rounded**, not Quicksand
 - **Journey row**: numbered circle (gold gradient = NEXT, green check = done, gray outline = future), connector ticks, trailing NEXT chip.
 - **Jewel-box celebration**: gradient card, floating mascot, gold reward chip, white pill.
 - **Letterhead documents**: serif title, date line, 44×2 brand rule, then formatted body.
-- **Enterprise report artifacts** (cover, scorecard, pricing card): navy surface, gold #FFD54F chip ("CONFIDENTIAL" style: gold text, 50%-alpha gold border, 4px radius) + 56×2 gold rule; **serif** for the company name, grade-seal letters, and money numerals; everything else stays Quicksand. Enterprise pricing is a report artifact — `$2,500` renders serif gold on navy, strikethrough compare-at in 60% white, founding-savings line in gold.
+- **Enterprise report artifacts** (cover, scorecard): navy surface, gold #FFD54F chip ("CONFIDENTIAL" style: gold text, 50%-alpha gold border, 4px radius) + 56×2 gold rule; **serif** for the company name, grade-seal letters, and in-report numerals; everything else stays Quicksand.
+- **Enterprise pricing card**: navy surface + gold accents, but numerals stay **Quicksand** — prices sit beside the other lanes' prices and must read as one family (serif next to Quicksand numerals reads as off, not premium). Strikethrough compare-at in 60% white, founding-savings line in gold. Serif never leaves the report.
 - **Scorecard dimension card**: white card, grade seal (see §2a) on top, dimension name, band-color score bar, `score/100 · label` caption. Sample grades on marketing surfaces MUST be the sample company's real numbers, captioned as such.
 
 ## 5. Mascot

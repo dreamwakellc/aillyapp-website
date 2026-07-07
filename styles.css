@@ -528,10 +528,11 @@ main { display: block; }
 .plan-enterprise { background: var(--ent-navy); color: #fff; }
 .plan-enterprise .plan-lane { color: var(--ent-gold); }
 .plan-enterprise .plan-note { color: rgba(255, 255, 255, .65); }
-/* Enterprise money is a report artifact: serif numerals in cover gold,
-   same treatment as the app's posture report. */
-.plan-enterprise .n { font-family: var(--serif); color: var(--ent-gold); }
-.plan-enterprise .n small { font-family: var(--font); color: rgba(255, 255, 255, .6); }
+/* Price font matches the other plans — side by side, prices must read as one
+   family (serif here looks off next to Quicksand numerals). Serif is reserved
+   for INSIDE report artifacts: grade seals, the report cover. Gold stays. */
+.plan-enterprise .n { color: var(--ent-gold); }
+.plan-enterprise .n small { color: rgba(255, 255, 255, .6); }
 .plan-enterprise .per { color: rgba(255, 255, 255, .75); }
 .plan-enterprise li { color: rgba(255, 255, 255, .9); }
 .plan-enterprise li::before { color: var(--ent-gold); }
