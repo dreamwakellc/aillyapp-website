@@ -814,7 +814,7 @@ html.reveal-ready [data-reveal].is-visible { opacity: 1; transform: none; }
 .chapter-enterprise { background: var(--ent-navy); background-image: var(--grad-ent); color: #fff; }
 .chapter-enterprise .chapter-lede { color: rgba(255, 255, 255, .82); }
 .chapter-enterprise .chapter-kicker,
-.chapter-enterprise .chapter-cta { color: var(--ent-ink); }
+.chapter-enterprise .chapter-cta { color: var(--ent-gold); }
 
 /* Alternating soft-tint chapter for rhythm on single-lane pages */
 .chapter-alt { background: #EFF1FA; }
@@ -837,7 +837,7 @@ html.reveal-ready [data-reveal].is-visible { opacity: 1; transform: none; }
   pointer-events: none;
 }
 .chapter-business .chapter-media::before { background: radial-gradient(circle, rgba(201, 163, 74, .22), transparent 66%); }
-.chapter-enterprise .chapter-media::before { background: radial-gradient(circle, rgba(143, 190, 232, .26), transparent 66%); }
+.chapter-enterprise .chapter-media::before { background: radial-gradient(circle, rgba(61, 90, 254, .35), transparent 66%); }
 
 /* ============================== STAGE — full-bleed stat / statement ============================== */
 .stage {

@@ -21,13 +21,26 @@ The single source of truth for how Ailly looks, moves, and speaks — on iOS, th
 | gold.business.hi | #C79A3E | Business accents (burnished gold) |
 | gold.business.lo | #A9762A | Business gradient start |
 | gold.business.deep | #7A4E12 | Business gradient depth |
-| gold.enterprise | #C9A34A / #E7C878 | Enterprise chips, rules, serif numerals |
-| navy.enterprise | #141B4D | Enterprise report/hero surfaces |
+| gold.enterprise | #FFD54F | Enterprise accents ON NAVY only: chips, rules, checkmarks, serif money numerals (app report cover gold) |
+| ink.enterprise | #3949AB | Enterprise accents on LIGHT surfaces: kickers, links, section numerals (app report indigo) |
+| navy.enterprise | #141B4D | Enterprise report/hero surfaces (report cover gradient: #0D1240 → #1A237E → #283593, glow #3D5AFE) |
 | reward.gold | #FFE7A3 → #FFC24D | Reward chips (text #4E3200) |
 | success | #43A047 family | Done states |
 | danger | app aillyError | Overdue/destructive |
 
-**Rules:** brand gradient buttons NEVER sit on the brand gradient (use white pills). Deep hues never carry text on dark cards — brighten per hue in dark mode.
+**Rules:** brand gradient buttons NEVER sit on the brand gradient (use white pills). Deep hues never carry text on dark cards — brighten per hue in dark mode. Enterprise gold #FFD54F NEVER carries text on white — switch to ink.enterprise on light surfaces (the app does exactly this: gold on the cover, indigo in the body).
+
+### 2a. Grade bands (app `LetterGrade.color` — canonical)
+| Band | Color | Leadership label |
+|---|---|---|
+| A+, A, A- | #2E7D32 green | Leading |
+| B+, B, B- | #3949AB indigo | On track |
+| C+, C, C- | #F57C00 amber | Developing |
+| D | #E65100 deep orange | Early |
+| F | #C62828 red | At risk |
+
+Score → grade: 95+ A+ · 90 A · 85 A- · 80 B+ · 73 B · 67 B- · 62 C+ · 55 C · 50 C- · 40 D · else F.
+**Grade seal:** circular, band-color fill, white **serif** letter (report language). Pair with a 4px band-color score bar and `score/100 · label` caption. Never show a letter grade in Quicksand, never recolor a band.
 
 ## 3. Type
 - **Quicksand** (500/600/700) for everything — EXCEPT the brand name (see §3a).
@@ -49,6 +62,8 @@ The app is the reference. Its wordmark is **rendered SF Rounded**, not Quicksand
 - **Journey row**: numbered circle (gold gradient = NEXT, green check = done, gray outline = future), connector ticks, trailing NEXT chip.
 - **Jewel-box celebration**: gradient card, floating mascot, gold reward chip, white pill.
 - **Letterhead documents**: serif title, date line, 44×2 brand rule, then formatted body.
+- **Enterprise report artifacts** (cover, scorecard, pricing card): navy surface, gold #FFD54F chip ("CONFIDENTIAL" style: gold text, 50%-alpha gold border, 4px radius) + 56×2 gold rule; **serif** for the company name, grade-seal letters, and money numerals; everything else stays Quicksand. Enterprise pricing is a report artifact — `$2,500` renders serif gold on navy, strikethrough compare-at in 60% white, founding-savings line in gold.
+- **Scorecard dimension card**: white card, grade seal (see §2a) on top, dimension name, band-color score bar, `score/100 · label` caption. Sample grades on marketing surfaces MUST be the sample company's real numbers, captioned as such.
 
 ## 5. Mascot
 White speech-bubble Ailly (+lightning). Business/enterprise variant carries a briefcase and its face fills ~1.29× more canvas — ALWAYS render at `matched` size (business = personal ÷ 1.29). Floats 8pt over 3.6s with a narrowing ground shadow; respect reduced-motion.
