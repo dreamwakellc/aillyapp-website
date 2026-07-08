@@ -609,6 +609,9 @@ main { display: block; }
   padding: 72px 24px;
 }
 .cta-band.cta-ent { background: var(--ent-navy); background-image: var(--grad-ent); }
+/* Badges in the CTA bands are loose inline spans (no flex wrapper) — give them
+   real separation so the pair never touches when it wraps on phones. */
+.cta-band .store-badge { margin: 6px 6px 0; }
 .cta-band h2 { font-size: clamp(24px, 3.8vw, 34px); font-weight: 700; margin-bottom: 12px; }
 .cta-band p { font-size: 16px; color: rgba(255, 255, 255, .85); max-width: 520px; margin: 0 auto 28px; line-height: 1.6; }
 
