@@ -35,13 +35,31 @@
   if (!targets.length) return;
 
   targets.forEach(function (t) { t.setAttribute("data-reveal", ""); });
+
+  // Staggered per-item reveal inside collections — cards, steps, path stops,
+  // plans, and screenshot figures rise one after another (max 6 × 70ms so a
+  // long grid never feels slow). The section itself still fades as a whole.
+  var itemSel = ".grid > *, .steps > .step, .path > li, .shots > .shot";
+  targets.forEach(function (t) {
+    [].slice.call(t.querySelectorAll(itemSel)).forEach(function (el, i) {
+      el.setAttribute("data-reveal-item", "");
+      el.style.setProperty("--rd", (Math.min(i, 6) * 0.07) + "s");
+    });
+  });
+
   docEl.classList.add("reveal-ready"); // enables the hidden state in CSS
 
   var vh = window.innerHeight || docEl.clientHeight;
+  function show(t) {
+    t.classList.add("is-visible");
+    [].slice.call(t.querySelectorAll("[data-reveal-item]")).forEach(function (el) {
+      el.classList.add("is-visible");
+    });
+  }
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (e.isIntersecting) {
-        e.target.classList.add("is-visible");
+        show(e.target);
         io.unobserve(e.target);
       }
     });
@@ -49,7 +67,7 @@
 
   targets.forEach(function (t) {
     // Anything already on-screen (e.g. the hero) shows immediately — no flash.
-    if (t.getBoundingClientRect().top < vh * 0.9) t.classList.add("is-visible");
+    if (t.getBoundingClientRect().top < vh * 0.9) show(t);
     else io.observe(t);
   });
 })();
