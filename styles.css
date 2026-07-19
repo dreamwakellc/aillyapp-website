@@ -1153,3 +1153,24 @@ html.reveal-ready [data-reveal-item].is-visible { opacity: 1; transform: none; }
   text-decoration-thickness: 1px;
 }
 .impact a:hover, .stage a:hover, .cinema a:hover { color: #FFE9A8; }
+
+
+/* Staged hero entrance: mascot, headline, sub, and CTAs rise in sequence on
+   load. Pure CSS; reduced-motion renders everything settled. */
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+/* Order matters: float is listed LAST so it wins the transform once its delay
+   ends; rise-in's forwards fill holds until then. The phone animates opacity
+   only, because the scroll physics own its transform via inline style. */
+.hero-cine .hero-mascot { animation: rise-in .7s cubic-bezier(.16,.84,.44,1) both, float 5.5s ease-in-out 1.3s infinite; }
+.hero-cine h1 { animation: rise-in .8s cubic-bezier(.16,.84,.44,1) .12s both; }
+.hero-cine .hero-sub { animation: rise-in .8s cubic-bezier(.16,.84,.44,1) .24s both; }
+.hero-cine .hero-ctas { animation: rise-in .8s cubic-bezier(.16,.84,.44,1) .38s both; }
+.hero-cine .hero-phone { animation: fade-in 1s ease .5s both; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-cine .hero-mascot, .hero-cine h1, .hero-cine .hero-sub,
+  .hero-cine .hero-ctas, .hero-cine .hero-phone { animation: none; }
+}
