@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=12">
+<link rel="stylesheet" href="/styles.css?v=13">
 </head>
 <body>
 
@@ -51,11 +51,15 @@
 
 <main id="main">
 
-  <!-- HERO — the umbrella promise (true for everyone) -->
-  <section class="hero">
+  <!-- HERO — the umbrella promise, full-viewport, recedes on scroll -->
+  <section class="hero hero-cine">
+    <div class="hero-glow hg1"></div>
+    <div class="hero-glow hg2"></div>
+    <div class="hero-glow hg3"></div>
+    <div class="hero-anim" data-hero>
     <img class="hero-mascot float" src="/assets/mascot.png" alt="Ailly mascot — a friendly speech-bubble robot with a lightning bolt">
     <h1>AI, finally on your side.</h1>
-    <p class="hero-sub">One friendly guide — whether you're learning AI for yourself, launching a business, or getting your whole company ready.</p>
+    <p class="hero-sub">Your AI ally for life and business. One friendly guide, whether you're learning AI, launching something real, or readying your whole company.</p>
     <div class="hero-ctas">
       <!-- TEMP: the app isn't live yet. When it is, change this <span> to
            <a class="store-badge" href="APP_STORE_URL"> with the same inner HTML — everywhere it appears. -->
@@ -64,11 +68,13 @@
         <span><span class="sb-top">Coming soon to the</span><span class="sb-bottom">App Store</span></span>
       </span>
       <span class="store-badge"><svg viewBox="0 0 512 512" aria-hidden="true" fill="currentColor"><path d="M104 64l336 192-336 192V64z"/></svg><span><span class="sb-top">Coming soon to</span><span class="sb-bottom">Google Play</span></span></span>
-      <a class="btn btn-ghost" href="#how">See how it works</a>
+      <a class="btn btn-ghost" href="#magic">See it work</a>
     </div>
-    <div class="phone hero-phone">
+    </div>
+    <div class="phone hero-phone" data-hero-phone>
       <img src="/assets/screens/personal-home.jpg" alt="The Ailly home screen: a friendly daily feed with today's lesson, challenge, and prompt drill" loading="eager">
     </div>
+    <div class="scroll-cue" aria-hidden="true"></div>
   </section>
 
   <!-- BRIDGE — frame the three as one family -->
@@ -76,6 +82,46 @@
     <p class="kicker">One ally, three ways it helps</p>
     <h2>Wherever you're starting, Ailly meets you there</h2>
     <p class="lede">Same friendly guide, tuned to what you need — for you, for your business, or for your whole company.</p>
+  </section>
+
+  <!-- SHOWCASE — the sheet fills itself (the proof, live) -->
+  <section class="cinema" id="magic">
+    <div class="cinema-inner">
+      <div class="cinema-copy">
+        <p class="chapter-kicker">The scary part, done for you</p>
+        <h2>Watch your paperwork fill itself.</h2>
+        <p class="cinema-lede">Answer a two-minute interview and every box on your state's LLC form gets your exact answer, with the real fee and the official site up front. Free to see. One price to unlock and file.</p>
+        <a class="chapter-cta" href="/business">See the whole launch path</a>
+      </div>
+      <div class="sheet" data-sheet aria-label="Demo: the filing answer sheet filling itself in">
+        <div class="sheet-head">
+          <img src="/assets/mascot.png" alt="">
+          <div><b>Your LLC answers</b><span>Bloom Bakery · demo</span></div>
+        </div>
+        <div class="sheet-chips"><span>Florida</span><span>$125 state fee</span><span>about 5 days</span></div>
+        <div class="sheet-row" data-type="Bloom Bakery LLC">
+          <div class="sl">Business name</div>
+          <div class="sv"></div>
+          <div class="check">✓</div>
+        </div>
+        <div class="sheet-row" data-type="1200 SW 8th St, Miami, FL">
+          <div class="sl">Principal address</div>
+          <div class="sv"></div>
+          <div class="check">✓</div>
+        </div>
+        <div class="sheet-row" data-type="Maria, at the address above">
+          <div class="sl">Registered agent <span>$0, forever</span></div>
+          <div class="sv"></div>
+          <div class="check">✓</div>
+        </div>
+        <div class="sheet-row" data-type="Member-managed">
+          <div class="sl">Management type</div>
+          <div class="sv"></div>
+          <div class="check">✓</div>
+        </div>
+        <div class="sheet-stamp">Ready to file on the official site ✓</div>
+      </div>
+    </div>
   </section>
 
   <!-- CHAPTER 1 — PERSONAL -->
@@ -212,6 +258,6 @@
   </div>
 </footer>
 
-<script src="/site.js?v=8" defer></script>
+<script src="/site.js?v=9" defer></script>
 </body>
 </html>

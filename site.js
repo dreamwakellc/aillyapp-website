@@ -71,3 +71,89 @@
     else io.observe(t);
   });
 })();
+
+
+// Hero scroll physics — the app's own rule ("heroes fade/scale away on scroll"),
+// brought to the web. The opening content gently recedes as you scroll; the
+// device straightens and rises. rAF-throttled, passive, reduced-motion aware.
+(function () {
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) return;
+  var hero = document.querySelector("[data-hero]");
+  var phone = document.querySelector("[data-hero-phone]");
+  if (!hero && !phone) return;
+  var ticking = false;
+  function frame() {
+    ticking = false;
+    var y = window.scrollY || 0;
+    var vh = window.innerHeight || 800;
+    if (hero) {
+      var p = Math.min(y / (vh * 0.6), 1);
+      hero.style.opacity = String(1 - p * 0.92);
+      hero.style.transform = "translateY(" + (p * -30) + "px) scale(" + (1 - p * 0.06) + ")";
+    }
+    if (phone) {
+      var q = Math.min(y / (vh * 0.85), 1);
+      phone.style.transform = "rotate(" + (-4 + q * 4) + "deg) translateY(" + (q * -30) + "px)";
+    }
+  }
+  window.addEventListener("scroll", function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(frame); }
+  }, { passive: true });
+  frame();
+})();
+
+// The living answer sheet — when the showcase scene enters the viewport, each
+// field types its own answer, gets its green check, and the "ready to file"
+// stamp lands. Reduced motion (or old browsers): everything renders pre-filled.
+(function () {
+  var sheet = document.querySelector("[data-sheet]");
+  if (!sheet) return;
+  var rows = [].slice.call(sheet.querySelectorAll(".sheet-row[data-type]"));
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function fillInstantly() {
+    rows.forEach(function (r) {
+      var v = r.querySelector(".sv");
+      if (v) v.textContent = r.getAttribute("data-type");
+      r.classList.add("filled");
+    });
+    sheet.classList.add("sheet-done");
+  }
+
+  if (reduce || !("IntersectionObserver" in window)) { fillInstantly(); return; }
+
+  var played = false;
+  function typeRow(i) {
+    if (i >= rows.length) {
+      setTimeout(function () { sheet.classList.add("sheet-done"); }, 220);
+      return;
+    }
+    var row = rows[i];
+    var target = row.getAttribute("data-type");
+    var v = row.querySelector(".sv");
+    row.classList.add("typing");
+    var n = 0;
+    var t = setInterval(function () {
+      n++;
+      v.textContent = target.slice(0, n);
+      if (n >= target.length) {
+        clearInterval(t);
+        row.classList.remove("typing");
+        row.classList.add("filled");
+        setTimeout(function () { typeRow(i + 1); }, 260);
+      }
+    }, 26);
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting && !played) {
+        played = true;
+        io.disconnect();
+        setTimeout(function () { typeRow(0); }, 350);
+      }
+    });
+  }, { threshold: 0.3 });
+  io.observe(sheet);
+})();
