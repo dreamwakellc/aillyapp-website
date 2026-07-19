@@ -531,7 +531,7 @@ main { display: block; }
 .plan h3 { font-size: 21px; font-weight: 700; margin-bottom: 4px; }
 .plan .plan-note { font-size: 13.5px; color: var(--faint); margin-top: 2px; }
 .plan .n { font-size: 40px; font-weight: 700; color: var(--navy); margin-top: 14px; line-height: 1; }
-.plan .n small { font-size: 15px; font-weight: 600; color: var(--muted); }
+.plan .n small { display: block; font-size: 14px; font-weight: 600; color: var(--muted); margin-top: 7px; letter-spacing: 0; }
 .plan .per { font-size: 13.5px; color: var(--muted); margin-top: 7px; line-height: 1.5; }
 .plan ul { list-style: none; margin: 20px 0 24px; }
 .plan li { font-size: 14.5px; padding: 6px 0 6px 26px; position: relative; color: var(--body); line-height: 1.5; }
@@ -770,7 +770,6 @@ main { display: block; }
 [data-reveal] {
   transition: opacity .7s cubic-bezier(.16, .84, .44, 1),
               transform .7s cubic-bezier(.16, .84, .44, 1);
-  will-change: opacity, transform;
 }
 html.reveal-ready [data-reveal] { opacity: 0; transform: translateY(22px); }
 html.reveal-ready [data-reveal].is-visible { opacity: 1; transform: none; }
@@ -1117,3 +1116,40 @@ html.reveal-ready [data-reveal-item].is-visible { opacity: 1; transform: none; }
 .hero:not(.hero-cine) h1 { font-size: clamp(40px, 7vw, 72px); line-height: 1.02; letter-spacing: -.04em; }
 .chapter-xl h2 { font-size: clamp(36px, 5.8vw, 64px); }
 .chapter-media .phone { width: min(330px, 76vw); }
+
+
+/* Every hero gets the glow atmosphere automatically (the home hero carries its
+   own richer .hero-glow layers, so it opts out of the pseudo pair). Children
+   are lifted above the glows so text never sits under a blur. */
+.hero { position: relative; }
+.hero:not(.hero-cine)::before,
+.hero:not(.hero-cine)::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+}
+.hero:not(.hero-cine)::before {
+  width: 420px; height: 420px;
+  background: #5C6BFF; opacity: .38;
+  top: -150px; left: -130px;
+}
+.hero:not(.hero-cine)::after {
+  width: 380px; height: 380px;
+  background: #4A148C; opacity: .5;
+  bottom: -140px; right: -110px;
+}
+.hero-ent:not(.hero-cine)::before { background: #3D5AFE; opacity: .3; }
+.hero:not(.hero-cine) > * { position: relative; z-index: 1; }
+
+
+/* Links on dark surfaces: navy-on-navy is invisible. Gold with a quiet
+   underline, per the enterprise-gold-on-navy rule. */
+.impact a, .stage a, .cinema a, .cta-band p a, .chapter-enterprise a:not(.chapter-cta) {
+  color: var(--ent-gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.impact a:hover, .stage a:hover, .cinema a:hover { color: #FFE9A8; }
