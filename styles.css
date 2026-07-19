@@ -950,10 +950,15 @@ html.reveal-ready [data-reveal-item].is-visible { opacity: 1; transform: none; }
 .hero-cine .hero-anim { will-change: transform, opacity; }
 .hero-cine .hero-mascot { width: 132px; margin-bottom: 22px; }
 .hero-cine h1 {
-  font-size: clamp(52px, 9vw, 112px);
-  line-height: .98;
-  letter-spacing: -.045em;
+  font-size: clamp(50px, 8.6vw, 104px);
+  /* line-height >= 1.04 + bottom padding: with background-clip:text, glyph
+     paint outside the line box (the y/g descenders) loses its gradient and
+     reads as cut off. The padding keeps every descender inside painted area. */
+  line-height: 1.06;
+  letter-spacing: -.04em;
   max-width: 1000px;
+  padding-bottom: .08em;
+  margin-bottom: 10px;
   background: linear-gradient(180deg, #fff 45%, rgba(255, 255, 255, .8));
   -webkit-background-clip: text;
   background-clip: text;
