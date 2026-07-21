@@ -1234,3 +1234,46 @@ html.reveal-ready [data-reveal-item].is-visible { opacity: 1; transform: none; }
 /* A single-phone stage (enterprise) reads best a touch larger */
 .hero-stage.hero-stage-solo { width: min(340px, 76vw); }
 @media (min-width: 980px) { .hero-stage.hero-stage-solo { width: 360px; } }
+
+
+/* ============================================================
+   PRICING CINEMA (2026-07-20). The pricing page opens like the
+   rest of the site, just quieter: a cinema hero with no device
+   stage, lane-accent hairlines on the plan cards, and the
+   honesty promise on a full-bleed stage band.
+   ============================================================ */
+
+.hero-quiet { min-height: 56svh; padding-bottom: 72px; }
+.hero-quiet .hero-mascot { width: 92px; margin-bottom: 14px; }
+.hero-quiet h1 { font-size: clamp(40px, 6vw, 76px); }
+@media (max-width: 700px) { .hero-quiet { min-height: 50svh; } }
+
+/* Plan cards wear their lane across the top, like the home lane cards */
+.plan { position: relative; overflow: hidden; }
+.plan::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--navy), var(--purple));
+}
+.plan-business::before { background: linear-gradient(90deg, var(--biz-gold-1), var(--biz-gold-2)); }
+.plan-enterprise::before { background: linear-gradient(90deg, #3D5AFE, #5C6BFF); }
+
+/* The lifted-children rule (.hero-cine > *:not(.hero-glow)) outranks
+   .scroll-cue's own position: absolute and turned the cue relative,
+   pushing it off-center. Re-pin it. */
+.hero .scroll-cue { position: absolute; }
+
+/* Store badges keep their spacing outside the cta-band too */
+.center .store-badge { margin: 6px 6px 0; }
+
+/* Honesty band: the jobs pills work on any stage */
+.stage .jobs { margin-top: 30px; }
+.stage .honest-note {
+  margin: 26px auto 0;
+  font-size: 15px;
+  color: rgba(255, 255, 255, .72);
+  max-width: 600px;
+  line-height: 1.65;
+}
