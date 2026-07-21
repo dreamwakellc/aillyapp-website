@@ -39,7 +39,7 @@
   // Staggered per-item reveal inside collections: cards, steps, path stops,
   // plans, and screenshot figures rise one after another (max 6 × 70ms so a
   // long grid never feels slow). The section itself still fades as a whole.
-  var itemSel = ".grid > *, .steps > .step, .path > li, .shots > .shot";
+  var itemSel = ".grid > *, .steps > .step, .path > li, .shots > .shot, .bento > *, .gal";
   targets.forEach(function (t) {
     [].slice.call(t.querySelectorAll(itemSel)).forEach(function (el, i) {
       el.setAttribute("data-reveal-item", "");

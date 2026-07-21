@@ -1750,3 +1750,105 @@ html.reveal-ready .dim.is-anim .seal { opacity: 1; transform: none; }
 .gal .phone { width: 100%; }
 .gal figcaption { font-size: 13px; font-weight: 700; color: var(--muted); margin-top: 12px; }
 .gallery-wrap { max-width: 1100px; margin: 0 auto; }
+
+
+/* ============================================================
+   BENTO v2 (2026-07-20): every tile is a miniature product
+   artifact, not a text card.
+   ============================================================ */
+.b-stage { background: var(--navy); background-image: var(--grad); border: none; }
+.b-stage h3 { color: #fff; }
+.b-stage p { color: rgba(255, 255, 255, .8); }
+.b-stage .b-kick { color: rgba(255, 255, 255, .85); }
+
+/* Mini conversation (Ask Ailly) */
+.mini-q {
+  background: #fff; color: var(--ink);
+  border-radius: 16px 16px 4px 16px;
+  padding: 10px 14px; font-size: 13.5px; font-weight: 600;
+  margin: 16px 0 8px 34px;
+}
+.mini-a {
+  background: rgba(255, 255, 255, .14);
+  border: 1px solid rgba(255, 255, 255, .18);
+  color: #fff;
+  border-radius: 16px 16px 16px 4px;
+  padding: 10px 14px; font-size: 13.5px; line-height: 1.5;
+  margin-right: 34px;
+}
+.b-stage .b-ask { background: rgba(255, 255, 255, .12); border: 1px solid rgba(255, 255, 255, .2); color: rgba(255, 255, 255, .75); }
+
+/* Graded row (the app scorecard, miniature) */
+.mini-grade { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.mini-grade .b-seal { margin: 0; }
+.mini-grade .mg-body { flex: 1; }
+.mini-grade .mg-score { font-size: 13px; font-weight: 700; color: var(--ink); }
+.mini-grade .mg-bar { display: block; height: 4px; border-radius: 2px; background: rgba(20, 27, 77, .08); margin-top: 6px; overflow: hidden; }
+.mini-grade .mg-bar i { display: block; height: 100%; width: 68%; border-radius: 2px; background: var(--grade-b); }
+
+/* Streak week (dots that got done) */
+.mini-week { display: flex; gap: 6px; margin-bottom: 14px; }
+.mini-week span {
+  width: 26px; height: 26px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700;
+  background: #EDEFFF; color: var(--faint);
+}
+.mini-week .done { background: #43A047; color: #fff; }
+.mini-week .today { background: linear-gradient(135deg, #FFE7A3, #FFC24D); color: #4E3200; }
+
+/* Midnight advisor exchange */
+.mini-time { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: .12em; color: var(--faint); margin-bottom: 8px; }
+.mini-msg {
+  background: #fff; border: 1px solid rgba(20, 26, 77, .08);
+  border-radius: 14px; padding: 9px 12px;
+  font-size: 12.5px; line-height: 1.45; color: var(--body);
+  margin-bottom: 6px;
+}
+.mini-msg.me { background: #EDEFFF; font-weight: 600; }
+
+/* Watched renewal row */
+.mini-renewal {
+  background: #fff; border: 1px solid rgba(20, 26, 77, .08);
+  border-radius: 14px; padding: 11px 13px; margin-bottom: 14px;
+}
+.mini-renewal b { display: block; font-size: 13px; }
+.mini-renewal .ok { display: inline-block; margin-top: 6px; font-size: 11px; font-weight: 700; color: #2E7D32; background: #E8F5E9; border-radius: 99px; padding: 4px 10px; }
+
+/* Miniature report cover */
+.b-report { display: flex; gap: 18px; align-items: center; }
+.mini-cover {
+  flex: 0 0 116px;
+  background-image: linear-gradient(160deg, #0D1240 0%, #1A237E 62%, #283593 100%);
+  border-radius: 12px; padding: 12px 10px; text-align: center;
+  box-shadow: 0 10px 24px rgba(5, 8, 30, .4);
+}
+.mini-cover .chip-confidential { font-size: 7.5px; padding: 3px 6px; letter-spacing: .12em; }
+.mini-cover .mc-name { font-family: var(--serif); font-size: 13px; font-weight: 700; color: #fff; margin: 8px 0; }
+.mini-cover .mc-seal {
+  width: 34px; height: 34px; border-radius: 50%; margin: 0 auto;
+  background: #fff; color: var(--ent-navy);
+  font-family: var(--serif); font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.mini-cover .mc-sub { font-size: 8px; color: rgba(255, 255, 255, .6); margin-top: 8px; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; }
+
+/* Prompt drill before/after */
+.mini-before { font-size: 13px; color: var(--faint); text-decoration: line-through; margin-bottom: 8px; }
+.mini-after {
+  background: #EDEFFF; border-radius: 12px; padding: 9px 12px;
+  font-size: 12.5px; font-weight: 600; color: var(--ink); line-height: 1.45;
+  margin-bottom: 8px;
+}
+.mini-a-chip {
+  display: inline-block; font-size: 11px; font-weight: 700;
+  background: var(--grade-a); color: #fff; border-radius: 99px; padding: 4px 11px;
+  margin-bottom: 12px;
+}
+@media (max-width: 880px) {
+  .b-report { flex-direction: column; align-items: flex-start; }
+}
+
+/* The tall Ask tile fills its column: conversation up top, input pinned low */
+.b-2h.b-stage { display: flex; flex-direction: column; }
+.b-2h.b-stage .b-ask { margin-top: auto; }

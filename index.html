@@ -30,7 +30,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=27">
+<link rel="stylesheet" href="/styles.css?v=29">
 </head>
 <body>
 
@@ -205,46 +205,68 @@
     <h2>One ally, a lot of muscle</h2>
     <p class="lede" style="margin-left:auto;margin-right:auto">The headline features, at a glance. Every one of them lives in the same friendly app.</p>
     <div class="bento" style="margin-top:34px">
-      <div class="b b-2w b-2h">
+      <div class="b b-2w b-2h b-stage">
         <span class="b-kick">Ask Ailly</span>
         <h3>An answer for anything, anytime</h3>
-        <p>Write something, plan something, decide something. The companion on your home screen takes real questions in plain words and answers like a friend who knows you.</p>
+        <p>The companion on your home screen takes real questions in plain words.</p>
+        <div class="mini-q" aria-hidden="true">Can you help me plan my mom's birthday dinner?</div>
+        <div class="mini-a" aria-hidden="true">Happily. Tell me the date, her favorite food, and your budget, and I'll draft the whole evening.</div>
         <div class="b-ask" aria-hidden="true"><i>&#128172;</i> Write something, plan something, decide s&hellip;</div>
       </div>
       <div class="b">
-        <span class="b-seal" aria-hidden="true">B</span>
+        <div class="mini-grade" aria-hidden="true">
+          <span class="b-seal">B</span>
+          <span class="mg-body"><span class="mg-score">68/100 &middot; On track</span><span class="mg-bar"><i></i></span></span>
+        </div>
         <h3>A plan with a grade</h3>
-        <p>Your score out of 100, honest and friendly. It's a starting point, not a verdict.</p>
+        <p>Honest, friendly, and yours in two minutes.</p>
       </div>
       <div class="b">
-        <span class="b-flame" aria-hidden="true">&#128293;</span>
+        <div class="mini-week" aria-hidden="true">
+          <span class="done">M</span><span class="done">T</span><span class="done">W</span><span class="done">T</span><span class="done">F</span><span class="today">S</span><span>S</span>
+        </div>
         <h3>Streaks that stick</h3>
-        <p>One small win a day keeps the flame alive. Points and levels make it feel like play.</p>
+        <p>One small win a day keeps the flame alive.</p>
       </div>
       <div class="b b-gold">
-        <span class="b-kick">Business</span>
-        <h3>Advice at midnight</h3>
-        <p>An AI advisor that knows your business and never sleeps on you.</p>
+        <span class="mini-time" aria-hidden="true">12:41 AM</span>
+        <div class="mini-msg me" aria-hidden="true">A customer wants a refund after 60 days. What do I say?</div>
+        <div class="mini-msg" aria-hidden="true">Here's a calm reply that keeps the relationship and protects you&hellip;</div>
+        <h3 style="margin-top:12px">Advice at midnight</h3>
+        <p>An advisor that knows your business and never sleeps.</p>
       </div>
       <div class="b b-gold">
-        <span class="b-kick">Business</span>
+        <div class="mini-renewal" aria-hidden="true">
+          <b>Annual report &middot; Florida</b>
+          <span class="ok">&#10003; Watched &middot; reminder set</span>
+        </div>
         <h3>Renewals, watched</h3>
-        <p>Your state's real deadlines tracked with reminders. Late fees don't sneak up.</p>
+        <p>Real deadlines, tracked. Late fees don't sneak up.</p>
       </div>
-      <div class="b b-2w b-dark">
-        <span class="b-chipgold">Confidential</span>
-        <h3>Board-ready proof</h3>
-        <p>Six graded dimensions, the hours quantified, and a PDF your leadership actually reads.</p>
+      <div class="b b-2w b-dark b-report">
+        <div class="mini-cover" aria-hidden="true">
+          <span class="chip-confidential">Confidential</span>
+          <div class="mc-name">Harborline Foods</div>
+          <div class="mc-seal">D</div>
+          <div class="mc-sub">AI posture report</div>
+        </div>
+        <div>
+          <span class="b-chipgold">Enterprise</span>
+          <h3>Board-ready proof</h3>
+          <p>Six graded dimensions, the hours quantified, and a PDF your leadership actually reads.</p>
+        </div>
       </div>
       <div class="b">
-        <span class="b-kick">Prompt Coach</span>
+        <span class="mini-a-chip" aria-hidden="true">A&minus; ask</span>
+        <p class="mini-before" aria-hidden="true">write an email</p>
+        <div class="mini-after" aria-hidden="true">Write a warm 60-word update to my team about the new hours&hellip;</div>
         <h3>One drill a day</h3>
-        <p>Two minutes of practice asking AI well, with feedback. The skill that compounds.</p>
+        <p>Prompt Coach turns vague asks into great ones.</p>
       </div>
       <div class="b">
         <div class="b-widget" aria-hidden="true"><b>7</b><span>DAY STREAK</span></div>
         <h3>On your home screen</h3>
-        <p>The widget keeps your streak in sight between sessions.</p>
+        <p>The widget keeps your streak in sight.</p>
       </div>
     </div>
   </section>
@@ -271,7 +293,6 @@
     <h2>A note from the founder</h2>
     <div class="letterhead" style="margin-top:34px">
       <h3>Why I built Ailly</h3>
-      <p class="lh-date">Miami, Florida</p>
       <hr class="lh-rule">
       <p>Most people I talk to want to use AI. They just don't know where to start, and
       everything out there assumes they already do. That's the gap Ailly fills. You answer
@@ -322,6 +343,6 @@
   </div>
 </footer>
 
-<script src="/site.js?v=13" defer></script>
+<script src="/site.js?v=14" defer></script>
 </body>
 </html>
