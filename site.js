@@ -94,7 +94,7 @@
     }
     if (phone) {
       var q = Math.min(y / (vh * 0.85), 1);
-      phone.style.transform = "rotate(" + (-4 + q * 4) + "deg) translateY(" + (q * -30) + "px)";
+      phone.style.transform = "rotate(" + (-2 + q * 2) + "deg) translateY(" + (q * -26) + "px)";
     }
   }
   window.addEventListener("scroll", function () {

@@ -30,7 +30,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=17">
+<link rel="stylesheet" href="/styles.css?v=18">
 </head>
 <body>
 
@@ -75,8 +75,10 @@
       <a class="btn btn-ghost" href="#magic">See it work</a>
     </div>
     </div>
-    <div class="phone hero-phone" data-hero-phone>
-      <img src="/assets/screens/personal-home.jpg" alt="The Ailly home screen: a friendly daily feed with today's lesson, challenge, and prompt drill" loading="eager">
+    <div class="hero-stage" data-hero-phone>
+      <span class="phone hp hp-left" aria-hidden="true"><img src="/assets/screens/launch-path.jpg" alt="" loading="eager"></span>
+      <span class="phone hp hp-center"><img src="/assets/screens/personal-home.jpg" alt="The Ailly home screen: a friendly daily feed with today's lesson, challenge, and prompt drill" loading="eager" fetchpriority="high"></span>
+      <span class="phone hp hp-right" aria-hidden="true"><img src="/assets/screens/report.jpg" alt="" loading="eager"></span>
     </div>
     <div class="scroll-cue" aria-hidden="true"></div>
   </section>
@@ -97,8 +99,8 @@
         <p class="cinema-lede">Answer a two-minute interview and every box on your state's LLC form gets your exact answer, with the real fee and the official site up front. Free to see. One price to unlock and file.</p>
         <a class="chapter-cta" href="/business">See the whole launch path</a>
       </div>
-      <div class="sheet" data-sheet aria-label="Demo: the filing answer sheet filling itself in">
-        <div class="sheet-head">
+      <div class="sheet" data-sheet role="img" aria-label="Demo: the filing answer sheet fills itself in — business name, address, registered agent, and management type, each with a green check, ending ready to file">
+        <div class="sheet-head" aria-hidden="true">
           <img src="/assets/mascot.png" alt="">
           <div><b>Your LLC answers</b><span>Bloom Bakery · demo</span></div>
         </div>
@@ -262,6 +264,6 @@
   </div>
 </footer>
 
-<script src="/site.js?v=9" defer></script>
+<script src="/site.js?v=10" defer></script>
 </body>
 </html>

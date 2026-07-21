@@ -923,7 +923,7 @@ html.reveal-ready [data-reveal-item].is-visible { opacity: 1; transform: none; }
 }
 
 /* Device shots: a touch more presence */
-.hero-phone { box-shadow: 0 42px 90px rgba(8, 11, 36, .5); }
+.hero-phone, .hero-stage .phone { box-shadow: 0 42px 90px rgba(8, 11, 36, .5); }
 .chapter-media .phone:hover { transform: translateY(-6px); }
 
 /* FAQ + quote cards join the hairline family */
@@ -970,10 +970,28 @@ html.reveal-ready [data-reveal-item].is-visible { opacity: 1; transform: none; }
   margin-top: 6px;
 }
 .hero-cine .hero-ctas { margin-top: 36px; }
-.hero-cine .hero-phone {
+/* Hero device cluster: one phone on mobile, a fanned trio on wide screens. */
+.hero-stage {
+  position: relative;
   margin: 64px auto -120px;
   width: min(320px, 76vw);
   will-change: transform;
+}
+.hero-stage .hp-center { position: relative; z-index: 2; display: block; }
+.hero-stage .hp-left, .hero-stage .hp-right { display: none; }
+@media (min-width: 980px) {
+  .hero-stage { width: 340px; margin-bottom: -140px; }
+  .hero-stage .hp-left, .hero-stage .hp-right {
+    display: block;
+    position: absolute;
+    top: 60px;
+    width: 88%;
+    z-index: 1;
+    opacity: .88;
+    filter: brightness(.82) saturate(.95);
+  }
+  .hero-stage .hp-left { left: -68%; transform: rotate(-9deg); }
+  .hero-stage .hp-right { right: -68%; transform: rotate(9deg); }
 }
 
 /* Layered glow atmosphere */
@@ -1169,8 +1187,8 @@ html.reveal-ready [data-reveal-item].is-visible { opacity: 1; transform: none; }
 .hero-cine h1 { animation: rise-in .8s cubic-bezier(.16,.84,.44,1) .12s both; }
 .hero-cine .hero-sub { animation: rise-in .8s cubic-bezier(.16,.84,.44,1) .24s both; }
 .hero-cine .hero-ctas { animation: rise-in .8s cubic-bezier(.16,.84,.44,1) .38s both; }
-.hero-cine .hero-phone { animation: fade-in 1s ease .5s both; }
+.hero-cine .hero-stage { animation: fade-in 1s ease .5s both; }
 @media (prefers-reduced-motion: reduce) {
   .hero-cine .hero-mascot, .hero-cine h1, .hero-cine .hero-sub,
-  .hero-cine .hero-ctas, .hero-cine .hero-phone { animation: none; }
+  .hero-cine .hero-ctas, .hero-cine .hero-stage { animation: none; }
 }
