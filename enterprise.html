@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=21">
+<link rel="stylesheet" href="/styles.css?v=23">
 <style>
   /* Enterprise refinements: report indigo on light surfaces, cover gold on navy,
      the app's posture report is the reference. Serif is reserved for REPORT
@@ -98,7 +98,7 @@
   <!-- STAGE: the reclaimable-hours stat -->
   <section class="stage stage-ent after-hero">
     <p class="stage-kicker">Reclaimable hours a week</p>
-    <div class="stage-num">29–32</div>
+    <div class="stage-num"><span data-countup="29">29</span>–<span data-countup="32">32</span></div>
     <h2>Hiding in plain sight.</h2>
     <p>What the sample company found in their own team's words: most of a full-time hire, recovered without hiring. Your report shows the same arithmetic, name by name.</p>
   </section>
@@ -144,6 +144,9 @@
     <p class="kicker">The report</p>
     <h2>Graded across six dimensions</h2>
     <p class="lede">Every grade comes with evidence from your own team's words, not a generic maturity model.</p>
+    <div class="report-frame" style="margin-top:30px">
+      <div class="report-head"><span class="chip-confidential">Readiness scorecard</span><span class="rf-brand">Ailly Enterprise</span></div>
+      <hr class="rule-gold-sm">
     <div class="dim-grid" role="list">
       <div class="dim" role="listitem" style="--band:var(--grade-c)"><span class="seal" aria-hidden="true">C-</span><span class="nm">Workforce AI fluency</span><span class="bar"><i style="width:50%"></i></span><span class="sc">50/100 · Developing</span></div>
       <div class="dim" role="listitem" style="--band:var(--grade-f)"><span class="seal" aria-hidden="true">F</span><span class="nm">Current AI adoption</span><span class="bar"><i style="width:24%"></i></span><span class="sc">24/100 · At risk</span></div>
@@ -152,35 +155,66 @@
       <div class="dim" role="listitem" style="--band:var(--grade-d)"><span class="seal" aria-hidden="true">D</span><span class="nm">Data &amp; tooling</span><span class="bar"><i style="width:44%"></i></span><span class="sc">44/100 · Early</span></div>
       <div class="dim" role="listitem" style="--band:var(--grade-f)"><span class="seal" aria-hidden="true">F</span><span class="nm">Governance &amp; risk</span><span class="bar"><i style="width:20%"></i></span><span class="sc">20/100 · At risk</span></div>
     </div>
+    </div>
     <p class="dim-note center">Grades shown are from the fictional sample company's report. Yours come from your team's real interviews.</p>
     <p style="margin-top:20px"><a class="btn btn-navy" href="/sample-report.pdf">Read a sample report (PDF)</a></p>
   </section>
 
-  <!-- WHAT YOU GET -->
-  <section class="section center">
-    <p class="kicker">What you get</p>
-    <h2>A program, not a PDF and a handshake</h2>
-    <div class="grid grid-4" style="text-align:left; margin-top:34px">
-      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></svg></div><h3>Live readiness dashboard</h3><p>Every team, graded and trending, plus who's practicing.</p></div>
-      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></div><h3>Board-ready PDF report</h3><p>Confidential, graded, and evidence-based, for leadership.</p></div>
-      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 4 10 5-10 5L2 9z"/><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/></svg></div><h3>Training for every employee</h3><p>A personal AI plan and guided practice per person.</p></div>
-      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div><h3>Three assessments over 6 months</h3><p>Baseline, mid-point, final: improvement measured, not claimed.</p></div>
+  <!-- THE PROGRAM: six months, measured -->
+  <section class="section">
+    <div class="center">
+      <p class="kicker">What you get</p>
+      <h2>A program, not a PDF and a handshake</h2>
+      <p class="lede" style="margin-left:auto;margin-right:auto">Six months with a start line, checkpoints, and a finish you can show your board.</p>
     </div>
+    <ol class="path path-ent">
+      <li>
+        <span class="next-chip">Next</span>
+        <span class="when">Week 1</span>
+        <h3>Every voice heard</h3>
+        <p>A private ~12-minute interview for every employee. No install, nothing for IT.</p>
+      </li>
+      <li>
+        <span class="when">Week 2</span>
+        <h3>The report lands</h3>
+        <p>Six graded dimensions with evidence, the hours quantified, a board-ready PDF.</p>
+      </li>
+      <li>
+        <span class="when">Months 1&ndash;6</span>
+        <h3>Everyone trains</h3>
+        <p>A personal AI plan per person, guided practice, and a live readiness dashboard.</p>
+      </li>
+      <li>
+        <span class="when">Month 3</span>
+        <h3>Progress, proven</h3>
+        <p>The mid-point assessment shows the climb in numbers, not anecdotes.</p>
+      </li>
+      <li>
+        <span class="when">Month 6</span>
+        <h3>The final grade</h3>
+        <p>A final assessment and your next-year plan. Improvement measured, not claimed.</p>
+      </li>
+    </ol>
   </section>
 
-  <!-- SECURITY & PRIVACY -->
+  <!-- SECURITY & PRIVACY: the confidential card -->
   <section class="section section-narrow">
     <p class="kicker">Security &amp; privacy</p>
     <h2>You're trusting us with how your company works</h2>
     <p class="lede">We treat that accordingly.</p>
-    <div class="sec-row"><span class="sec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><p><b>Private by design.</b> Leadership sees levels and opportunities, never word-for-word answers.</p></div>
-    <div class="sec-row"><span class="sec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg></span><p><b>Your data stays yours.</b> Encrypted on Google Cloud, scoped to you, never used to train models.</p></div>
-    <div class="sec-row"><span class="sec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-4z"/><path d="M13 6v12" stroke-dasharray="2 2.4"/></svg></span><p><b>Single-use invites.</b> Every seat is attributable; a leaked code can't be reused.</p></div>
-    <div class="sec-row"><span class="sec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M6 7l1 13h10l1-13M10 11v6M14 11v6"/></svg></span><p><b>Deletable on request.</b> Ask, and your company's data is fully removed.</p></div>
+    <div class="impact">
+      <ul>
+        <li><b>Private by design.</b> Leadership sees levels and opportunities, never word-for-word answers.</li>
+        <li><b>Your data stays yours.</b> Encrypted on Google Cloud, scoped to you, never used to train models.</li>
+        <li><b>Single-use invites.</b> Every seat is attributable; a leaked code can't be reused.</li>
+        <li><b>Deletable on request.</b> Ask, and your company's data is fully removed.</li>
+      </ul>
+    </div>
   </section>
 
   <!-- CLOSING CTA -->
   <section class="cta-band cta-ent">
+    <img class="cta-mascot float" src="/assets/mascot.png" alt="">
     <h2>See what your team would tell you</h2>
     <p>Start with the sample report, then run the real thing on your own company.</p>
     <div class="hero-ctas" style="margin-top:0">
@@ -192,43 +226,29 @@
 </main>
 
 <footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="/assets/mascot.png" alt="">
-        <p>Your AI ally for life and business. Plain-language AI guidance for you, your business, and your whole company.</p>
-      </div>
-      <nav aria-label="Product">
-        <h4>Product</h4>
-        <ul>
-          <li><a href="/personal">Personal</a></li>
-          <li><a href="/business">Business</a></li>
-          <li><a href="/enterprise">Enterprise</a></li>
-          <li><a href="/pricing">Pricing</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="Company">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="https://ailly-f1ccf.web.app/admin">Admin dashboard</a></li>
-          <li><a href="/support">Support</a></li>
-          <li><a href="/ai-glossary">AI glossary</a></li>
-          <li><a href="/how-to-talk-to-ai">How to talk to AI</a></li>
-          <li><a href="/privacy-policy">Privacy policy</a></li>
-          <li><a href="/terms">Terms of use</a></li>
-                <li><a href="mailto:support@aillyapp.com">Contact</a></li>
-          <li><a href="https://dreamwakelabs.com" rel="noopener">Dreamwake Labs</a></li>
-          <li><a href="https://dailyrung.com" rel="noopener">Rung, our daily word game</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Dreamwake LLC. All rights reserved.</span>
+  <div class="footer-inner footer-min">
+    <img class="footer-mascot" src="/assets/mascot.png" alt="">
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="/personal">Personal</a>
+      <a href="/business">Business</a>
+      <a href="/enterprise">Enterprise</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/support">Support</a>
+    </nav>
+    <nav class="footer-sub" aria-label="Guides and legal">
+      <a href="/ai-glossary">AI glossary</a>
+      <a href="/how-to-talk-to-ai">How to talk to AI</a>
+      <a href="/privacy-policy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="mailto:support@aillyapp.com">Contact</a>
+    </nav>
+    <div class="footer-base">
+      <span>&copy; 2026 Dreamwake LLC &middot; Made by <a href="https://dreamwakelabs.com" rel="noopener">Dreamwake Labs</a></span>
       <span>No jargon. No wrong answers.</span>
     </div>
   </div>
 </footer>
 
-<script src="/site.js?v=10" defer></script>
+<script src="/site.js?v=11" defer></script>
 </body>
 </html>

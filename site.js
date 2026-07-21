@@ -157,3 +157,84 @@
   }, { threshold: 0.3 });
   io.observe(sheet);
 })();
+
+
+// Living numbers: the app's reveal language on the web. Count-up numbers
+// ([data-countup]), the score ring that draws itself (.score-ring), and the
+// scorecard whose bars fill and seals pop (.dim-grid). Progressive: without
+// JS (or with reduced motion) everything renders in its final state.
+(function () {
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) return;
+
+  function ease(t) { return 1 - Math.pow(1 - t, 3); }
+  function countTo(el, target, ms) {
+    var t0 = null;
+    function step(ts) {
+      if (!t0) t0 = ts;
+      var p = Math.min((ts - t0) / ms, 1);
+      el.textContent = String(Math.round(ease(p) * target));
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  var counts = [].slice.call(document.querySelectorAll("[data-countup]"));
+  counts.forEach(function (el) { el.textContent = "0"; });
+
+  var rings = [].slice.call(document.querySelectorAll(".score-ring"));
+  rings.forEach(function (ring) {
+    var fg = ring.querySelector(".rfg");
+    if (!fg) return;
+    var C = 2 * Math.PI * parseFloat(fg.getAttribute("r"));
+    fg.style.strokeDasharray = String(C);
+    fg.style.strokeDashoffset = String(C);
+    var b = ring.querySelector("b");
+    if (b) b.textContent = "0";
+  });
+
+  var grids = [].slice.call(document.querySelectorAll(".dim-grid"));
+  grids.forEach(function (grid) {
+    [].slice.call(grid.querySelectorAll(".bar i")).forEach(function (bar) {
+      bar.setAttribute("data-w", bar.style.width);
+      bar.style.width = "0%";
+    });
+  });
+
+  function fire(el) {
+    if (el.hasAttribute("data-countup")) {
+      countTo(el, parseInt(el.getAttribute("data-countup"), 10), 1200);
+      return;
+    }
+    if (el.classList.contains("score-ring")) {
+      var fg = el.querySelector(".rfg");
+      var pct = parseInt(el.getAttribute("data-ring"), 10) / 100;
+      if (fg) {
+        var C = 2 * Math.PI * parseFloat(fg.getAttribute("r"));
+        fg.style.strokeDashoffset = String(C * (1 - pct));
+      }
+      var b = el.querySelector("b");
+      if (b) countTo(b, parseInt(el.getAttribute("data-ring"), 10), 1300);
+      return;
+    }
+    if (el.classList.contains("dim-grid")) {
+      [].slice.call(el.querySelectorAll(".dim")).forEach(function (dim, i) {
+        dim.style.setProperty("--sd", (i * 0.12) + "s");
+        dim.classList.add("is-anim");
+      });
+      [].slice.call(el.querySelectorAll(".bar i")).forEach(function (bar) {
+        bar.style.width = bar.getAttribute("data-w");
+      });
+    }
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { fire(e.target); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.35 });
+
+  counts.forEach(function (el) { io.observe(el); });
+  rings.forEach(function (el) { io.observe(el); });
+  grids.forEach(function (el) { io.observe(el); });
+})();

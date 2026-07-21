@@ -30,7 +30,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=21">
+<link rel="stylesheet" href="/styles.css?v=23">
 </head>
 <body>
 
@@ -199,22 +199,27 @@
     </div>
   </section>
 
-  <!-- FOUNDER -->
-  <section class="section section-narrow" id="why">
+  <!-- FOUNDER: a real letter, on letterhead -->
+  <section class="section section-narrow center" id="why">
     <p class="kicker">Why Ailly exists</p>
     <h2>A note from the founder</h2>
-    <p class="lede" style="max-width:640px">
-      "Most people I talk to want to use AI. They just don't know where to start, and
+    <div class="letterhead" style="margin-top:34px">
+      <h3>Why I built Ailly</h3>
+      <p class="lh-date">Miami, Florida</p>
+      <hr class="lh-rule">
+      <p>Most people I talk to want to use AI. They just don't know where to start, and
       everything out there assumes they already do. That's the gap Ailly fills. You answer
       a few honest questions, you get a plan that fits your life, and you learn one useful
-      thing at a time in plain English. If it ever stops feeling that simple, tell me.
-      The feedback button in the app goes straight to me."
-    </p>
-    <p style="margin-top:18px;font-weight:700">Amaan · Founder, Ailly</p>
+      thing at a time in plain English.</p>
+      <p style="margin-top:14px">If it ever stops feeling that simple, tell me.
+      The feedback button in the app goes straight to me.</p>
+      <p class="sig">Amaan · Founder, Ailly</p>
+    </div>
   </section>
 
   <!-- CLOSING CTA -->
   <section class="cta-band">
+    <img class="cta-mascot float" src="/assets/mascot.png" alt="">
     <h2>Ready to meet your AI ally?</h2>
     <p>Free to start. Two minutes to your first game plan. A friendlier way into AI than anything you've tried.</p>
     <!-- TEMP: swap to App Store link when live (see comment in hero). -->
@@ -228,42 +233,29 @@
 </main>
 
 <footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="/assets/mascot.png" alt="">
-        <p>Your AI ally for life and business. Plain-language AI guidance for you, your business, and your whole company.</p>
-      </div>
-      <nav aria-label="Product">
-        <h4>Product</h4>
-        <ul>
-          <li><a href="/personal">Personal</a></li>
-          <li><a href="/business">Business</a></li>
-          <li><a href="/enterprise">Enterprise</a></li>
-          <li><a href="/pricing">Pricing</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="Company">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="/support">Support</a></li>
-          <li><a href="/ai-glossary">AI glossary</a></li>
-          <li><a href="/how-to-talk-to-ai">How to talk to AI</a></li>
-          <li><a href="/privacy-policy">Privacy policy</a></li>
-          <li><a href="/terms">Terms of use</a></li>
-                <li><a href="mailto:support@aillyapp.com">Contact</a></li>
-          <li><a href="https://dreamwakelabs.com" rel="noopener">Dreamwake Labs</a></li>
-          <li><a href="https://dailyrung.com" rel="noopener">Rung, our daily word game</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Dreamwake LLC. All rights reserved.</span>
+  <div class="footer-inner footer-min">
+    <img class="footer-mascot" src="/assets/mascot.png" alt="">
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="/personal">Personal</a>
+      <a href="/business">Business</a>
+      <a href="/enterprise">Enterprise</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/support">Support</a>
+    </nav>
+    <nav class="footer-sub" aria-label="Guides and legal">
+      <a href="/ai-glossary">AI glossary</a>
+      <a href="/how-to-talk-to-ai">How to talk to AI</a>
+      <a href="/privacy-policy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="mailto:support@aillyapp.com">Contact</a>
+    </nav>
+    <div class="footer-base">
+      <span>&copy; 2026 Dreamwake LLC &middot; Made by <a href="https://dreamwakelabs.com" rel="noopener">Dreamwake Labs</a></span>
       <span>No jargon. No wrong answers.</span>
     </div>
   </div>
 </footer>
 
-<script src="/site.js?v=10" defer></script>
+<script src="/site.js?v=11" defer></script>
 </body>
 </html>

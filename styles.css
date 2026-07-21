@@ -1286,3 +1286,151 @@ html.reveal-ready [data-reveal-item].is-visible { opacity: 1; transform: none; }
   max-width: 600px;
   line-height: 1.65;
 }
+
+
+/* ============================================================
+   LIVING NUMBERS + APP MOTION (2026-07-20 deep pass).
+   The app's reveal language on the web: the count-up score ring,
+   score bars that fill, grade seals that pop, journey rows with
+   the gold NEXT chip, jewel-box closing bands, and the one
+   shimmer the design system allows (the Pro card).
+   ============================================================ */
+
+/* --- Score ring (the app's hero ring, drawn on scroll) --- */
+.score-ring { position: relative; width: 200px; height: 200px; margin: 0 auto 20px; }
+.score-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.score-ring circle { fill: none; stroke-width: 9; stroke-linecap: round; }
+.score-ring .rbg { stroke: rgba(255, 255, 255, .22); }
+.score-ring .rfg { stroke: #fff; transition: stroke-dashoffset 1.3s cubic-bezier(.22, .8, .3, 1) .15s; }
+.ring-center {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.ring-center b { font-size: 60px; font-weight: 700; line-height: 1; letter-spacing: -.02em; }
+.ring-center span { font-size: 13px; font-weight: 600; color: rgba(255, 255, 255, .72); margin-top: 6px; }
+
+/* --- Scorecard: bars fill, seals pop (enterprise report artifact) --- */
+html.reveal-ready:not(.reduce-motion) .dim .seal {
+  opacity: 0; transform: scale(.4);
+  transition: opacity .45s cubic-bezier(.34, 1.56, .64, 1) var(--sd, 0s),
+              transform .45s cubic-bezier(.34, 1.56, .64, 1) var(--sd, 0s);
+}
+html.reveal-ready .dim.is-anim .seal { opacity: 1; transform: none; }
+.dim .bar i { transition: width 1s cubic-bezier(.22, .8, .3, 1) calc(var(--sd, 0s) + .12s); }
+@media (prefers-reduced-motion: reduce) {
+  html.reveal-ready .dim .seal { opacity: 1 !important; transform: none !important; }
+}
+
+/* --- The report frame: the scorecard sits on the report cover --- */
+.report-frame {
+  background-image:
+    radial-gradient(circle at 82% -12%, rgba(61, 90, 254, .38), transparent 58%),
+    linear-gradient(160deg, #0D1240 0%, #1A237E 62%, #283593 100%);
+  border-radius: 26px;
+  padding: 26px 24px 24px;
+  box-shadow: 0 30px 70px rgba(5, 8, 30, .35);
+  text-align: left;
+}
+.report-head {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 12px; flex-wrap: wrap;
+}
+.chip-confidential {
+  font-size: 10.5px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ent-gold); border: 1px solid rgba(255, 213, 79, .5);
+  border-radius: 4px; padding: 5px 10px;
+}
+.rf-brand { font-size: 10.5px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: rgba(255, 255, 255, .6); }
+.rule-gold-sm { width: 56px; height: 2px; background: var(--ent-gold); border: none; margin: 14px 0 18px; opacity: .85; }
+
+/* --- Journey timeline variants (app journey rows) --- */
+.path li { overflow: hidden; }
+.path .next-chip {
+  position: absolute; top: 14px; right: 14px;
+  font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  padding: 5px 10px; border-radius: 99px;
+  background: linear-gradient(135deg, #FFE7A3, #FFC24D); color: #4E3200;
+}
+.path-ent li::before { background: linear-gradient(135deg, #3949AB, #5C6BFF); }
+@media (min-width: 860px) {
+  .path-ent li:not(:last-child)::after { background: linear-gradient(90deg, #5C6BFF, #C9CFF2); }
+}
+.path .when { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--ent-ink); margin-bottom: 7px; }
+
+/* Enterprise step circles pick up the report indigo */
+.ent .step::before { background: linear-gradient(135deg, #3949AB, #5C6BFF); }
+
+/* --- Jewel-box closing bands: the floating mascot joins the moment --- */
+.cta-band .cta-mascot { width: 84px; margin: 0 auto 16px; display: block; }
+
+/* --- The one allowed shimmer: the Pro card --- */
+.plan-shimmer { position: relative; overflow: hidden; }
+.plan-shimmer::after {
+  content: "";
+  position: absolute; top: -60%; bottom: -60%; left: -70%; width: 46%;
+  background: linear-gradient(105deg, transparent, rgba(108, 99, 255, .09), transparent);
+  transform: rotate(12deg);
+  animation: shimmer 4.6s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes shimmer { 0%, 18% { left: -70%; } 62%, 100% { left: 135%; } }
+@media (prefers-reduced-motion: reduce) { .plan-shimmer::after { animation: none; opacity: 0; } }
+
+/* --- Letterhead card (app letterhead documents): the founder note --- */
+.letterhead {
+  background: #fff; border-radius: 22px; padding: 40px 36px;
+  border: 1px solid rgba(20, 26, 77, .06);
+  box-shadow: var(--shadow-card-lg);
+  max-width: 680px; margin: 0 auto; text-align: left;
+}
+.letterhead h3 { font-family: var(--serif); font-size: 25px; font-weight: 700; }
+.letterhead .lh-date { font-size: 12.5px; color: var(--faint); margin-top: 6px; }
+.letterhead .lh-rule { width: 44px; height: 2px; background: var(--navy); border: none; margin: 16px 0 20px; }
+.letterhead p { font-size: 15.5px; line-height: 1.75; color: var(--body); }
+.letterhead .sig { margin-top: 20px; font-weight: 700; color: var(--ink); }
+@media (max-width: 700px) { .letterhead { padding: 30px 24px; } }
+
+/* --- Press feedback (the app's haptic, translated) --- */
+.btn:active, .store-badge:active { transform: scale(.97); }
+.card:active, .plan:active, .lane:active { transform: translateY(-1px) scale(.995); }
+
+/* --- Mobile hero fan: the flanking phones peek in instead of vanishing --- */
+@media (max-width: 979px) {
+  .hero-stage:not(.hero-stage-solo) .hp-left,
+  .hero-stage:not(.hero-stage-solo) .hp-right {
+    display: block;
+    position: absolute;
+    top: 40px;
+    width: 82%;
+    z-index: 1;
+    opacity: .5;
+    filter: brightness(.72) saturate(.9);
+  }
+  .hero-stage:not(.hero-stage-solo) .hp-left { left: -52%; transform: rotate(-10deg); }
+  .hero-stage:not(.hero-stage-solo) .hp-right { right: -52%; transform: rotate(10deg); }
+}
+
+/* Inline bolds inside impact list rows stay body-sized white (the big serif
+   gold .impact b treatment is for the stat headline only) */
+.impact li b { font-family: var(--font); font-size: inherit; color: #fff; display: inline; margin: 0; }
+
+/* ============================== MINIMAL FOOTER (2026-07-20) ==============================
+   One quiet, centered block: mascot, the five destinations, a muted row of
+   guides and legal, and the base line. Nothing strewn about. */
+.footer-min { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.footer-mascot { width: 54px; }
+.footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 28px; }
+.footer-nav a { color: rgba(255, 255, 255, .88); font-size: 14.5px; font-weight: 600; text-decoration: none; }
+.footer-nav a:hover { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+.footer-sub { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 22px; }
+.footer-sub a { color: rgba(255, 255, 255, .55); font-size: 13px; text-decoration: none; }
+.footer-sub a:hover { color: rgba(255, 255, 255, .85); }
+.footer-base {
+  border-top: 1px solid rgba(255, 255, 255, .14);
+  padding-top: 22px; margin-top: 6px; width: 100%;
+  display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: space-between;
+  font-size: 12.5px; color: rgba(255, 255, 255, .5);
+}
+.footer-base a { color: rgba(255, 255, 255, .7); text-decoration: none; }
+.footer-base a:hover { color: #fff; }
+@media (max-width: 700px) { .footer-base { justify-content: center; text-align: center; } }
