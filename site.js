@@ -238,3 +238,101 @@
   rings.forEach(function (el) { io.observe(el); });
   grids.forEach(function (el) { io.observe(el); });
 })();
+
+
+// Product scenes: an interview becomes graded evidence, a day checks itself
+// off, and readiness climbs. Same family as the filing sheet: play once when
+// scrolled into view; reduced motion (or old browsers) renders the finale.
+(function () {
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var scenes = [].slice.call(document.querySelectorAll("[data-scene]"));
+  if (!scenes.length) return;
+
+  function typeInto(el, text, speed, done) {
+    var n = 0;
+    var t = setInterval(function () {
+      n++;
+      el.textContent = text.slice(0, n);
+      if (n >= text.length) { clearInterval(t); if (done) done(); }
+    }, speed);
+  }
+
+  function playInterview(sc) {
+    var txt = sc.querySelector(".iv-text");
+    var hours = sc.querySelector("[data-hours]");
+    sc.classList.add("typing");
+    typeInto(txt, txt.getAttribute("data-type"), 24, function () {
+      sc.classList.remove("typing");
+      setTimeout(function () { sc.classList.add("s2"); }, 320);
+      setTimeout(function () {
+        var t0 = null;
+        function step(ts) {
+          if (!t0) t0 = ts;
+          var p = Math.min((ts - t0) / 900, 1);
+          hours.textContent = (4.2 * (1 - Math.pow(1 - p, 3))).toFixed(1);
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }, 1250);
+      setTimeout(function () { sc.classList.add("s4"); }, 2300);
+    });
+  }
+  function settleInterview(sc) {
+    var txt = sc.querySelector(".iv-text");
+    txt.textContent = txt.getAttribute("data-type");
+    sc.querySelector("[data-hours]").textContent = "4.2";
+    sc.classList.add("s2", "s4");
+  }
+
+  function playDay(sc) {
+    var rows = [].slice.call(sc.querySelectorAll(".dc-row"));
+    var streak = sc.querySelector("[data-streak]");
+    var score = sc.querySelector("[data-fluency]");
+    rows.forEach(function (r, i) {
+      setTimeout(function () {
+        r.classList.add("filled");
+        if (r.querySelector(".dc-points")) {
+          setTimeout(function () { r.classList.add("points"); }, 260);
+        }
+      }, 500 + i * 620);
+    });
+    setTimeout(function () {
+      streak.textContent = "7";
+      sc.classList.add("streak-pop");
+      setTimeout(function () { sc.classList.remove("streak-pop"); }, 420);
+    }, 500 + rows.length * 620 + 200);
+    setTimeout(function () {
+      score.textContent = "73";
+      sc.classList.add("score-pop");
+      setTimeout(function () { sc.classList.remove("score-pop"); }, 420);
+    }, 500 + rows.length * 620 + 700);
+  }
+  function settleDay(sc) {
+    [].slice.call(sc.querySelectorAll(".dc-row")).forEach(function (r) {
+      r.classList.add("filled", "points");
+    });
+    sc.querySelector("[data-streak]").textContent = "7";
+    sc.querySelector("[data-fluency]").textContent = "73";
+  }
+
+  function playClimb(sc) { sc.classList.add("go"); }
+  function settleClimb(sc) { sc.classList.add("go"); }
+
+  var play = { interview: playInterview, day: playDay, climb: playClimb };
+  var settle = { interview: settleInterview, day: settleDay, climb: settleClimb };
+
+  if (reduce || !("IntersectionObserver" in window)) {
+    scenes.forEach(function (sc) { settle[sc.getAttribute("data-scene")](sc); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      var fn = play[e.target.getAttribute("data-scene")];
+      if (fn) setTimeout(function () { fn(e.target); }, 250);
+    });
+  }, { threshold: 0.35 });
+  scenes.forEach(function (sc) { io.observe(sc); });
+})();

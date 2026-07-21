@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=23">
+<link rel="stylesheet" href="/styles.css?v=24">
 <style>
   /* Enterprise refinements: report indigo on light surfaces, cover gold on navy,
      the app's posture report is the reference. Serif is reserved for REPORT
@@ -103,6 +103,31 @@
     <p>What the sample company found in their own team's words: most of a full-time hire, recovered without hiring. Your report shows the same arithmetic, name by name.</p>
   </section>
 
+  <!-- SHOWCASE: one interview becomes evidence -->
+  <section class="cinema" id="proof">
+    <div class="cinema-inner">
+      <div class="cinema-copy">
+        <p class="chapter-kicker">The proof, live</p>
+        <h2>Watch one interview become evidence.</h2>
+        <p class="cinema-lede">Every employee talks to Ailly privately for about 12 minutes. What they say becomes graded evidence with the hours quantified. The report reads like your company because it's built from your company.</p>
+        <a class="chapter-cta" href="/sample-report.pdf">Read the full sample report</a>
+      </div>
+      <div class="ivscene" data-scene="interview" role="img" aria-label="Demo: an employee's private interview answer types itself out, then becomes a graded scorecard row with a C minus seal, a score bar, 4.2 hours a week quantified, and a stamp reading graded from their own words">
+        <div class="iv-bubble" aria-hidden="true">
+          <span class="iv-tag">Employee interview &middot; private</span>
+          <p class="iv-text" data-type="Honestly? I retype the same quote email about ten times a week. Nobody's shown me a faster way."></p>
+        </div>
+        <div class="iv-card" aria-hidden="true">
+          <span class="iv-tag2">What Ailly heard</span>
+          <div class="iv-row"><span class="ivl">Workforce AI fluency</span><span class="iv-seal">C-</span></div>
+          <span class="iv-bar" style="--w:50%"><i></i></span>
+          <div class="iv-hours">Hours hiding in busywork: <b><span data-hours>0</span> hrs/week</b></div>
+          <div class="iv-stamp">Graded from their own words &#10003;</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CHAPTER: the report -->
   <section class="chapter chapter-enterprise chapter-xl">
     <div class="chapter-inner">
@@ -169,7 +194,6 @@
     </div>
     <ol class="path path-ent">
       <li>
-        <span class="next-chip">Next</span>
         <span class="when">Week 1</span>
         <h3>Every voice heard</h3>
         <p>A private ~12-minute interview for every employee. No install, nothing for IT.</p>
@@ -195,6 +219,19 @@
         <p>A final assessment and your next-year plan. Improvement measured, not claimed.</p>
       </li>
     </ol>
+  </section>
+
+  <!-- THE CLIMB: improvement measured, not claimed -->
+  <section class="section section-narrow center" id="climb">
+    <p class="kicker">The result</p>
+    <h2>Readiness that climbs on the record</h2>
+    <p class="lede" style="margin-left:auto;margin-right:auto">Three assessments over six months in the sample company. The grade is the story.</p>
+    <div class="climb" data-scene="climb" role="img" aria-label="Demo chart: overall readiness rises from 49 with a D grade at baseline, to 63 and C plus at month three, to 78 and grade B at month six">
+      <div class="cl-col" style="--h:38%; --band:var(--grade-d); --d1:0s; --d2:.75s" aria-hidden="true"><span class="cl-seal">D</span><b>49</b><i></i><span class="cl-lab">Baseline</span></div>
+      <div class="cl-col" style="--h:58%; --band:var(--grade-c); --d1:.35s; --d2:1.1s" aria-hidden="true"><span class="cl-seal">C+</span><b>63</b><i></i><span class="cl-lab">Month 3</span></div>
+      <div class="cl-col" style="--h:80%; --band:var(--grade-b); --d1:.7s; --d2:1.45s" aria-hidden="true"><span class="cl-seal">B</span><b>78</b><i></i><span class="cl-lab">Month 6</span></div>
+    </div>
+    <p class="dim-note">The fictional sample company's climb. Yours is measured the same way.</p>
   </section>
 
   <!-- SECURITY & PRIVACY: the confidential card -->
@@ -249,6 +286,6 @@
   </div>
 </footer>
 
-<script src="/site.js?v=11" defer></script>
+<script src="/site.js?v=12" defer></script>
 </body>
 </html>

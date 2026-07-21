@@ -1345,12 +1345,6 @@ html.reveal-ready .dim.is-anim .seal { opacity: 1; transform: none; }
 
 /* --- Journey timeline variants (app journey rows) --- */
 .path li { overflow: hidden; }
-.path .next-chip {
-  position: absolute; top: 14px; right: 14px;
-  font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
-  padding: 5px 10px; border-radius: 99px;
-  background: linear-gradient(135deg, #FFE7A3, #FFC24D); color: #4E3200;
-}
 .path-ent li::before { background: linear-gradient(135deg, #3949AB, #5C6BFF); }
 @media (min-width: 860px) {
   .path-ent li:not(:last-child)::after { background: linear-gradient(90deg, #5C6BFF, #C9CFF2); }
@@ -1434,3 +1428,173 @@ html.reveal-ready .dim.is-anim .seal { opacity: 1; transform: none; }
 .footer-base a { color: rgba(255, 255, 255, .7); text-decoration: none; }
 .footer-base a:hover { color: #fff; }
 @media (max-width: 700px) { .footer-base { justify-content: center; text-align: center; } }
+
+
+/* ============================================================
+   PRODUCT SCENES (2026-07-20). Three more "watch it work"
+   moments in the sheet's family: an interview becoming graded
+   evidence (enterprise), a day checking itself off (personal),
+   and the readiness climb (enterprise). JS drives the sequence;
+   .scene classes gate each beat; reduced motion settles all.
+   ============================================================ */
+
+/* Personal flavor of the cinema band: the brand gradient world */
+.cinema-personal {
+  background-image:
+    radial-gradient(circle at 15% 8%, rgba(92, 107, 255, .35), transparent 52%),
+    radial-gradient(circle at 88% 92%, rgba(74, 20, 140, .6), transparent 58%),
+    linear-gradient(168deg, #171E5E 0%, #2A1B6E 55%, #3D1470 100%);
+}
+.cinema-personal .chapter-kicker { color: rgba(255, 255, 255, .85); }
+.cinema-personal .chapter-cta { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+
+/* --- Interview scene (enterprise) --- */
+.ivscene { max-width: 440px; margin: 0 auto; width: 100%; }
+.iv-bubble {
+  background: rgba(255, 255, 255, .1);
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 20px 20px 20px 6px;
+  padding: 16px 18px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.iv-tag {
+  display: block;
+  font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+  color: rgba(255, 255, 255, .6); margin-bottom: 8px;
+}
+.iv-text { font-size: 16px; line-height: 1.55; color: #fff; min-height: 75px; font-style: italic; }
+.iv-text::after {
+  content: ""; display: none; width: 2px; height: 15px;
+  background: #fff; margin-left: 2px; vertical-align: -2px;
+  animation: caret .8s steps(1) infinite;
+}
+.ivscene.typing .iv-text::after { display: inline-block; }
+.iv-card {
+  background: #fff; border-radius: 20px; padding: 20px;
+  margin-top: 14px; color: var(--ink);
+  box-shadow: 0 30px 70px rgba(5, 8, 30, .5);
+  opacity: 0; transform: translateY(14px);
+  transition: opacity .55s cubic-bezier(.16, .84, .44, 1), transform .55s cubic-bezier(.16, .84, .44, 1);
+}
+.ivscene.s2 .iv-card { opacity: 1; transform: none; }
+.iv-tag2 {
+  display: block; font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--ent-ink); margin-bottom: 12px;
+}
+.iv-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.iv-row .ivl { font-size: 15px; font-weight: 700; }
+.iv-seal {
+  width: 40px; height: 40px; border-radius: 50%; flex: none;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--grade-c); color: #fff;
+  font-family: var(--serif); font-size: 18px; font-weight: 700;
+  opacity: 0; transform: scale(.4);
+  transition: opacity .45s cubic-bezier(.34, 1.56, .64, 1) .5s, transform .45s cubic-bezier(.34, 1.56, .64, 1) .5s;
+}
+.ivscene.s2 .iv-seal { opacity: 1; transform: none; }
+.iv-bar { display: block; height: 4px; border-radius: 2px; background: rgba(20, 27, 77, .08); margin: 10px 0 14px; overflow: hidden; }
+.iv-bar i { display: block; height: 100%; border-radius: 2px; background: var(--grade-c); width: 0; transition: width 1s cubic-bezier(.22, .8, .3, 1) .35s; }
+.ivscene.s2 .iv-bar i { width: var(--w, 50%); }
+.iv-hours { font-size: 14px; color: var(--muted); }
+.iv-hours b { color: var(--ink); font-size: 15px; }
+.iv-stamp {
+  margin-top: 14px;
+  background: linear-gradient(120deg, #0C6E5E, #10897B);
+  color: #fff; border-radius: 13px; padding: 12px; text-align: center;
+  font-weight: 700; font-size: 13.5px;
+  opacity: 0; transform: translateY(8px);
+  transition: opacity .5s cubic-bezier(.16, .84, .44, 1), transform .5s cubic-bezier(.16, .84, .44, 1);
+}
+.ivscene.s4 .iv-stamp { opacity: 1; transform: none; }
+
+/* --- Day scene (personal) --- */
+.daycard {
+  background: #fff; border-radius: 26px; padding: 22px; color: var(--ink);
+  box-shadow: 0 40px 90px rgba(5, 8, 30, .55), 0 0 0 1px rgba(255, 255, 255, .08);
+  max-width: 420px; margin: 0 auto; width: 100%;
+}
+.dc-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.dc-head b { font-size: 17px; display: block; }
+.dc-head > div > span { font-size: 12px; color: var(--faint); }
+.dc-streak {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: #FFF3E0; color: #B4530A; border-radius: 99px;
+  padding: 7px 13px; font-size: 13px; font-weight: 700;
+  transition: transform .3s cubic-bezier(.34, 1.56, .64, 1);
+}
+.daycard.streak-pop .dc-streak { transform: scale(1.12); }
+.dc-row {
+  display: flex; align-items: center; gap: 12px;
+  border: 1px solid rgba(20, 26, 77, .08);
+  border-radius: 14px; padding: 12px 14px; margin-bottom: 9px;
+  position: relative;
+}
+.dc-ico {
+  width: 38px; height: 38px; border-radius: 11px; flex: none;
+  display: flex; align-items: center; justify-content: center; font-size: 17px;
+  background: #EDEFFF;
+}
+.dc-ico.warm { background: #FFF3E0; }
+.dc-ico.deep { background: #ECE7FA; }
+.dc-body { flex: 1; min-width: 0; }
+.dc-kick { display: block; font-size: 9.5px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--faint); }
+.dc-title { font-size: 14.5px; font-weight: 700; margin-top: 2px; }
+.dc-row .check {
+  position: static; width: 22px; height: 22px; border-radius: 50%;
+  background: #43A047; color: #fff; flex: none;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700;
+  opacity: 0; transform: scale(.4);
+  transition: opacity .3s cubic-bezier(.16, .84, .44, 1), transform .3s cubic-bezier(.34, 1.56, .64, 1);
+}
+.dc-row.filled .check { opacity: 1; transform: scale(1); }
+.dc-points {
+  position: absolute; right: 46px; top: -10px;
+  background: linear-gradient(120deg, #FFE7A3, #FFC24D); color: #4E3200;
+  font-size: 11.5px; font-weight: 700; padding: 5px 11px; border-radius: 99px;
+  box-shadow: 0 6px 16px rgba(120, 80, 0, .25);
+  opacity: 0; transform: translateY(8px) scale(.7);
+  transition: opacity .4s cubic-bezier(.34, 1.56, .64, 1), transform .4s cubic-bezier(.34, 1.56, .64, 1);
+}
+.dc-row.points .dc-points { opacity: 1; transform: none; }
+.dc-foot {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 13px; padding: 12px 14px;
+  background: var(--grad); border-radius: 13px; color: #fff;
+}
+.dc-foot span { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255, 255, 255, .75); }
+.dc-foot b { font-size: 19px; transition: transform .3s cubic-bezier(.34, 1.56, .64, 1); }
+.daycard.score-pop .dc-foot b { transform: scale(1.18); }
+
+/* --- The climb (enterprise): three assessments, one story --- */
+.climb {
+  display: flex; align-items: flex-end; justify-content: center;
+  gap: clamp(20px, 6vw, 56px);
+  height: 300px; margin: 40px auto 0; max-width: 560px;
+}
+.cl-col { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; flex: 1; max-width: 120px; }
+.cl-seal {
+  width: 46px; height: 46px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--band); color: #fff;
+  font-family: var(--serif); font-size: 20px; font-weight: 700;
+  margin-bottom: 8px;
+  opacity: 0; transform: scale(.4);
+  transition: opacity .45s cubic-bezier(.34, 1.56, .64, 1) var(--d2, .9s), transform .45s cubic-bezier(.34, 1.56, .64, 1) var(--d2, .9s);
+}
+.cl-col b { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 8px; opacity: 0; transition: opacity .4s ease var(--d2, .9s); }
+.cl-col i {
+  display: block; width: 100%; max-width: 84px;
+  height: 0; border-radius: 12px 12px 4px 4px;
+  background: linear-gradient(180deg, var(--band), color-mix(in srgb, var(--band) 72%, #141B4D));
+  transition: height 1s cubic-bezier(.22, .8, .3, 1) var(--d1, 0s);
+}
+.climb.go .cl-col i { height: var(--h); }
+.climb.go .cl-seal, .climb.go .cl-col b { opacity: 1; transform: none; }
+.cl-lab { font-size: 12.5px; font-weight: 700; color: var(--muted); margin-top: 10px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ivscene .iv-card, .ivscene .iv-seal, .ivscene .iv-stamp,
+  .dc-row .check, .dc-points, .cl-seal, .cl-col b { transition: none; }
+}
