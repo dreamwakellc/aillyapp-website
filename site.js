@@ -336,3 +336,67 @@
   }, { threshold: 0.35 });
   scenes.forEach(function (sc) { io.observe(sc); });
 })();
+
+
+// Live shots: lazy-load real screen recordings into phone frames once they
+// approach the viewport. Reduced motion (or no IO) keeps the poster still.
+(function () {
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var vids = [].slice.call(document.querySelectorAll("video[data-src]"));
+  if (!vids.length || reduce || !("IntersectionObserver" in window)) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      var v = e.target;
+      v.src = v.getAttribute("data-src");
+      v.play().catch(function () {});
+    });
+  }, { rootMargin: "600px 0px" });
+  vids.forEach(function (v) { io.observe(v); });
+})();
+
+// The document that writes itself (business): serif title types, the brand
+// rule draws, the opening clause types, the stamp lands.
+(function () {
+  var sc = document.querySelector("[data-scene-doc]");
+  if (!sc) return;
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var title = sc.querySelector(".doc-title");
+  var line = sc.querySelector(".doc-line");
+  function settle() {
+    title.textContent = title.getAttribute("data-type");
+    line.textContent = line.getAttribute("data-type");
+    sc.classList.add("s2", "s3");
+  }
+  if (reduce || !("IntersectionObserver" in window)) { settle(); return; }
+  function typeInto(el, text, speed, done) {
+    var n = 0;
+    var t = setInterval(function () {
+      n++;
+      el.textContent = text.slice(0, n);
+      if (n >= text.length) { clearInterval(t); if (done) done(); }
+    }, speed);
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      io.disconnect();
+      setTimeout(function () {
+        sc.classList.add("typing-t");
+        typeInto(title, title.getAttribute("data-type"), 34, function () {
+          sc.classList.remove("typing-t");
+          sc.classList.add("s2");
+          setTimeout(function () {
+            sc.classList.add("typing");
+            typeInto(line, line.getAttribute("data-type"), 18, function () {
+              sc.classList.remove("typing");
+              setTimeout(function () { sc.classList.add("s3"); }, 250);
+            });
+          }, 500);
+        });
+      }, 300);
+    });
+  }, { threshold: 0.35 });
+  io.observe(sc);
+})();
