@@ -1265,6 +1265,15 @@ html.reveal-ready [data-reveal-item].is-visible { opacity: 1; transform: none; }
    pushing it off-center. Re-pin it. */
 .hero .scroll-cue { position: absolute; }
 
+/* The frosted nav sits in normal flow, so at the top of the page its glass
+   sampled the light body background and read gray; only after scrolling did
+   the hero slide under it and tint it purple. Pull every hero up beneath the
+   64px nav band so the glass is always over the gradient at the top. */
+.nav { margin-bottom: -64px; }
+.hero { padding-top: 152px; }
+.hero-cine { padding-top: 160px; }
+.page-hero { padding-top: 124px; }
+
 /* Store badges keep their spacing outside the cta-band too */
 .center .store-badge { margin: 6px 6px 0; }
 
