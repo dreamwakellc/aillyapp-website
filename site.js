@@ -1,4 +1,4 @@
-// Ailly — shared site behavior (vanilla JS, no dependencies)
+// Ailly shared site behavior (vanilla JS, no dependencies)
 
 (function () {
   var toggle = document.querySelector(".nav-toggle");
@@ -23,7 +23,7 @@
   });
 })();
 
-// Scroll reveal — gentle fade-up as each section enters the viewport.
+// Scroll reveal: gentle fade-up as each section enters the viewport.
 // Fully progressive: bails out (leaving everything visible) when the browser
 // has no IntersectionObserver or the user prefers reduced motion.
 (function () {
@@ -36,7 +36,7 @@
 
   targets.forEach(function (t) { t.setAttribute("data-reveal", ""); });
 
-  // Staggered per-item reveal inside collections — cards, steps, path stops,
+  // Staggered per-item reveal inside collections: cards, steps, path stops,
   // plans, and screenshot figures rise one after another (max 6 × 70ms so a
   // long grid never feels slow). The section itself still fades as a whole.
   var itemSel = ".grid > *, .steps > .step, .path > li, .shots > .shot";
@@ -66,14 +66,14 @@
   }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
 
   targets.forEach(function (t) {
-    // Anything already on-screen (e.g. the hero) shows immediately — no flash.
+    // Anything already on-screen (e.g. the hero) shows immediately, no flash.
     if (t.getBoundingClientRect().top < vh * 0.9) show(t);
     else io.observe(t);
   });
 })();
 
 
-// Hero scroll physics — the app's own rule ("heroes fade/scale away on scroll"),
+// Hero scroll physics: the app's own rule ("heroes fade/scale away on scroll"),
 // brought to the web. The opening content gently recedes as you scroll; the
 // device straightens and rises. rAF-throttled, passive, reduced-motion aware.
 (function () {
@@ -103,7 +103,7 @@
   frame();
 })();
 
-// The living answer sheet — when the showcase scene enters the viewport, each
+// The living answer sheet: when the showcase scene enters the viewport, each
 // field types its own answer, gets its green check, and the "ready to file"
 // stamp lands. Reduced motion (or old browsers): everything renders pre-filled.
 (function () {

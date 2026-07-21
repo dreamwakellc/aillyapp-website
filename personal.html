@@ -3,27 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Ailly Personal — Learn AI with a friendly daily guide</title>
+<title>Ailly Personal: Learn AI with a friendly daily guide</title>
 <meta name="description" content="New to AI? Take a 2-minute check-up, get your AI game plan with a grade, and build real skills with a daily lesson, a daily challenge, and Prompt Coach. Free to start.">
 <link rel="canonical" href="https://aillyapp.com/personal">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Ailly Personal — Learn AI with a friendly daily guide">
-<meta property="og:description" content="A 2-minute check-up, a personal game plan, and daily practice that makes AI feel simple. Free to start — no wrong answers.">
+<meta property="og:title" content="Ailly Personal: Learn AI with a friendly daily guide">
+<meta property="og:description" content="A 2-minute check-up, a personal game plan, and daily practice that makes AI feel simple. Free to start, no wrong answers.">
 <meta property="og:url" content="https://aillyapp.com/personal">
 <meta property="og:image" content="https://aillyapp.com/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Ailly — Your AI Ally for Life and Business">
+<meta property="og:image:alt" content="Ailly: Your AI Ally for Life and Business">
 <meta name="twitter:image" content="https://aillyapp.com/assets/og-image.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://aillyapp.com/#org","name":"Ailly","url":"https://aillyapp.com/","logo":"https://aillyapp.com/assets/mascot.png","sameAs":["https://dreamwakelabs.com/"]},{"@type":"WebSite","@id":"https://aillyapp.com/#site","name":"Ailly","url":"https://aillyapp.com/","publisher":{"@id":"https://aillyapp.com/#org"}},{"@type":"WebPage","@id":"https://aillyapp.com/personal","url":"https://aillyapp.com/personal","name":"Ailly Personal — Learn AI with a friendly daily guide","description":"New to AI? Take a 2-minute check-up, get your AI game plan with a grade, and build real skills with a daily lesson, a daily challenge, and Prompt Coach. Free to start.","isPartOf":{"@id":"https://aillyapp.com/#site"},"publisher":{"@id":"https://aillyapp.com/#org"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://aillyapp.com/#org","name":"Ailly","url":"https://aillyapp.com/","logo":"https://aillyapp.com/assets/mascot.png","sameAs":["https://dreamwakelabs.com/"]},{"@type":"WebSite","@id":"https://aillyapp.com/#site","name":"Ailly","url":"https://aillyapp.com/","publisher":{"@id":"https://aillyapp.com/#org"}},{"@type":"WebPage","@id":"https://aillyapp.com/personal","url":"https://aillyapp.com/personal","name":"Ailly Personal: Learn AI with a friendly daily guide","description":"New to AI? Take a 2-minute check-up, get your AI game plan with a grade, and build real skills with a daily lesson, a daily challenge, and Prompt Coach. Free to start.","isPartOf":{"@id":"https://aillyapp.com/#site"},"publisher":{"@id":"https://aillyapp.com/#org"}}]}</script>
 <meta name="theme-color" content="#1A237E">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" as="image" href="/assets/mascot.png">
+<link rel="preload" as="image" href="/assets/screens/personal-home.jpg">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=18">
+<link rel="stylesheet" href="/styles.css?v=19">
 </head>
 <body>
 
@@ -31,7 +33,7 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <a class="nav-logo" href="/"><img src="/assets/wordmark.png" alt="Ailly — home"></a>
+    <a class="nav-logo" href="/"><img src="/assets/wordmark.png" alt="Ailly home"></a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu"><span class="bars"></span></button>
     <nav class="nav-menu" id="navMenu" aria-label="Main">
       <ul class="nav-links">
@@ -48,12 +50,16 @@
 
 <main id="main">
 
-  <!-- HERO -->
-  <section class="hero">
-    <img class="hero-mascot float" src="/assets/mascot.png" alt="Ailly mascot — a friendly speech-bubble robot with a lightning bolt">
+  <!-- HERO: full-viewport lane cinema, recedes on scroll -->
+  <section class="hero hero-cine hero-lane">
+    <div class="hero-glow hg1"></div>
+    <div class="hero-glow hg2"></div>
+    <div class="hero-glow hg3"></div>
+    <div class="hero-anim" data-hero>
+    <img class="hero-mascot float" src="/assets/mascot.png" alt="Ailly mascot, a friendly speech-bubble robot with a lightning bolt">
     <div><span class="chip">Ailly Personal</span></div>
     <h1>New to AI? Perfect. Start here.</h1>
-    <p class="hero-sub">Two minutes of friendly questions, and Ailly builds your AI game plan — then helps you get a little better every day. No experience needed, no wrong answers.</p>
+    <p class="hero-sub">Two minutes of friendly questions, and Ailly builds your AI game plan. Then it helps you get a little better every day. No experience needed, no wrong answers.</p>
     <div class="jobs" aria-hidden="false"><span style="cursor:default">✓ Your AI grade in 2 minutes</span><span style="cursor:default">✓ A plan made for your life</span><span style="cursor:default">✓ One small win a day</span></div>
     <div class="hero-ctas">
       <!-- TEMP: swap to App Store link when live (see comment in index.html hero). -->
@@ -64,63 +70,70 @@
       <span class="store-badge"><svg viewBox="0 0 512 512" aria-hidden="true" fill="currentColor"><path d="M104 64l336 192-336 192V64z"/></svg><span><span class="sb-top">Coming soon to</span><span class="sb-bottom">Google Play</span></span></span>
       <a class="btn btn-ghost" href="#start">See how it works</a>
     </div>
+    </div>
+    <div class="hero-stage" data-hero-phone>
+      <span class="phone hp hp-left" aria-hidden="true"><img src="/assets/screens/gameplan.jpg" alt="" loading="eager"></span>
+      <span class="phone hp hp-center"><img src="/assets/screens/personal-home.jpg" alt="The Ailly home screen: a friendly daily feed with today's lesson, challenge, and prompt drill" loading="eager" fetchpriority="high"></span>
+      <span class="phone hp hp-right" aria-hidden="true"><img src="/assets/screens/dark-home.jpg" alt="" loading="eager"></span>
+    </div>
+    <div class="scroll-cue" aria-hidden="true"></div>
   </section>
 
-  <!-- CHAPTER 1 — the check-up -->
-  <section class="chapter chapter-personal chapter-xl" id="start">
+  <!-- CHAPTER 1: the check-up -->
+  <section class="chapter chapter-personal chapter-xl after-hero" id="start">
     <div class="chapter-inner">
       <div class="chapter-copy">
         <p class="chapter-kicker">Step one · The check-up</p>
         <h2>Two minutes. A few honest questions.</h2>
-        <p class="chapter-lede">No experience needed and no wrong answers — Ailly just learns where you are with AI today, so everything after is made for you.</p>
+        <p class="chapter-lede">No experience needed and no wrong answers. Ailly just learns where you are with AI today, so everything after is made for you.</p>
       </div>
       <div class="chapter-media">
-        <span class="phone"><img src="/assets/screens/personal-home.jpg" alt="The Ailly home screen — a friendly daily feed" loading="lazy"></span>
+        <span class="phone"><img src="/assets/screens/personal-home.jpg" alt="The Ailly home screen: a friendly daily feed" loading="lazy"></span>
       </div>
     </div>
   </section>
 
-  <!-- CHAPTER 2 — the game plan -->
+  <!-- CHAPTER 2: the game plan -->
   <section class="chapter chapter-alt chapter-xl">
     <div class="chapter-inner chapter-reverse">
       <div class="chapter-copy">
         <p class="chapter-kicker">Step two · Your game plan</p>
         <h2>A plan with your grade on it.</h2>
-        <p class="chapter-lede">See where you stand, what to learn first, and where AI helps most — ranked by impact, in plain words you'll actually use.</p>
+        <p class="chapter-lede">See where you stand, what to learn first, and where AI helps most. Everything is ranked by impact, in plain words you'll actually use.</p>
       </div>
       <div class="chapter-media">
-        <span class="phone"><img src="/assets/screens/gameplan.jpg" alt="Your AI game plan — a score out of 100 with a grade" loading="lazy"></span>
+        <span class="phone"><img src="/assets/screens/gameplan.jpg" alt="Your AI game plan: a score out of 100 with a grade" loading="lazy"></span>
       </div>
     </div>
   </section>
 
-  <!-- CHAPTER 3 — daily practice -->
+  <!-- CHAPTER 3: daily practice -->
   <section class="chapter chapter-personal chapter-xl">
     <div class="chapter-inner">
       <div class="chapter-copy">
         <p class="chapter-kicker">Step three · Every day</p>
         <h2>Three small wins a day.</h2>
-        <p class="chapter-lede">A short lesson, a real challenge, and a Prompt Coach drill. A few minutes, a real skill — and it never feels like homework.</p>
+        <p class="chapter-lede">A short lesson, a real challenge, and a Prompt Coach drill. A few minutes a day, a real skill, and it never feels like homework.</p>
       </div>
       <div class="chapter-media">
-        <span class="phone"><img src="/assets/screens/dark-home.jpg" alt="The daily practice feed — lesson, challenge, and prompt drill" loading="lazy"></span>
+        <span class="phone"><img src="/assets/screens/dark-home.jpg" alt="The daily practice feed: lesson, challenge, and prompt drill" loading="lazy"></span>
       </div>
     </div>
   </section>
 
-  <!-- STAGE — the fluency score -->
+  <!-- STAGE: the fluency score -->
   <section class="stage">
     <p class="stage-kicker">Your AI Fluency score</p>
     <div class="stage-num">72</div>
     <h2>Watch it climb.</h2>
-    <p>One number for your real skills — understanding, judgment, know-how. Every lesson and challenge nudges it up. Progress you can point at.</p>
+    <p>One number for your real skills: understanding, judgment, know-how. Every lesson and challenge nudges it up. Progress you can point at.</p>
   </section>
 
   <!-- FREE VS PRO -->
   <section class="section section-narrow">
     <p class="kicker">Free to start</p>
     <h2>Start free. Go further with Ailly Pro.</h2>
-    <p class="lede">The check-up, your game plan, and daily practice are free — no card, no catch. When you're ready for more, Pro deepens the journey.</p>
+    <p class="lede">The check-up, your game plan, and daily practice are free. No card, no catch. When you're ready for more, Pro deepens the journey.</p>
     <div class="grid grid-2">
       <div class="plan">
         <span class="plan-lane">Free</span>
@@ -129,17 +142,17 @@
           <li>The 2-minute check-up</li>
           <li>Your AI game plan with a grade</li>
           <li>Daily lesson and daily challenge</li>
-          <li>Prompt Coach — one drill a day</li>
+          <li>Prompt Coach, one drill a day</li>
           <li>Your AI Fluency score</li>
         </ul>
-        <p class="finePrint">Free means free — start today, keep it as long as you like.</p>
+        <p class="finePrint">Free means free. Start today and keep it as long as you like.</p>
       </div>
       <div class="plan">
         <span class="plan-lane">Ailly Pro · 7 days free</span>
         <h3>A journey that evolves with you</h3>
         <ul>
           <li>Weekly check-ins that reshape your journey around your life</li>
-          <li>Daily lessons personalized to you — your goals, your pace</li>
+          <li>Daily lessons personalized to you: your goals, your pace</li>
           <li>Deeper Prompt Coach practice</li>
           <li>The full evolving weekly journey, week after week</li>
         </ul>
@@ -151,7 +164,7 @@
   <!-- CLOSING CTA -->
   <section class="cta-band">
     <h2>Two minutes from your first game plan</h2>
-    <p>No experience needed. No jargon. No wrong answers — just a friendly place to start.</p>
+    <p>No experience needed. No jargon. No wrong answers. Just a friendly place to start.</p>
     <!-- TEMP: swap to App Store link when live. -->
     <span class="store-badge">
       <svg viewBox="0 0 384 512" aria-hidden="true" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.7-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
@@ -167,7 +180,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="/assets/mascot.png" alt="">
-        <p>Ailly — your AI ally for life and business. Plain-language AI guidance for you, your business, and your whole company.</p>
+        <p>Your AI ally for life and business. Plain-language AI guidance for you, your business, and your whole company.</p>
       </div>
       <nav aria-label="Product">
         <h4>Product</h4>
@@ -188,7 +201,7 @@
           <li><a href="/terms">Terms of use</a></li>
                 <li><a href="mailto:support@aillyapp.com">Contact</a></li>
           <li><a href="https://dreamwakelabs.com" rel="noopener">Dreamwake Labs</a></li>
-          <li><a href="https://dailyrung.com" rel="noopener">Rung — our daily word game</a></li>
+          <li><a href="https://dailyrung.com" rel="noopener">Rung, our daily word game</a></li>
         </ul>
       </nav>
     </div>

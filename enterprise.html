@@ -3,38 +3,40 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Ailly Enterprise — AI readiness for your whole company</title>
+<title>Ailly Enterprise: AI readiness for your whole company</title>
 <meta name="description" content="Ailly interviews every employee, grades your AI readiness across six dimensions, and delivers a board-ready report plus a 6-month program built for your company.">
 <link rel="canonical" href="https://aillyapp.com/enterprise">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Ailly Enterprise — AI readiness for your whole company">
-<meta property="og:description" content="12-minute interviews, a graded six-dimension AI posture report, and a 6-month program that proves the climb — in numbers your board understands.">
+<meta property="og:title" content="Ailly Enterprise: AI readiness for your whole company">
+<meta property="og:description" content="12-minute interviews, a graded six-dimension AI posture report, and a 6-month program that proves the climb, in numbers your board understands.">
 <meta property="og:url" content="https://aillyapp.com/enterprise">
 <meta property="og:image" content="https://aillyapp.com/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Ailly — Your AI Ally for Life and Business">
+<meta property="og:image:alt" content="Ailly: Your AI Ally for Life and Business">
 <meta name="twitter:image" content="https://aillyapp.com/assets/og-image.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://aillyapp.com/#org","name":"Ailly","url":"https://aillyapp.com/","logo":"https://aillyapp.com/assets/mascot.png","sameAs":["https://dreamwakelabs.com/"]},{"@type":"WebSite","@id":"https://aillyapp.com/#site","name":"Ailly","url":"https://aillyapp.com/","publisher":{"@id":"https://aillyapp.com/#org"}},{"@type":"WebPage","@id":"https://aillyapp.com/enterprise","url":"https://aillyapp.com/enterprise","name":"Ailly Enterprise — AI readiness for your whole company","description":"Ailly interviews every employee, grades your AI readiness across six dimensions, and delivers a board-ready report plus a 6-month program built for your company.","isPartOf":{"@id":"https://aillyapp.com/#site"},"publisher":{"@id":"https://aillyapp.com/#org"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://aillyapp.com/#org","name":"Ailly","url":"https://aillyapp.com/","logo":"https://aillyapp.com/assets/mascot.png","sameAs":["https://dreamwakelabs.com/"]},{"@type":"WebSite","@id":"https://aillyapp.com/#site","name":"Ailly","url":"https://aillyapp.com/","publisher":{"@id":"https://aillyapp.com/#org"}},{"@type":"WebPage","@id":"https://aillyapp.com/enterprise","url":"https://aillyapp.com/enterprise","name":"Ailly Enterprise: AI readiness for your whole company","description":"Ailly interviews every employee, grades your AI readiness across six dimensions, and delivers a board-ready report plus a 6-month program built for your company.","isPartOf":{"@id":"https://aillyapp.com/#site"},"publisher":{"@id":"https://aillyapp.com/#org"}}]}</script>
 <meta name="theme-color" content="#1A237E">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" as="image" href="/assets/mascot.png">
+<link rel="preload" as="image" href="/assets/screens/report.jpg">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=18">
+<link rel="stylesheet" href="/styles.css?v=19">
 <style>
-  /* Enterprise refinements: report indigo on light surfaces, cover gold on navy —
+  /* Enterprise refinements: report indigo on light surfaces, cover gold on navy,
      the app's posture report is the reference. Serif is reserved for REPORT
-     artifacts (grade seals, money) — page chrome stays rounded. */
+     artifacts (grade seals, money); page chrome stays rounded. */
   .ent .kicker { color: var(--ent-ink); }
   .dim-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
   .dim {
     background: #fff; border-radius: 16px; padding: 22px 16px 18px; text-align: center;
     box-shadow: var(--shadow-card);
   }
-  /* The grade seal — serif letter in its band color, like the report scorecard. */
+  /* The grade seal: serif letter in its band color, like the report scorecard. */
   .dim .seal {
     width: 52px; height: 52px; border-radius: 50%; margin: 0 auto 12px;
     display: flex; align-items: center; justify-content: center;
@@ -54,7 +56,7 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <a class="nav-logo" href="/"><img src="/assets/wordmark.png" alt="Ailly — home"></a>
+    <a class="nav-logo" href="/"><img src="/assets/wordmark.png" alt="Ailly home"></a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu"><span class="bars"></span></button>
     <nav class="nav-menu" id="navMenu" aria-label="Main">
       <ul class="nav-links">
@@ -72,33 +74,42 @@
 <main id="main">
 
   <!-- HERO -->
-  <section class="hero hero-ent">
-    <img class="hero-mascot float" src="/assets/mascot.png" alt="Ailly mascot — a friendly speech-bubble robot with a lightning bolt">
+  <section class="hero hero-ent hero-cine hero-lane">
+    <div class="hero-glow hg1"></div>
+    <div class="hero-glow hg2"></div>
+    <div class="hero-glow hg3"></div>
+    <div class="hero-anim" data-hero>
+    <img class="hero-mascot float" src="/assets/mascot.png" alt="Ailly mascot, a friendly speech-bubble robot with a lightning bolt">
     <div><span class="chip chip-gold">Ailly Enterprise</span></div>
     <h1>Know exactly where your company stands on AI.</h1>
-    <p class="hero-sub">Every employee interviewed, six dimensions graded, a board-ready plan — name by name.</p>
+    <p class="hero-sub">Every employee interviewed, six dimensions graded, a board-ready plan, name by name.</p>
     <div class="jobs" aria-hidden="false"><span style="cursor:default">✓ Every employee graded</span><span style="cursor:default">✓ Hidden hours quantified</span><span style="cursor:default">✓ Proof your board can read</span></div>
     <div class="hero-ctas">
       <a class="btn btn-white" href="/sample-report.pdf">Read a sample report</a>
-        <a class="btn btn-ghost" href="mailto:support@aillyapp.com?subject=Ailly%20Enterprise%20%E2%80%94%20request%20access">Request access</a>
+        <a class="btn btn-ghost" href="mailto:support@aillyapp.com?subject=Ailly%20Enterprise%3A%20request%20access">Request access</a>
     </div>
+    </div>
+    <div class="hero-stage hero-stage-solo" data-hero-phone>
+      <span class="phone hp hp-center"><img src="/assets/screens/report.jpg" alt="A confidential AI posture report cover with a readiness grade seal" loading="eager" fetchpriority="high"></span>
+    </div>
+    <div class="scroll-cue" aria-hidden="true"></div>
   </section>
 
-  <!-- STAGE — the reclaimable-hours stat -->
-  <section class="stage stage-ent">
+  <!-- STAGE: the reclaimable-hours stat -->
+  <section class="stage stage-ent after-hero">
     <p class="stage-kicker">Reclaimable hours a week</p>
     <div class="stage-num">29–32</div>
     <h2>Hiding in plain sight.</h2>
-    <p>What the sample company found in their own team's words — most of a full-time hire, recovered without hiring. Your report shows the same arithmetic, name by name.</p>
+    <p>What the sample company found in their own team's words: most of a full-time hire, recovered without hiring. Your report shows the same arithmetic, name by name.</p>
   </section>
 
-  <!-- CHAPTER — the report -->
+  <!-- CHAPTER: the report -->
   <section class="chapter chapter-enterprise chapter-xl">
     <div class="chapter-inner">
       <div class="chapter-copy">
         <p class="chapter-kicker">The deliverable</p>
         <h2>A report your board can read.</h2>
-        <p class="chapter-lede">Graded across six dimensions, backed by evidence from your team's own words — confidential, and built for the room where decisions get made.</p>
+        <p class="chapter-lede">Graded across six dimensions and backed by evidence from your team's own words. Confidential, and built for the room where decisions get made.</p>
         <a class="chapter-cta" href="/sample-report.pdf">Read a sample report</a>
       </div>
       <div class="chapter-media">
@@ -111,11 +122,11 @@
   <section class="section section-narrow">
     <p class="kicker">How it works</p>
     <h2>Three steps, mostly done by your people in their own words</h2>
-    <p class="lede">No workshops, no consultants camped in your conference room — and nothing for IT to install.</p>
+    <p class="lede">No workshops, no consultants camped in your conference room, and nothing for IT to install.</p>
     <div class="steps">
       <div class="step"><div>
         <h3>Every employee takes a ~12-minute interview</h3>
-        <p>A private link in their browser — no install.</p>
+        <p>A private link in their browser. No install.</p>
       </div></div>
       <div class="step"><div>
         <h3>Ailly writes your graded posture report</h3>
@@ -132,7 +143,7 @@
   <section class="section section-narrow">
     <p class="kicker">The report</p>
     <h2>Graded across six dimensions</h2>
-    <p class="lede">Every grade comes with evidence from your own team's words — not a generic maturity model.</p>
+    <p class="lede">Every grade comes with evidence from your own team's words, not a generic maturity model.</p>
     <div class="dim-grid" role="list">
       <div class="dim" role="listitem" style="--band:var(--grade-c)"><span class="seal" aria-hidden="true">C-</span><span class="nm">Workforce AI fluency</span><span class="bar"><i style="width:50%"></i></span><span class="sc">50/100 · Developing</span></div>
       <div class="dim" role="listitem" style="--band:var(--grade-f)"><span class="seal" aria-hidden="true">F</span><span class="nm">Current AI adoption</span><span class="bar"><i style="width:24%"></i></span><span class="sc">24/100 · At risk</span></div>
@@ -141,7 +152,7 @@
       <div class="dim" role="listitem" style="--band:var(--grade-d)"><span class="seal" aria-hidden="true">D</span><span class="nm">Data &amp; tooling</span><span class="bar"><i style="width:44%"></i></span><span class="sc">44/100 · Early</span></div>
       <div class="dim" role="listitem" style="--band:var(--grade-f)"><span class="seal" aria-hidden="true">F</span><span class="nm">Governance &amp; risk</span><span class="bar"><i style="width:20%"></i></span><span class="sc">20/100 · At risk</span></div>
     </div>
-    <p class="dim-note center">Grades shown are from the fictional sample company's report — yours come from your team's real interviews.</p>
+    <p class="dim-note center">Grades shown are from the fictional sample company's report. Yours come from your team's real interviews.</p>
     <p style="margin-top:20px"><a class="btn btn-navy" href="/sample-report.pdf">Read a sample report (PDF)</a></p>
   </section>
 
@@ -150,10 +161,10 @@
     <p class="kicker">What you get</p>
     <h2>A program, not a PDF and a handshake</h2>
     <div class="grid grid-4" style="text-align:left; margin-top:34px">
-      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></svg></div><h3>Live readiness dashboard</h3><p>Every team, graded and trending — plus who's practicing.</p></div>
-      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></div><h3>Board-ready PDF report</h3><p>Confidential, graded, evidence-based — for leadership.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></svg></div><h3>Live readiness dashboard</h3><p>Every team, graded and trending, plus who's practicing.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></div><h3>Board-ready PDF report</h3><p>Confidential, graded, and evidence-based, for leadership.</p></div>
       <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 4 10 5-10 5L2 9z"/><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/></svg></div><h3>Training for every employee</h3><p>A personal AI plan and guided practice per person.</p></div>
-      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div><h3>Three assessments over 6 months</h3><p>Baseline, mid-point, final — improvement measured, not claimed.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div><h3>Three assessments over 6 months</h3><p>Baseline, mid-point, final: improvement measured, not claimed.</p></div>
     </div>
   </section>
 
@@ -162,7 +173,7 @@
     <p class="kicker">Security &amp; privacy</p>
     <h2>You're trusting us with how your company works</h2>
     <p class="lede">We treat that accordingly.</p>
-    <div class="sec-row"><span class="sec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><p><b>Private by design.</b> Leadership sees levels and opportunities — never word-for-word answers.</p></div>
+    <div class="sec-row"><span class="sec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><p><b>Private by design.</b> Leadership sees levels and opportunities, never word-for-word answers.</p></div>
     <div class="sec-row"><span class="sec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg></span><p><b>Your data stays yours.</b> Encrypted on Google Cloud, scoped to you, never used to train models.</p></div>
     <div class="sec-row"><span class="sec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-4z"/><path d="M13 6v12" stroke-dasharray="2 2.4"/></svg></span><p><b>Single-use invites.</b> Every seat is attributable; a leaked code can't be reused.</p></div>
     <div class="sec-row"><span class="sec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M6 7l1 13h10l1-13M10 11v6M14 11v6"/></svg></span><p><b>Deletable on request.</b> Ask, and your company's data is fully removed.</p></div>
@@ -171,10 +182,10 @@
   <!-- CLOSING CTA -->
   <section class="cta-band cta-ent">
     <h2>See what your team would tell you</h2>
-    <p>Start with the sample report — then run the real thing on your own company.</p>
+    <p>Start with the sample report, then run the real thing on your own company.</p>
     <div class="hero-ctas" style="margin-top:0">
       <a class="btn btn-white" href="/sample-report.pdf">Read a sample report</a>
-        <a class="btn btn-ghost" href="mailto:support@aillyapp.com?subject=Ailly%20Enterprise%20%E2%80%94%20request%20access">Request access</a>
+        <a class="btn btn-ghost" href="mailto:support@aillyapp.com?subject=Ailly%20Enterprise%3A%20request%20access">Request access</a>
     </div>
   </section>
 
@@ -185,7 +196,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="/assets/mascot.png" alt="">
-        <p>Ailly — your AI ally for life and business. Plain-language AI guidance for you, your business, and your whole company.</p>
+        <p>Your AI ally for life and business. Plain-language AI guidance for you, your business, and your whole company.</p>
       </div>
       <nav aria-label="Product">
         <h4>Product</h4>
@@ -207,7 +218,7 @@
           <li><a href="/terms">Terms of use</a></li>
                 <li><a href="mailto:support@aillyapp.com">Contact</a></li>
           <li><a href="https://dreamwakelabs.com" rel="noopener">Dreamwake Labs</a></li>
-          <li><a href="https://dailyrung.com" rel="noopener">Rung — our daily word game</a></li>
+          <li><a href="https://dailyrung.com" rel="noopener">Rung, our daily word game</a></li>
         </ul>
       </nav>
     </div>

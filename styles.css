@@ -1,5 +1,5 @@
 /* ============================================================
-   Ailly — shared site styles
+   Ailly shared site styles
    Brand: Quicksand everywhere; Source Serif 4 for enterprise
    headlines only. Gradient stage: navy → deep purple.
    ============================================================ */
@@ -269,7 +269,7 @@ a { color: var(--navy); }
 }
 .btn-gold:hover { box-shadow: 0 9px 24px rgba(169, 118, 42, .4); }
 
-/* App Store "coming soon" badge — one shared element.
+/* App Store "coming soon" badge: one shared element.
    When the app goes live, swap the <span class="store-badge"> for an
    <a class="store-badge" href="APP_STORE_URL"> everywhere. */
 .store-badge {
@@ -450,7 +450,7 @@ main { display: block; }
 
 .steps-gold .step::before { background: linear-gradient(135deg, var(--biz-gold-1), var(--biz-gold-2)); }
 
-/* Launch path (business) — vertical timeline, horizontal on wide screens */
+/* Launch path (business): vertical timeline, horizontal on wide screens */
 .path { counter-reset: p; list-style: none; display: grid; gap: 16px; }
 .path li {
   position: relative;
@@ -542,7 +542,7 @@ main { display: block; }
 .plan-business .n { color: var(--biz-gold-1); }
 
 /* The enterprise plan wears the report cover: deep navy gradient + glow,
-   white type. Gold is jewelry, not paint — exactly two gold moments (the
+   white type. Gold is jewelry, not paint: exactly two gold moments (the
    lane eyebrow and the founding line); price and checks stay white so the
    card reads premium, not brassy. */
 .plan-enterprise {
@@ -554,7 +554,7 @@ main { display: block; }
 }
 .plan-enterprise .plan-lane { color: var(--ent-gold); }
 .plan-enterprise .plan-note { color: rgba(255, 255, 255, .65); }
-/* Price font matches the other plans — side by side, prices must read as one
+/* Price font matches the other plans. Side by side, prices must read as one
    family (serif here looks off next to Quicksand numerals). Serif is reserved
    for INSIDE report artifacts: grade seals, the report cover. */
 .plan-enterprise .n { color: #fff; }
@@ -625,7 +625,7 @@ main { display: block; }
   padding: 72px 24px;
 }
 .cta-band.cta-ent { background: var(--ent-navy); background-image: var(--grad-ent); }
-/* Badges in the CTA bands are loose inline spans (no flex wrapper) — give them
+/* Badges in the CTA bands are loose inline spans (no flex wrapper), so give them
    real separation so the pair never touches when it wraps on phones. */
 .cta-band .store-badge { margin: 6px 6px 0; }
 .cta-band h2 { font-size: clamp(24px, 3.8vw, 34px); font-weight: 700; margin-bottom: 12px; }
@@ -638,8 +638,8 @@ main { display: block; }
 .prose p { font-size: 15px; line-height: 1.7; color: var(--body); }
 .prose .updated { font-size: 13px; color: var(--faint); margin-bottom: 4px; }
 
-.page-hero { padding: 52px 24px 56px; }
-.page-hero h1 { font-size: clamp(28px, 4.5vw, 38px); }
+.page-hero { padding: 60px 24px 64px; }
+.page-hero h1 { font-size: clamp(32px, 5vw, 48px); }
 
 /* ============================== FOOTER ============================== */
 
@@ -679,7 +679,7 @@ main { display: block; }
 .pill { background: #EDEFFF; color: var(--navy); font-size: 13.5px; font-weight: 700; padding: 8px 15px; border-radius: 99px; }
 .pill-gold-bg { background: #F7EED9; color: var(--biz-gold-1); }
 
-/* Score ring — small visual used on personal page */
+/* Score ring, a small visual used on personal page */
 .ring {
   width: 128px; height: 128px;
   margin: 0 auto 14px;
@@ -832,15 +832,15 @@ html.reveal-ready [data-reveal].is-visible { opacity: 1; transform: none; }
 .chapter-media { display: flex; justify-content: center; }
 .chapter-media .phone { width: min(300px, 74vw); }
 
-/* Personal — clean & warm */
+/* Personal: clean & warm */
 .chapter-personal { background: #fff; }
 
-/* Business — soft gold world */
+/* Business: soft gold world */
 .chapter-business { background: #FBF6EC; }
 .chapter-business .chapter-kicker,
 .chapter-business .chapter-cta { color: var(--biz-gold-1); }
 
-/* Enterprise — dark, authoritative stage */
+/* Enterprise: dark, authoritative stage */
 .chapter-enterprise { background: var(--ent-navy); background-image: var(--grad-ent); color: #fff; }
 .chapter-enterprise .chapter-lede { color: rgba(255, 255, 255, .82); }
 .chapter-enterprise .chapter-kicker,
@@ -869,7 +869,7 @@ html.reveal-ready [data-reveal].is-visible { opacity: 1; transform: none; }
 .chapter-business .chapter-media::before { background: radial-gradient(circle, rgba(201, 163, 74, .22), transparent 66%); }
 .chapter-enterprise .chapter-media::before { background: radial-gradient(circle, rgba(61, 90, 254, .35), transparent 66%); }
 
-/* ============================== STAGE — full-bleed stat / statement ============================== */
+/* ============================== STAGE: full-bleed stat / statement ============================== */
 .stage {
   background: var(--navy);
   background-image: var(--grad);
@@ -931,7 +931,7 @@ html.reveal-ready [data-reveal-item].is-visible { opacity: 1; transform: none; }
 
 
 /* ============================================================
-   CINEMA (2026-07-19 jaw-drop pass) — the Apple-grade layer.
+   CINEMA (2026-07-19 jaw-drop pass): the Apple-grade layer.
    Home hero goes full-viewport with scroll physics; a showcase
    scene proves the product by filling the filing sheet live.
    ============================================================ */
@@ -1192,3 +1192,45 @@ html.reveal-ready [data-reveal-item].is-visible { opacity: 1; transform: none; }
   .hero-cine .hero-mascot, .hero-cine h1, .hero-cine .hero-sub,
   .hero-cine .hero-ctas, .hero-cine .hero-stage { animation: none; }
 }
+
+
+/* ============================================================
+   LANE CINEMA (2026-07-20). Lane pages open like the home page:
+   full-viewport hero, staged entrance, scroll physics, a device
+   stage that overlaps into the first chapter.
+   ============================================================ */
+
+/* Lane heroes carry more content (chip, jobs strip, two CTAs), so the
+   headline steps down a size from the home hero and the stage sits closer. */
+.hero-lane { min-height: 88svh; }
+.hero-lane h1 { font-size: clamp(40px, 6.4vw, 80px); max-width: 940px; }
+.hero-lane .hero-sub { max-width: 620px; }
+.hero-lane .hero-ctas { margin-top: 28px; }
+.hero-lane .hero-stage { margin-top: 56px; }
+.hero-lane .chip { margin-bottom: 18px; }
+@media (max-width: 700px) { .hero-lane { min-height: 84svh; } }
+
+/* The chip and jobs strip join the staged entrance */
+.hero-cine .chip { animation: fade-in .8s ease .1s both; }
+.hero-cine .jobs { animation: rise-in .8s cubic-bezier(.16,.84,.44,1) .3s both; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-cine .chip, .hero-cine .jobs { animation: none; }
+}
+
+/* Sections a hero device overlaps into (the stage hangs 120 to 140px down) */
+.chapter.after-hero { padding-top: 180px; }
+.stage.after-hero { padding-top: 210px; }
+@media (max-width: 700px) {
+  .chapter.after-hero { padding-top: 150px; }
+  .stage.after-hero { padding-top: 170px; }
+}
+
+/* Per-lane glow tints. Business warms its third glow with burnished gold;
+   enterprise cools the first to the report-cover blue. */
+.hero-biz .hero-glow.hg3 { background: #C79A3E; opacity: .16; }
+.hero-ent .hero-glow.hg1 { background: #3D5AFE; opacity: .4; }
+.hero-ent .hero-glow.hg3 { background: #FFD54F; opacity: .09; }
+
+/* A single-phone stage (enterprise) reads best a touch larger */
+.hero-stage.hero-stage-solo { width: min(340px, 76vw); }
+@media (min-width: 980px) { .hero-stage.hero-stage-solo { width: 360px; } }

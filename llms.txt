@@ -1,11 +1,11 @@
 # Ailly
 
-> Ailly is a guided, step-by-step AI assistant app (iOS) for everyday people — especially beginners, older adults, and small business owners who find AI confusing. It works like TurboTax for AI: a short check-up, a personal game plan, then daily practice. No jargon, no wrong answers.
+> Ailly is a guided, step-by-step AI assistant app (iOS) for everyday people, especially beginners, older adults, and small business owners who find AI confusing. It works like TurboTax for AI: a short check-up, a personal game plan, then daily practice. No jargon, no wrong answers.
 
 ## Products and pricing
 
 - Ailly Personal: free to start. A 2-minute AI check-up, a graded personal game plan, a daily lesson, a daily challenge, and Prompt Coach (teaches how to ask AI for things). Optional Pro subscription for depth.
-- Ailly Business: free launch-readiness assessment. Ailly Launch ($159.99 one-time) takes a business from idea to official — plan, name, LLC answer sheets, documents, invoices, and an AI business advisor. Grow is $19.99/mo.
+- Ailly Business: free launch-readiness assessment. Ailly Launch ($159.99 one-time) takes a business from idea to official: plan, name, LLC answer sheets, documents, invoices, and an AI business advisor. Grow is $19.99/mo.
 - Ailly Enterprise: AI-readiness program for companies. Interviews every employee, grades readiness across six dimensions, delivers a board-ready report plus a 6-month program. Founding pricing $2,500 for 6 months including 5 people.
 
 ## Who it's for
@@ -14,14 +14,14 @@ People who feel left behind by AI: non-technical users, seniors, teachers, real-
 
 ## Key pages
 
-- https://aillyapp.com/ — overview
-- https://aillyapp.com/personal — Personal tier
-- https://aillyapp.com/business — Business tier
-- https://aillyapp.com/enterprise — Enterprise program
-- https://aillyapp.com/pricing — all pricing, plainly
-- https://aillyapp.com/support — FAQ and contact
-- https://aillyapp.com/ai-glossary — plain-English glossary of 36 AI terms (model, prompt, token, hallucination, agent…)
-- https://aillyapp.com/how-to-talk-to-ai — beginner guide to prompting: the four-part recipe, before/after examples, common mistakes
-- https://aillyapp.com/ai-for-teachers — practical AI uses for teachers with copy-paste prompts and privacy cautions
-- https://aillyapp.com/ai-for-real-estate-agents — practical AI uses for agents incl. fair-housing caution
-- https://aillyapp.com/ai-for-small-business-owners — practical AI uses for owners incl. data cautions
+- https://aillyapp.com/ : overview
+- https://aillyapp.com/personal : Personal tier
+- https://aillyapp.com/business : Business tier
+- https://aillyapp.com/enterprise : Enterprise program
+- https://aillyapp.com/pricing : all pricing, plainly
+- https://aillyapp.com/support : FAQ and contact
+- https://aillyapp.com/ai-glossary : plain-English glossary of 36 AI terms (model, prompt, token, hallucination, agent…)
+- https://aillyapp.com/how-to-talk-to-ai : beginner guide to prompting: the four-part recipe, before/after examples, common mistakes
+- https://aillyapp.com/ai-for-teachers : practical AI uses for teachers with copy-paste prompts and privacy cautions
+- https://aillyapp.com/ai-for-real-estate-agents : practical AI uses for agents incl. fair-housing caution
+- https://aillyapp.com/ai-for-small-business-owners : practical AI uses for owners incl. data cautions
