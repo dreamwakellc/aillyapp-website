@@ -178,7 +178,7 @@ a { color: var(--navy); }
 
 .hero.hero-ent { background: var(--ent-navy); background-image: var(--grad-ent); }
 
-.hero-mascot { width: 108px; margin-bottom: 18px; }
+.hero-mascot { width: 132px; margin-bottom: 20px; }
 
 .hero h1 {
   font-size: clamp(38px, 6.5vw, 64px);
@@ -947,7 +947,7 @@ html.reveal-ready [data-reveal-item].is-visible { opacity: 1; transform: none; }
   padding: 96px 24px 0;
 }
 .hero-cine .hero-anim { will-change: transform, opacity; }
-.hero-cine .hero-mascot { width: 132px; margin-bottom: 22px; }
+
 .hero-cine h1 {
   font-size: clamp(50px, 8.6vw, 104px);
   /* line-height >= 1.04 + bottom padding: with background-clip:text, glyph
@@ -1244,7 +1244,6 @@ html.reveal-ready [data-reveal-item].is-visible { opacity: 1; transform: none; }
    ============================================================ */
 
 .hero-quiet { min-height: 56svh; padding-bottom: 72px; }
-.hero-quiet .hero-mascot { width: 92px; margin-bottom: 14px; }
 .hero-quiet h1 { font-size: clamp(40px, 6vw, 76px); }
 @media (max-width: 700px) { .hero-quiet { min-height: 50svh; } }
 
@@ -1598,3 +1597,14 @@ html.reveal-ready .dim.is-anim .seal { opacity: 1; transform: none; }
   .ivscene .iv-card, .ivscene .iv-seal, .ivscene .iv-stamp,
   .dc-row .check, .dc-points, .cl-seal, .cl-col b { transition: none; }
 }
+
+/* Business/enterprise pages carry the briefcase mascot. Its face fills about
+   1.29x more canvas than the personal mascot, so it renders at matched size
+   (personal size divided by 1.29) per the design doctrine. */
+.hero-mascot.mascot-biz { width: 102px; }
+.cta-band .cta-mascot.mascot-biz { width: 65px; }
+.footer-mascot.mascot-biz { width: 42px; }
+
+/* The range dash in big stat numerals gets air on both sides (the tight
+   letter-spacing otherwise presses it into the digits) */
+.stage-num .num-dash { margin: 0 .09em; letter-spacing: 0; }
