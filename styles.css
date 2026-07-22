@@ -1860,6 +1860,9 @@ html.reveal-ready .dim.is-anim .seal { opacity: 1; transform: none; }
    ============================================================ */
 .scrub { background: #fff; overflow: visible; }
 .scrub.after-hero { padding-top: 150px; }
+/* Business lane flavor: the soft gold world, kickers to match */
+.scrub-biz { background: #FBF6EC; }
+.scrub-biz .chapter-kicker { color: var(--biz-gold-1); }
 .scrub-inner {
   max-width: 1040px; margin: 0 auto; padding: 0 24px;
   display: grid; grid-template-columns: 1.05fr .95fr; gap: 72px;
@@ -1893,6 +1896,9 @@ html.reveal-ready .dim.is-anim .seal { opacity: 1; transform: none; }
     /* Solid past the phone's bottom edge, then a short fade so passing
        copy slips under it instead of reading through the bezel. */
     background: linear-gradient(180deg, #fff calc(100% - 26px), rgba(255, 255, 255, 0));
+  }
+  .scrub-biz .scrub-stage {
+    background: linear-gradient(180deg, #FBF6EC calc(100% - 26px), rgba(251, 246, 236, 0));
   }
   .scrub-phone { width: min(180px, 46vw); }
   .scrub-steps .sstep { min-height: 54svh; text-align: center; align-items: center; }

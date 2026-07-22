@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=31">
+<link rel="stylesheet" href="/styles.css?v=32">
 </head>
 <body>
 
@@ -79,16 +79,32 @@
     <div class="scroll-cue" aria-hidden="true"></div>
   </section>
 
-  <!-- CHAPTER 1: one app for the whole business -->
-  <section class="chapter chapter-business chapter-xl after-hero">
-    <div class="chapter-inner">
-      <div class="chapter-copy">
-        <p class="chapter-kicker">One home for it all</p>
-        <h2>Your whole business, in one app.</h2>
-        <p class="chapter-lede">The plan, the paperwork, the money, and an advisor that never sleeps. From the first idea to the first invoice, it all lives here.</p>
+  <!-- THE STORY: one pinned phone, three steps scroll past it -->
+  <section class="scrub scrub-biz after-hero" id="story" data-scrub>
+    <div class="scrub-inner">
+      <div class="scrub-steps">
+        <div class="sstep">
+          <p class="chapter-kicker">Step one · What matters to you</p>
+          <h2>Rank what you want to win.</h2>
+          <p class="chapter-lede">A short interview: more revenue, less waste, happier customers, you pick. Ailly shapes everything after around your answers.</p>
+        </div>
+        <div class="sstep">
+          <p class="chapter-kicker">Step two · The path appears</p>
+          <h2>Idea to official, one screen.</h2>
+          <p class="chapter-lede">Your cockpit holds the whole road: plan, name and brand, paperwork, first customers. Every step knows what comes next.</p>
+        </div>
+        <div class="sstep">
+          <p class="chapter-kicker">Step three · The scary part, done</p>
+          <h2>Filing answers, filled in free.</h2>
+          <p class="chapter-lede">Every box on your state's formation form has your answer waiting, with the real fee and filing site up front, before you pay a cent. Launch unlocks the sheet and the walk to Submit.</p>
+        </div>
       </div>
-      <div class="chapter-media">
-        <span class="phone"><img src="/assets/screens/launch-path.jpg" alt="A business cockpit showing the path from idea to official" loading="lazy"></span>
+      <div class="scrub-stage">
+        <span class="phone scrub-phone" role="img" aria-label="The Ailly business app, step by step: priorities ranked in the short interview, then the cockpit path from idea to official, then the filing answer sheet with your answers filled in">
+          <img class="layer base" src="/assets/screens/ranking.jpg" alt="" loading="lazy">
+          <img class="layer" src="/assets/screens/launch-path.jpg" alt="" loading="lazy" aria-hidden="true">
+          <img class="layer" src="/assets/screens/filing-answers.jpg" alt="" loading="lazy" aria-hidden="true">
+        </span>
       </div>
     </div>
   </section>
@@ -122,20 +138,6 @@
         <p>A first-customers plan, plus AI shortcuts from week one.</p>
       </li>
     </ol>
-  </section>
-
-  <!-- CHAPTER 2: the filing answers -->
-  <section class="chapter chapter-business chapter-xl">
-    <div class="chapter-inner chapter-reverse">
-      <div class="chapter-copy">
-        <p class="chapter-kicker">The scary part, done for you</p>
-        <h2>Your filing answers, filled in before you pay a cent.</h2>
-        <p class="chapter-lede">A two-minute interview, and every box on your state's formation form has your answer waiting, with your state's real fee and filing site up front. One price unlocks the sheet and the walk to Submit.</p>
-      </div>
-      <div class="chapter-media">
-        <span class="phone"><img src="/assets/screens/filing-answers.jpg" alt="The filing answer sheet: business name filled in, remaining answers locked until Launch" loading="lazy"></span>
-      </div>
-    </div>
   </section>
 
   <!-- SHOWCASE: the paperwork writes itself -->
