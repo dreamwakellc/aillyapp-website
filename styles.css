@@ -1655,6 +1655,7 @@ html.reveal-ready .dim.is-anim .seal { opacity: 1; transform: none; }
   color: rgba(255, 255, 255, .85); font-size: 13px; margin-top: 14px;
 }
 .b-ask i { font-style: normal; }
+.b-ask span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 .b-seal {
   width: 46px; height: 46px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
@@ -1679,6 +1680,15 @@ html.reveal-ready .dim.is-anim .seal { opacity: 1; transform: none; }
 .b-widget span { font-size: 10px; font-weight: 700; margin-top: 4px; opacity: .8; }
 @media (max-width: 880px) {
   .bento { grid-template-columns: repeat(2, 1fr); }
+}
+/* iPhone: one confident column; every tile full-width and full-density */
+@media (max-width: 640px) {
+  .bento { grid-template-columns: 1fr; }
+  .b-2w { grid-column: auto; }
+  .b-2h { grid-row: auto; }
+  .b { padding: 24px 22px; }
+  .b h3 { font-size: 18px; }
+  .b p { font-size: 14.5px; }
 }
 
 /* --- The honest math: Launch vs. the big filing sites --- */
@@ -1776,8 +1786,19 @@ html.reveal-ready .dim.is-anim .seal { opacity: 1; transform: none; }
 }
 .b-stage .b-ask { background: rgba(255, 255, 255, .12); border: 1px solid rgba(255, 255, 255, .2); color: rgba(255, 255, 255, .75); }
 
+/* Every tile: artifact up top, words seated at the bottom, no dead zones */
+.b { display: flex; flex-direction: column; }
+.b > h3 { margin-top: auto; padding-top: 14px; }
+.b > h3 + p { margin-top: 0; }
+.b-stage > h3 { margin-top: 0; padding-top: 0; }
+
 /* Graded row (the app scorecard, miniature) */
 .mini-grade { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.mg-dims { display: grid; gap: 8px; }
+.mg-dim { display: flex; align-items: center; gap: 10px; font-size: 11.5px; font-weight: 700; color: var(--muted); }
+.mg-dim > span:first-child { flex: 0 0 88px; }
+.mg-minibar { display: block; flex: 1; height: 4px; border-radius: 2px; background: rgba(20, 27, 77, .08); overflow: hidden; }
+.mg-minibar i { display: block; height: 100%; border-radius: 2px; background: var(--grade-b); }
 .mini-grade .b-seal { margin: 0; }
 .mini-grade .mg-body { flex: 1; }
 .mini-grade .mg-score { font-size: 13px; font-weight: 700; color: var(--ink); }
@@ -1794,6 +1815,7 @@ html.reveal-ready .dim.is-anim .seal { opacity: 1; transform: none; }
 }
 .mini-week .done { background: #43A047; color: #fff; }
 .mini-week .today { background: linear-gradient(135deg, #FFE7A3, #FFC24D); color: #4E3200; }
+.b .mini-best { font-size: 12px; font-weight: 700; color: #B4530A; }
 
 /* Midnight advisor exchange */
 .mini-time { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: .12em; color: var(--faint); margin-bottom: 8px; }
@@ -1812,9 +1834,10 @@ html.reveal-ready .dim.is-anim .seal { opacity: 1; transform: none; }
 }
 .mini-renewal b { display: block; font-size: 13px; }
 .mini-renewal .ok { display: inline-block; margin-top: 6px; font-size: 11px; font-weight: 700; color: #2E7D32; background: #E8F5E9; border-radius: 99px; padding: 4px 10px; }
+.mini-renewal.mr-tight { margin-top: -6px; }
 
 /* Miniature report cover */
-.b-report { display: flex; gap: 18px; align-items: center; }
+.b-report { display: flex; flex-direction: row; gap: 18px; align-items: center; }
 .mini-cover {
   flex: 0 0 116px;
   background-image: linear-gradient(160deg, #0D1240 0%, #1A237E 62%, #283593 100%);
