@@ -1516,7 +1516,7 @@ html.reveal-ready .dim.is-anim .seal { opacity: 1; transform: none; }
 .dc-head b { font-size: 17px; display: block; }
 .dc-head > div > span { font-size: 12px; color: var(--faint); }
 .dc-streak {
-  display: inline-flex; align-items: center; gap: 5px;
+  display: inline-flex; align-items: center; gap: 5px; white-space: nowrap;
   background: #FFF3E0; color: #B4530A; border-radius: 99px;
   padding: 7px 13px; font-size: 13px; font-weight: 700;
   transition: transform .3s cubic-bezier(.34, 1.56, .64, 1);
@@ -2109,3 +2109,70 @@ html.reveal-ready .j-row:not(.on) { opacity: 0; transform: translateY(10px); }
   .mk-weak, .mk-c, .mk-note, .mk-seal,
   .j-row, .j-flip b, .j-tag { transition: none; animation: none; }
 }
+
+
+/* ============================================================
+   COMB PASS (2026-07-22): sitewide fit-and-finish from the
+   every-inch review. Phone-mock bottom vignette, mobile rhythm,
+   footer wrap fix, hero CTA stacking, before/after cards.
+   ============================================================ */
+
+/* Screenshots inside device frames end wherever the capture ended; a soft
+   bottom shade makes that cut read as device shading, not a rendering bug. */
+.chapter-media .phone::after, .scrub-phone::after, .gal .phone::after, .shot .phone::after {
+  content: ""; position: absolute; left: 10px; right: 10px; bottom: 10px;
+  height: 34px; border-radius: 0 0 30px 30px;
+  background: linear-gradient(180deg, rgba(13, 16, 42, 0), rgba(13, 16, 42, .22));
+  pointer-events: none;
+}
+.gal .phone, .shot .phone { position: relative; }
+
+/* Mobile rhythm: the desktop air reads as dead space on a 390px screen */
+@media (max-width: 640px) {
+  .section { padding: 60px 22px; }
+  .section-tight { padding-top: 42px; padding-bottom: 42px; }
+  .cinema { padding: 84px 22px; }
+  .stage { padding: 88px 22px; }
+}
+
+/* Footer rows fit one line on iPhone; no single-word orphans */
+@media (max-width: 480px) {
+  .footer-nav { gap: 6px 18px; }
+  .footer-nav a { font-size: 13.5px; }
+  .footer-sub { gap: 6px 14px; }
+  .footer-sub a { font-size: 12px; }
+}
+
+/* Hero CTAs stack as one centered column on small phones instead of the
+   ragged 1 + 2 wrap */
+@media (max-width: 480px) {
+  .hero-ctas { flex-direction: column; }
+  .hero-ctas .store-badge { width: 220px; justify-content: center; }
+}
+
+/* Gallery edges fade so peeking captions read as designed, not clipped */
+.gallery {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+}
+
+/* The Ask tile's conversation breathes to fill its two-row span */
+.b-2h.b-stage .mini-q { margin-top: auto; }
+
+/* How-to: the mistakes list carries its own gold checks; kill default discs */
+ul.impact { list-style: none; }
+
+/* How-to: before/after examples sit in cards like everything else */
+.ba {
+  background: #fff; border: 1px solid rgba(20, 26, 77, .08);
+  border-radius: 18px; padding: 18px 20px; margin-top: 16px;
+  box-shadow: var(--shadow-card);
+}
+.ba p + p { margin-top: 12px; }
+
+/* How-to: the makeover card centers in its column */
+.mkscene { margin-left: auto; margin-right: auto; }
+
+/* Four cards never orphan into a 3 + 1 grid */
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }

@@ -88,7 +88,9 @@
     var y = window.scrollY || 0;
     var vh = window.innerHeight || 800;
     if (hero) {
-      var p = Math.min(y / (vh * 0.6), 1);
+      // Fade begins only after real scroll intent (12% of a viewport), so the
+      // CTA row never reads as ghosted buttons while it is still front and center.
+      var p = Math.min(Math.max(y - vh * 0.12, 0) / (vh * 0.55), 1);
       hero.style.opacity = String(1 - p * 0.92);
       hero.style.transform = "translateY(" + (p * -30) + "px) scale(" + (1 - p * 0.06) + ")";
     }
@@ -359,9 +361,9 @@
   function playJourney(sc) {
     var rows = [].slice.call(sc.querySelectorAll(".j-row"));
     rows.forEach(function (r, i) {
-      setTimeout(function () { r.classList.add("on"); }, 150 + i * 150);
+      setTimeout(function () { r.classList.add("on"); }, 120 + i * 110);
     });
-    setTimeout(function () { sc.classList.add("swap"); }, 150 + rows.length * 150 + 550);
+    setTimeout(function () { sc.classList.add("swap"); }, 120 + rows.length * 110 + 450);
   }
   function settleJourney(sc) {
     [].slice.call(sc.querySelectorAll(".j-row")).forEach(function (r) { r.classList.add("on"); });
