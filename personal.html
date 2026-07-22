@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=30">
+<link rel="stylesheet" href="/styles.css?v=31">
 </head>
 <body>
 
@@ -147,6 +147,21 @@
     </div>
   </section>
 
+  <!-- THE JOURNEY: a plan that rewrites itself -->
+  <section class="section center" id="journey">
+    <p class="kicker">A plan that learns you</p>
+    <h2>Your journey rewrites itself.</h2>
+    <p class="lede">Every week, Ailly reads how your week really went, what clicked and what you skipped, and reshapes the weeks ahead. Nobody gets a canned course.</p>
+    <div class="jscene" data-scene="journey" role="img" aria-label="Demo: a six-week journey where weeks one and two are done, week three is this week, and week four rewrites itself from prompt drills to faster email writing based on last week's results">
+      <div class="j-row done"><span class="j-dot">&#10003;</span><div class="j-body"><span class="j-week">Week 1</span><b>The basics, no jargon</b></div></div>
+      <div class="j-row done"><span class="j-dot">&#10003;</span><div class="j-body"><span class="j-week">Week 2</span><b>Everyday asks</b></div></div>
+      <div class="j-row now"><span class="j-dot"></span><div class="j-body"><span class="j-week">Week 3</span><b>Writing with AI</b></div><span class="j-now">This week</span></div>
+      <div class="j-row next"><span class="j-dot"></span><div class="j-body"><span class="j-week">Week 4</span><span class="j-flip"><b class="j-old">Prompt drills, level 2</b><b class="j-new">Email, twice as fast</b></span></div><span class="j-tag">Rewritten for you</span></div>
+      <div class="j-row dim"><span class="j-dot"></span><div class="j-body"><span class="j-week">Week 5</span><b>Judgment: when to trust it</b></div></div>
+      <div class="j-row dim"><span class="j-dot"></span><div class="j-body"><span class="j-week">Week 6</span><b>Still forming&hellip;</b></div></div>
+    </div>
+  </section>
+
   <!-- STAGE: the fluency score, counting up -->
   <section class="stage">
     <p class="stage-kicker">Your AI Fluency score</p>
@@ -204,7 +219,6 @@
 
 <footer class="footer">
   <div class="footer-inner footer-min">
-    <img class="footer-mascot" src="/assets/mascot.png" alt="">
     <nav class="footer-nav" aria-label="Footer">
       <a href="/personal">Personal</a>
       <a href="/business">Business</a>
@@ -226,6 +240,6 @@
   </div>
 </footer>
 
-<script src="/site.js?v=15" defer></script>
+<script src="/site.js?v=16" defer></script>
 </body>
 </html>

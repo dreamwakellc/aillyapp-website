@@ -318,8 +318,58 @@
   function playClimb(sc) { sc.classList.add("go"); }
   function settleClimb(sc) { sc.classList.add("go"); }
 
-  var play = { interview: playInterview, day: playDay, climb: playClimb };
-  var settle = { interview: settleInterview, day: settleDay, climb: settleClimb };
+  function playAdvisor(sc) {
+    var txt = sc.querySelector(".adv-text");
+    sc.classList.add("typing");
+    typeInto(txt, txt.getAttribute("data-type"), 26, function () {
+      sc.classList.remove("typing");
+      setTimeout(function () { sc.classList.add("s2"); }, 300);
+      setTimeout(function () { sc.classList.add("s3"); }, 1500);
+      setTimeout(function () { sc.classList.add("s4"); }, 2500);
+    });
+  }
+  function settleAdvisor(sc) {
+    var txt = sc.querySelector(".adv-text");
+    txt.textContent = txt.getAttribute("data-type");
+    sc.classList.add("s3", "s4");
+  }
+
+  function playMakeover(sc) {
+    var txt = sc.querySelector(".mk-text");
+    var checks = [].slice.call(sc.querySelectorAll(".mk-c:not(.mk-skip)"));
+    setTimeout(function () { sc.classList.add("s1"); }, 250);
+    setTimeout(function () {
+      sc.classList.add("typing");
+      typeInto(txt, txt.getAttribute("data-type"), 16, function () {
+        sc.classList.remove("typing");
+        checks.forEach(function (c, i) {
+          setTimeout(function () { c.classList.add("on"); }, 350 + i * 300);
+        });
+        setTimeout(function () { sc.classList.add("s3"); }, 350 + checks.length * 300 + 250);
+      });
+    }, 850);
+  }
+  function settleMakeover(sc) {
+    var txt = sc.querySelector(".mk-text");
+    txt.textContent = txt.getAttribute("data-type");
+    [].slice.call(sc.querySelectorAll(".mk-c:not(.mk-skip)")).forEach(function (c) { c.classList.add("on"); });
+    sc.classList.add("s1", "s3");
+  }
+
+  function playJourney(sc) {
+    var rows = [].slice.call(sc.querySelectorAll(".j-row"));
+    rows.forEach(function (r, i) {
+      setTimeout(function () { r.classList.add("on"); }, 150 + i * 150);
+    });
+    setTimeout(function () { sc.classList.add("swap"); }, 150 + rows.length * 150 + 550);
+  }
+  function settleJourney(sc) {
+    [].slice.call(sc.querySelectorAll(".j-row")).forEach(function (r) { r.classList.add("on"); });
+    sc.classList.add("swap");
+  }
+
+  var play = { interview: playInterview, day: playDay, climb: playClimb, advisor: playAdvisor, makeover: playMakeover, journey: playJourney };
+  var settle = { interview: settleInterview, day: settleDay, climb: settleClimb, advisor: settleAdvisor, makeover: settleMakeover, journey: settleJourney };
 
   if (reduce || !("IntersectionObserver" in window)) {
     scenes.forEach(function (sc) { settle[sc.getAttribute("data-scene")](sc); });
