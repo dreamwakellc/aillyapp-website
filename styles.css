@@ -805,7 +805,7 @@ html.reveal-ready [data-reveal].is-visible { opacity: 1; transform: none; }
   color: var(--navy);
   margin-bottom: 14px;
 }
-.chapter h2 {
+.chapter h2, .scrub h2 {
   font-size: clamp(30px, 4.6vw, 46px);
   font-weight: 700;
   line-height: 1.08;
@@ -1852,3 +1852,52 @@ html.reveal-ready .dim.is-anim .seal { opacity: 1; transform: none; }
 /* The tall Ask tile fills its column: conversation up top, input pinned low */
 .b-2h.b-stage { display: flex; flex-direction: column; }
 .b-2h.b-stage .b-ask { margin-top: auto; }
+
+
+/* ============================================================
+   SCRUB STORY (2026-07-21): the pinned phone. The device stays
+   fixed while the three steps scroll past; the screen inside
+   crossfades to match the step. Collapses to a top-pinned phone
+   on iPhone. No JS: all steps visible, first screen showing.
+   ============================================================ */
+.scrub { background: #fff; overflow: visible; }
+.scrub.after-hero { padding-top: 150px; }
+.scrub-inner {
+  max-width: 1040px; margin: 0 auto; padding: 0 24px;
+  display: grid; grid-template-columns: 1.05fr .95fr; gap: 72px;
+}
+.scrub-steps .sstep {
+  min-height: 88svh;
+  display: flex; flex-direction: column; justify-content: center;
+  transition: opacity .45s ease;
+}
+.scrub-steps .sstep.dim { opacity: .28; }
+.scrub-stage {
+  position: sticky; top: 0; height: 100svh;
+  display: flex; align-items: center; justify-content: center;
+}
+.scrub-phone { position: relative; width: min(320px, 74vw); }
+.scrub-phone .layer { transition: opacity .55s ease; }
+.scrub-phone .layer:not(.base) {
+  position: absolute; top: 10px; left: 10px; /* 10px = the bezel padding */
+  width: calc(100% - 20px); height: calc(100% - 20px);
+  object-fit: cover; opacity: 0;
+}
+.scrub-phone .layer.on { opacity: 1; }
+.scrub-phone .layer.base.off { opacity: 0; }
+@media (max-width: 879px) {
+  .scrub-inner { grid-template-columns: 1fr; gap: 0; }
+  .scrub-stage {
+    position: sticky; top: 64px; height: auto;
+    padding: 14px 0 34px;
+    order: -1;
+    z-index: 2;
+    /* Solid past the phone's bottom edge, then a short fade so passing
+       copy slips under it instead of reading through the bezel. */
+    background: linear-gradient(180deg, #fff calc(100% - 26px), rgba(255, 255, 255, 0));
+  }
+  .scrub-phone { width: min(180px, 46vw); }
+  .scrub-steps .sstep { min-height: 54svh; text-align: center; align-items: center; }
+  .scrub-steps .chapter-lede { margin-left: auto; margin-right: auto; }
+  .scrub.after-hero { padding-top: 130px; }
+}

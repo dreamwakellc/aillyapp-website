@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=29">
+<link rel="stylesheet" href="/styles.css?v=30">
 </head>
 <body>
 
@@ -79,44 +79,32 @@
     <div class="scroll-cue" aria-hidden="true"></div>
   </section>
 
-  <!-- CHAPTER 1: the check-up -->
-  <section class="chapter chapter-personal chapter-xl after-hero" id="start">
-    <div class="chapter-inner">
-      <div class="chapter-copy">
-        <p class="chapter-kicker">Step one · The check-up</p>
-        <h2>Two minutes. A few honest questions.</h2>
-        <p class="chapter-lede">No experience needed and no wrong answers. Ailly just learns where you are with AI today, so everything after is made for you.</p>
+  <!-- THE STORY: one pinned phone, three steps scroll past it -->
+  <section class="scrub after-hero" id="start" data-scrub>
+    <div class="scrub-inner">
+      <div class="scrub-steps">
+        <div class="sstep">
+          <p class="chapter-kicker">Step one · The check-up</p>
+          <h2>Two minutes. A few honest questions.</h2>
+          <p class="chapter-lede">No experience needed and no wrong answers. Ailly just learns where you are with AI today, so everything after is made for you.</p>
+        </div>
+        <div class="sstep">
+          <p class="chapter-kicker">Step two · Your game plan</p>
+          <h2>A plan with your grade on it.</h2>
+          <p class="chapter-lede">See where you stand, what to learn first, and where AI helps most. Everything is ranked by impact, in plain words you'll actually use.</p>
+        </div>
+        <div class="sstep">
+          <p class="chapter-kicker">Step three · Every day</p>
+          <h2>Three small wins a day.</h2>
+          <p class="chapter-lede">A short lesson, a real challenge, and a Prompt Coach drill. A few minutes a day, a real skill, and it never feels like homework.</p>
+        </div>
       </div>
-      <div class="chapter-media">
-        <span class="phone"><video muted playsinline loop preload="none" poster="/assets/screens/personal-home.jpg" data-src="/assets/screens/personal-home.mp4" aria-label="The live Ailly home screen: the mascot floats above a friendly daily feed"></video></span>
-      </div>
-    </div>
-  </section>
-
-  <!-- CHAPTER 2: the game plan -->
-  <section class="chapter chapter-alt chapter-xl">
-    <div class="chapter-inner chapter-reverse">
-      <div class="chapter-copy">
-        <p class="chapter-kicker">Step two · Your game plan</p>
-        <h2>A plan with your grade on it.</h2>
-        <p class="chapter-lede">See where you stand, what to learn first, and where AI helps most. Everything is ranked by impact, in plain words you'll actually use.</p>
-      </div>
-      <div class="chapter-media">
-        <span class="phone"><video muted playsinline loop preload="none" poster="/assets/screens/gameplan.jpg" data-src="/assets/screens/gameplan.mp4" aria-label="The game plan reveal: Ailly opens and the score ring counts up to 68 with a Grade B minus"></video></span>
-      </div>
-    </div>
-  </section>
-
-  <!-- CHAPTER 3: daily practice -->
-  <section class="chapter chapter-personal chapter-xl">
-    <div class="chapter-inner">
-      <div class="chapter-copy">
-        <p class="chapter-kicker">Step three · Every day</p>
-        <h2>Three small wins a day.</h2>
-        <p class="chapter-lede">A short lesson, a real challenge, and a Prompt Coach drill. A few minutes a day, a real skill, and it never feels like homework.</p>
-      </div>
-      <div class="chapter-media">
-        <span class="phone"><img src="/assets/screens/dark-home.jpg" alt="The daily practice feed: lesson, challenge, and prompt drill" loading="lazy"></span>
+      <div class="scrub-stage">
+        <span class="phone scrub-phone" role="img" aria-label="The Ailly app, step by step: the friendly home feed, then your graded game plan with the score counting up, then the daily practice feed with today's lesson, challenge, and drill">
+          <video class="layer base" muted playsinline loop preload="none" poster="/assets/screens/personal-home.jpg" data-src="/assets/screens/personal-home.mp4" aria-hidden="true"></video>
+          <video class="layer" muted playsinline loop preload="none" poster="/assets/screens/gameplan.jpg" data-src="/assets/screens/gameplan.mp4" aria-hidden="true"></video>
+          <img class="layer" src="/assets/screens/dark-home.jpg" alt="" loading="lazy" aria-hidden="true">
+        </span>
       </div>
     </div>
   </section>
@@ -238,6 +226,6 @@
   </div>
 </footer>
 
-<script src="/site.js?v=14" defer></script>
+<script src="/site.js?v=15" defer></script>
 </body>
 </html>

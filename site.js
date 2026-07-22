@@ -342,7 +342,9 @@
 // approach the viewport. Reduced motion (or no IO) keeps the poster still.
 (function () {
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var vids = [].slice.call(document.querySelectorAll("video[data-src]"));
+  var vids = [].slice.call(document.querySelectorAll("video[data-src]")).filter(function (v) {
+    return !(v.closest && v.closest("[data-scrub]")); // the scrub player manages its own
+  });
   if (!vids.length || reduce || !("IntersectionObserver" in window)) return;
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
@@ -399,4 +401,36 @@
     });
   }, { threshold: 0.35 });
   io.observe(sc);
+})();
+
+
+// The pinned phone: as each story step crosses mid-viewport, the sticky
+// device crossfades to that step's screen (videos play only while active).
+(function () {
+  var scrub = document.querySelector("[data-scrub]");
+  if (!scrub || !("IntersectionObserver" in window)) return;
+  var steps = [].slice.call(scrub.querySelectorAll(".sstep"));
+  var layers = [].slice.call(scrub.querySelectorAll(".scrub-phone .layer"));
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function activate(i) {
+    layers.forEach(function (l, j) {
+      l.classList.toggle("on", j === i && j !== 0);
+      if (j === 0) l.classList.toggle("off", i !== 0);
+      var v = l.tagName === "VIDEO" ? l : null;
+      if (v) {
+        if (j === i && !reduce) {
+          if (!v.src && v.getAttribute("data-src")) v.src = v.getAttribute("data-src");
+          v.play().catch(function () {});
+        } else if (v.src) { v.pause(); }
+      }
+    });
+    steps.forEach(function (s, j) { s.classList.toggle("dim", j !== i); });
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) activate(steps.indexOf(e.target));
+    });
+  }, { rootMargin: "-45% 0px -45% 0px" });
+  steps.forEach(function (s) { io.observe(s); });
+  activate(0);
 })();
