@@ -263,7 +263,7 @@
     var txt = sc.querySelector(".iv-text");
     var hours = sc.querySelector("[data-hours]");
     sc.classList.add("typing");
-    typeInto(txt, txt.getAttribute("data-type"), 24, function () {
+    typeInto(txt, txt.getAttribute("data-type"), 16, function () {
       sc.classList.remove("typing");
       setTimeout(function () { sc.classList.add("s2"); }, 320);
       setTimeout(function () {
@@ -296,18 +296,18 @@
         if (r.querySelector(".dc-points")) {
           setTimeout(function () { r.classList.add("points"); }, 260);
         }
-      }, 500 + i * 620);
+      }, 420 + i * 520);
     });
     setTimeout(function () {
       streak.textContent = "7";
       sc.classList.add("streak-pop");
       setTimeout(function () { sc.classList.remove("streak-pop"); }, 420);
-    }, 500 + rows.length * 620 + 200);
+    }, 420 + rows.length * 520 + 200);
     setTimeout(function () {
       score.textContent = "73";
       sc.classList.add("score-pop");
       setTimeout(function () { sc.classList.remove("score-pop"); }, 420);
-    }, 500 + rows.length * 620 + 700);
+    }, 420 + rows.length * 520 + 650);
   }
   function settleDay(sc) {
     [].slice.call(sc.querySelectorAll(".dc-row")).forEach(function (r) {
@@ -323,11 +323,11 @@
   function playAdvisor(sc) {
     var txt = sc.querySelector(".adv-text");
     sc.classList.add("typing");
-    typeInto(txt, txt.getAttribute("data-type"), 26, function () {
+    typeInto(txt, txt.getAttribute("data-type"), 18, function () {
       sc.classList.remove("typing");
-      setTimeout(function () { sc.classList.add("s2"); }, 300);
-      setTimeout(function () { sc.classList.add("s3"); }, 1500);
-      setTimeout(function () { sc.classList.add("s4"); }, 2500);
+      setTimeout(function () { sc.classList.add("s2"); }, 260);
+      setTimeout(function () { sc.classList.add("s3"); }, 1150);
+      setTimeout(function () { sc.classList.add("s4"); }, 1950);
     });
   }
   function settleAdvisor(sc) {
@@ -345,11 +345,11 @@
       typeInto(txt, txt.getAttribute("data-type"), 16, function () {
         sc.classList.remove("typing");
         checks.forEach(function (c, i) {
-          setTimeout(function () { c.classList.add("on"); }, 350 + i * 300);
+          setTimeout(function () { c.classList.add("on"); }, 300 + i * 260);
         });
-        setTimeout(function () { sc.classList.add("s3"); }, 350 + checks.length * 300 + 250);
+        setTimeout(function () { sc.classList.add("s3"); }, 300 + checks.length * 260 + 220);
       });
-    }, 850);
+    }, 600);
   }
   function settleMakeover(sc) {
     var txt = sc.querySelector(".mk-text");
@@ -438,12 +438,12 @@
       io.disconnect();
       setTimeout(function () {
         sc.classList.add("typing-t");
-        typeInto(title, title.getAttribute("data-type"), 34, function () {
+        typeInto(title, title.getAttribute("data-type"), 26, function () {
           sc.classList.remove("typing-t");
           sc.classList.add("s2");
           setTimeout(function () {
             sc.classList.add("typing");
-            typeInto(line, line.getAttribute("data-type"), 18, function () {
+            typeInto(line, line.getAttribute("data-type"), 13, function () {
               sc.classList.remove("typing");
               setTimeout(function () { sc.classList.add("s3"); }, 250);
             });
@@ -464,13 +464,16 @@
   var steps = [].slice.call(scrub.querySelectorAll(".sstep"));
   var layers = [].slice.call(scrub.querySelectorAll(".scrub-phone .layer"));
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // On phones the pinned device renders small: the compressed video reads
+  // soft there, so we keep the crisp poster stills and skip playback.
+  var noVideo = window.matchMedia && window.matchMedia("(max-width: 879px)").matches;
   function activate(i) {
     layers.forEach(function (l, j) {
       l.classList.toggle("on", j === i && j !== 0);
       if (j === 0) l.classList.toggle("off", i !== 0);
       var v = l.tagName === "VIDEO" ? l : null;
       if (v) {
-        if (j === i && !reduce) {
+        if (j === i && !reduce && !noVideo) {
           if (!v.src && v.getAttribute("data-src")) v.src = v.getAttribute("data-src");
           v.play().catch(function () {});
         } else if (v.src) { v.pause(); }
