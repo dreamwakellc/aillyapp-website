@@ -5,7 +5,7 @@
 ## Products and pricing
 
 - Ailly Personal: free to start. A 2-minute AI check-up, a graded personal game plan, a daily lesson, a daily challenge, and Prompt Coach (teaches how to ask AI for things). Optional Pro subscription for depth.
-- Ailly Business: free launch-readiness assessment. Ailly Launch ($159.99 one-time) takes a business from idea to official: plan, name, LLC answer sheets, documents, invoices, and an AI business advisor. Grow is $19.99/mo.
+- Ailly Business: free launch-readiness assessment. Ailly Launch ($159.99 one-time) takes a business from idea to official: plan, name, LLC answer sheets, documents, invoices, and an AI business advisor. Grow is $9.99/mo.
 - Ailly Enterprise: AI-readiness program for companies. Interviews every employee, grades readiness across six dimensions, delivers a board-ready report plus a 6-month program. Founding pricing $2,500 for 6 months including 5 people.
 
 ## Who it's for
