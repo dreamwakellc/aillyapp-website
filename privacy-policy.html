@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=35">
+<link rel="stylesheet" href="/styles.css?v=36">
 </head>
 <body>
 
@@ -49,38 +49,76 @@
 
   <section class="hero page-hero">
     <h1>Privacy Policy</h1>
-    <p class="hero-sub">Last updated: July 2026</p>
+    <p class="hero-sub">Last updated: August 2026</p>
   </section>
 
   <div class="prose">
-    <h2>Information we collect</h2>
-    <p>When you create an account, we collect your name and email address. During the AI diagnostic, we collect the answers you provide to personalize your AI recommendations.</p>
+    <p class="prose-lead">Ailly is made by Dreamwake Labs LLC. This policy explains what we collect, why, and what you can do about it. If anything here is unclear, email us and we will answer in plain language.</p>
 
-    <h2>How we use your information</h2>
-    <p>Your answers are sent to Anthropic's Claude API to generate personalized recommendations. We store your profile and generated plans in Firebase so you can access them later. We do not sell your data to third parties.</p>
+    <aside class="prose-tldr">
+      <h3>The short version</h3>
+      <ul>
+        <li>We collect what you tell us and what you write in the app, because that is what your plan is built from.</li>
+        <li>We do not sell your data, we show no ads, and we do not track you across other apps or websites.</li>
+        <li>What you write is never used to train AI models, ours or anyone else's.</li>
+        <li>You can delete your account and everything in it at any time, from inside the app.</li>
+      </ul>
+    </aside>
 
-    <h2>Third-party services</h2>
-    <p>Ailly uses Firebase (by Google) for authentication and data storage, and Anthropic's Claude API for AI-generated recommendations. You may also sign in via Apple or Google. Each service processes data according to their own privacy policies.</p>
+    <nav class="prose-toc" aria-label="Sections">
+      <h3>Jump to</h3>
+      <ul>
+        <li><a href="#collect">What we collect</a></li>
+        <li><a href="#use">How we use it</a></li>
+        <li><a href="#ai">AI and your content</a></li>
+        <li><a href="#third-party">Third parties</a></li>
+        <li><a href="#enterprise">Enterprise data</a></li>
+        <li><a href="#retention">Retention</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#rights">Your rights</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
 
-    <h2>Enterprise interview data</h2>
+    <h2 id="collect">Information we collect</h2>
+    <p><strong>Account information.</strong> When you create an account we collect your name and email address. If you sign in with Apple or Google, we receive whatever that service passes to us, which is typically your name and an email address. Apple's Hide My Email is supported, and if you use it we only ever see the relay address.</p>
+    <p><strong>What you write in the app.</strong> Your assessment answers, plans, goals, chats with Ailly, business details, and anything else you type or dictate. This is the content that makes your recommendations yours.</p>
+    <p><strong>Purchase information.</strong> If you subscribe or buy a one-time unlock, Apple processes the payment and we never see your card. We do store the transaction identifier Apple gives us, along with which product you bought and when it renews or expires, so we know what your account has access to.</p>
+    <p><strong>Usage and diagnostics.</strong> We collect basic product analytics (which screens and features get used) and crash and performance reports. Both are tied to your account, because knowing which account hit a crash is what lets us actually fix it for you. We use these to repair what is broken and to understand which parts of Ailly genuinely help.</p>
+    <p>We do not collect your contacts, photos, location, or health data.</p>
+
+    <h2 id="use">How we use your information</h2>
+    <p>To create your plan and your daily practice, to answer what you ask Ailly, to keep your progress across devices, to know which features your account has unlocked, to email you about your account, and to find and fix problems.</p>
+    <p><strong>We do not sell your data. We do not share it with advertisers, and we do not track you across other apps or websites.</strong> Ailly contains no advertising and no ad SDKs.</p>
+
+    <h2 id="ai">AI and your content</h2>
+    <p>What you write is sent to Anthropic's Claude API so it can generate your plans, lessons, and answers. Anthropic processes it to return a response to you and does not use it to train their models. We do not use your content to train any model either.</p>
+    <p>If you dictate an answer instead of typing it, iOS handles the speech-to-text on your device or through Apple's speech recognition, under Apple's privacy policy. We receive only the resulting text.</p>
+
+    <h2 id="third-party">Third-party services</h2>
+    <p>Firebase (Google) for sign-in, database, cloud functions, analytics, and crash reporting. Anthropic's Claude API for AI generation. Apple for sign-in and for all purchases and subscriptions. Resend for account email. Each processes data under its own privacy policy.</p>
+
+    <h2 id="enterprise">Enterprise interview data</h2>
     <p>When your company runs an Ailly Enterprise program, your interview answers are stored encrypted and scoped to your company. Leadership sees readiness levels, tiers, and opportunities, never your word-for-word personal answers. Company data is never used to train models or shared with other customers, and is fully deleted on request.</p>
 
-    <h2>Data retention</h2>
-    <p>Your account data and saved plans are kept until you delete your account. You can permanently delete your account and all associated data at any time from the Account section in Settings.</p>
+    <h2 id="retention">Data retention</h2>
+    <p>Your account data and saved plans are kept until you delete your account. You can permanently delete your account and everything attached to it at any time from <strong>Profile, then Privacy and Legal, then Delete Account</strong>. Deletion removes your sign-in account and your server data. Aggregate counts that cannot identify you, and records we are required to keep for tax or accounting, may remain.</p>
 
-    <h2>Security</h2>
-    <p>All data is transmitted over HTTPS. Your account is protected by Firebase Authentication. Ailly never asks you for AI provider keys; every AI request runs through our secure backend, so no such keys are ever stored on your device.</p>
+    <h2 id="security">Security</h2>
+    <p>All data is transmitted over HTTPS. Your account is protected by Firebase Authentication. Ailly never asks you for AI provider keys; every AI request runs through our backend, so no such keys are ever stored on your device.</p>
+    <p>Data is stored on Google Cloud infrastructure in the United States. If you use Ailly from outside the US, your information is transferred and processed there.</p>
 
-    <h2>Your rights</h2>
-    <p>You may access, correct, or delete your personal information at any time using the in-app Settings. For additional requests, contact us at <a href="mailto:support@aillyapp.com">support@aillyapp.com</a>.</p>
+    <h2 id="rights">Your rights</h2>
+    <p>You can access, correct, export, or delete your personal information at any time from in-app Settings, or by emailing us. Depending on where you live, you may have additional rights under laws such as the GDPR or the CCPA, including the right to object to processing or to lodge a complaint with your local regulator. We honor these requests regardless of where you live. Contact <a href="mailto:support@aillyapp.com">support@aillyapp.com</a> and we will respond within 30 days.</p>
 
-    <h2>Children's privacy</h2>
-    <p>Ailly is not directed at children under 13. We do not knowingly collect personal information from children under 13.</p>
+    <h2 id="children">Children's privacy</h2>
+    <p>Ailly is not directed at children under 13. We do not knowingly collect personal information from children under 13. If you believe a child has given us information, email us and we will delete it.</p>
 
-    <h2>Changes to this policy</h2>
-    <p>We may update this Privacy Policy from time to time. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+    <h2 id="changes">Changes to this policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we make a meaningful change we will update the date at the top of this page, and significant changes will be surfaced in the app.</p>
 
-    <h2>Contact</h2>
+    <h2 id="contact">Contact</h2>
     <p>Questions? Email us at <a href="mailto:support@aillyapp.com">support@aillyapp.com</a>.</p>
   </div>
 
@@ -103,7 +141,7 @@
       <a href="mailto:support@aillyapp.com">Contact</a>
     </nav>
     <div class="footer-base">
-      <span>&copy; 2026 Dreamwake LLC &middot; Made by <a href="https://dreamwakelabs.com" rel="noopener">Dreamwake Labs</a></span>
+      <span>&copy; 2026 Dreamwake Labs LLC &middot; Made by <a href="https://dreamwakelabs.com" rel="noopener">Dreamwake Labs</a></span>
       <span>No jargon. No wrong answers.</span>
     </div>
   </div>

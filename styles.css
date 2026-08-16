@@ -633,10 +633,62 @@ main { display: block; }
 
 /* ============================== LEGAL / PROSE PAGES ============================== */
 
-.prose { max-width: 720px; margin: 0 auto; padding: 44px 24px 76px; }
-.prose h2 { font-size: 17.5px; font-weight: 700; color: var(--navy); margin: 28px 0 8px; }
-.prose p { font-size: 15px; line-height: 1.7; color: var(--body); }
+.prose { max-width: 700px; margin: 0 auto; padding: 8px 24px 88px; }
+.prose h2 {
+  font-size: 22px; font-weight: 700; color: var(--navy);
+  margin: 44px 0 12px; letter-spacing: -.01em; scroll-margin-top: 96px;
+}
+.prose h2:first-of-type { margin-top: 8px; }
+.prose p { font-size: 16.5px; line-height: 1.75; color: var(--body); margin-bottom: 14px; }
+.prose p:last-child { margin-bottom: 0; }
+.prose strong { color: var(--ink); font-weight: 700; }
+.prose a { color: var(--navy); text-decoration: underline; text-underline-offset: 2px; }
 .prose .updated { font-size: 13px; color: var(--faint); margin-bottom: 4px; }
+
+/* Opening paragraph reads a size up: it carries the whole promise of the page. */
+.prose-lead { font-size: 18.5px !important; line-height: 1.65 !important; color: var(--muted) !important; }
+
+/* "The short version" card. A privacy policy nobody reads is a failed document,
+   so the honest summary sits above the legal text rather than under it. */
+.prose-tldr {
+  background: #fff; border: 1px solid rgba(26, 35, 126, .12);
+  border-radius: var(--radius); box-shadow: var(--shadow-card);
+  padding: 26px 28px; margin: 30px 0 8px;
+}
+.prose-tldr h3 {
+  font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--navy); margin-bottom: 14px;
+}
+.prose-tldr ul { list-style: none; display: grid; gap: 11px; }
+.prose-tldr li {
+  font-size: 15.5px; line-height: 1.6; color: var(--body);
+  padding-left: 27px; position: relative;
+}
+.prose-tldr li::before {
+  content: ""; position: absolute; left: 2px; top: .5em;
+  width: 9px; height: 9px; border-radius: 50%; background: var(--navy); opacity: .85;
+}
+
+/* Section rail: skimmable on desktop, hidden where it would just be more scrolling. */
+.prose-toc { margin: 34px 0 4px; padding: 0 0 26px; border-bottom: 1px solid rgba(26, 35, 126, .1); }
+.prose-toc h3 {
+  font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--faint); margin-bottom: 12px;
+}
+.prose-toc ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 10px; }
+.prose-toc a {
+  display: inline-block; font-size: 14px; text-decoration: none; color: var(--navy);
+  background: rgba(26, 35, 126, .055); border-radius: 999px; padding: 6px 13px;
+  transition: background .16s ease;
+}
+.prose-toc a:hover { background: rgba(26, 35, 126, .11); text-decoration: none; }
+@media (max-width: 640px) {
+  .prose { padding-bottom: 64px; }
+  .prose h2 { font-size: 20px; margin-top: 36px; }
+  .prose p { font-size: 16px; }
+  .prose-toc { display: none; }
+  .prose-tldr { padding: 22px 20px; }
+}
 
 .page-hero { padding: 60px 24px 64px; }
 .page-hero h1 { font-size: clamp(32px, 5vw, 48px); }
